@@ -1,5 +1,9 @@
+import classNameAdder from 'utils/classNameAdder'
+
 const styles = {
-    rootPage: "bg-green-500 text-white"
+    rootPage: "bg-dblack text-dneon",
+    exampleSetting: "bg-black",
 }
 
-export default styles
+
+export default classNameAdder(styles)
