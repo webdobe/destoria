@@ -6,7 +6,7 @@ import { Context } from "contexts/Dropdown";
 
 let lastOptionId = 0;
 
-export function DropdownOption({ name, content: Content, backgroundHeight }) {
+export function DropdownOption({ name, content: Content, backgroundHeight, backgroundWidth }) {
   const idRef = useRef(++lastOptionId);
   const id = idRef.current;
 
@@ -43,7 +43,8 @@ export function DropdownOption({ name, content: Content, backgroundHeight }) {
         optionDimensions,
         optionCenterX: optionDimensions.x + optionDimensions.width / 2,
         WrappedContent,
-        backgroundHeight
+        backgroundHeight,
+        backgroundWidth
       })
 
       setRegistered(true)
@@ -60,7 +61,8 @@ export function DropdownOption({ name, content: Content, backgroundHeight }) {
     optionDimensions,
     updateOptionProps,
     deleteOptionById,
-    backgroundHeight
+    backgroundHeight,
+    backgroundWidth
   ])
 
   const handleOpen = () => setTargetId(id)

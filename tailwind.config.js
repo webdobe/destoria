@@ -16,6 +16,11 @@ module.exports = {
           'dblack': '#050D1D',
           'dwhite': '#F0F0F0',
         },
+        backgroundImage: {
+          'hero-first-half': "url('bgfirsthalf.png')",
+          'hero-second-half': "url('bgsecondhalf.png')",
+          'hero-full': "url('bgfull.png')",
+        }
       },
     },
     plugins: [],

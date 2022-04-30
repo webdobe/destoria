@@ -20,6 +20,7 @@ interface IItems {
   WrappedContent: any
   backgroundHeight: any
   optionId: any
+  backgroundWidth: any
 }
 
 export const Context = createContext<IDropDownContext>(null);
@@ -36,6 +37,7 @@ export const DropdownProvider: FunctionComponent = ({ children }) => {
       optionCenterX,
       WrappedContent,
       backgroundHeight,
+      backgroundWidth
     }) => {
       setOptions((items: IItems) => [
         ...items,
@@ -45,6 +47,7 @@ export const DropdownProvider: FunctionComponent = ({ children }) => {
           optionCenterX,
           WrappedContent,
           backgroundHeight,
+          backgroundWidth
         },
       ]);
     },

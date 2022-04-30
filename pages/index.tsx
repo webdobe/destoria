@@ -12,7 +12,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section {...s.exampleSetting}>
-        temp content
       </section>
       <main>
       </main>

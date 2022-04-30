@@ -2,7 +2,7 @@ import classNameAdder from 'utils/classNameAdder'
 
 const styles = {
     rootPage: "bg-dblack text-dneon",
-    exampleSetting: "bg-black text-dorange",
+    exampleSetting: "text-dorange",
 }
 
 

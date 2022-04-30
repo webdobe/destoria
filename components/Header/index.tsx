@@ -27,27 +27,32 @@ const Header: FunctionComponent = function () {
                 <DropdownOption
                   name="About"
                   content={Teams}
-                  backgroundHeight="200"
+                  backgroundHeight={250}
+                  backgroundWidth={150}
                 />
                 <DropdownOption
                   name="Whitepaper"
                   content={Teams}
-                  backgroundHeight="200"
+                  backgroundHeight={160}
+                  backgroundWidth={250}
                 />
                 <DropdownOption
                   name="Team"
                   content={Teams}
-                  backgroundHeight="200"
+                  backgroundHeight={220}
+                  backgroundWidth={200}
                 />
                 <DropdownOption
                   name="Marketplace"
                   content={Teams}
-                  backgroundHeight="200"
+                  backgroundHeight={160}
+                  backgroundWidth={200}
                 />
                 <DropdownOption
                   name="Mint"
                   content={Teams}
-                  backgroundHeight="200"
+                  backgroundHeight={220}
+                  backgroundWidth={200}
                 />
               </ul>
             </nav>

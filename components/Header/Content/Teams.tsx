@@ -6,10 +6,10 @@ const Teams: FunctionComponent = function () {
     <div {...s.wrapper}>
       <ul {...s.wrapper}>
         <li {...s.item}>temp content</li>
-        <li>temp content</li>
-        <li>temp content</li>
-        <li>temp content</li>
-        <li>temp content</li>
+        <li {...s.item}>temp content</li>
+        <li {...s.item}>temp content</li>
+        <li {...s.item}>temp content</li>
+        <li {...s.item}>temp content</li>
       </ul>
     </div>
   );

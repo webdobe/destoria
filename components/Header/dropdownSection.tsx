@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import { Context } from "contexts/Dropdown";
 import s from "./styles";
 function DropdownSection({ option }) {
-  const { updateOptionProps, cachedId } = useContext(Context);
+  const { cachedId } = useContext(Context);
 
-  const { id, optionDimensions, contentDimensions, optionCenterX } = option;
+  const { id, contentDimensions, optionCenterX } = option;
 
   const contentWidth = contentDimensions?.width || 0;
-  const x = (optionCenterX - contentWidth / 2) - 20;
+  const x = (optionCenterX - contentWidth / 2) ;
 
   const isActive = cachedId === id;
 
