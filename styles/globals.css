@@ -7,6 +7,7 @@ html,
 body {
   font-family: 'Chakra Petch', sans-serif;
   background-color: #050D1D;
+  min-height: 100%;
 }
 
 a {
@@ -23,17 +24,17 @@ a {
 
 @keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7.5px #F24A7C, 0 0 10px #F24A7C, 0 0 12.5px #F24A7C, 0 0 15px #F24A7C, 0 0 17.5px #F24A7C;
   }
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    text-shadow: 0 0 2px #fff, 0 0 7.5px #F284A5, 0 0 12.5px #F284A5, 0 0 15px #F284A5, 0 0 17.5px #F284A5, 0 0 22.5px #F284A5, 0 0 27.5px #F284A5;
   }
 }
-
-.glower {
-    text-align: center;
-    -webkit-animation: glow 1s ease-in-out infinite alternate;
-    -moz-animation: glow 1s ease-in-out infinite alternate;
-    animation: glow 1s ease-in-out infinite alternate;
-  }
   
+.glower:hover {
+  font-size: 400px !important;
+}
+
+.connect-wallet:hover .glower {
+  animation: glow 0.35s ease-in-out infinite alternate;
+}

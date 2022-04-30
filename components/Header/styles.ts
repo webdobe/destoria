@@ -9,10 +9,15 @@ const styles = {
     logo: "p-1",
     nav: "grow flex justify-end",
     navUl: "flex grow justify-end gap-9",
-    connectWallet: "w-45 h-10 flex justify-center items-center cursor-pointer ",
+    navLi: "cursor-pointer outline-0 bg-white p-4 transition-opacity hover:opacity-50 focus:opacity-50",
+    connectWallet: "w-45 h-10 flex justify-center items-center cursor-pointer connect-wallet",
     navBurger: "md:hidden",
     connectWalletText: "w-0 glower",
-    connectWalletImage: "w-0"
+    connectWalletImage: "w-0",
+    dropdownRoot: "z-10 absolute",
+    dropdownArrow: "",
+    dropdownContainer: "absolute",
+    dropdownSection: "absolute"
 }
 
 
