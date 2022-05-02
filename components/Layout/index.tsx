@@ -7,7 +7,7 @@ interface ILayout {
 
 const Layout: FunctionComponent<ILayout> = function ({children}) {
     return (
-        <main style={{maxWidth: '1440px'}} {...s.main}>
+        <main {...s.main}>
             {children}
         </main>
     )

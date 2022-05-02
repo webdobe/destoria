@@ -10,6 +10,10 @@ body {
   min-height: 100%;
 }
 
+body {
+  background-image: url("/bgfull.png");
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -35,9 +39,9 @@ a {
   font-size: 400px !important;
 }
 
-.connect-wallet:hover .glower {
+/* .connect-wallet:hover .glower {
   animation: glow 0.35s ease-in-out infinite alternate;
-}
+} */
 
 .-top-1 {
   top: -8px;
@@ -47,4 +51,15 @@ a {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background: rgb(2,0,36);
   background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(193,67,27, 0.3) 0%, rgba(0,212,255,0) 100%);
+}
+
+.customUlNav {
+  left: calc(100% - 14rem);
+}
+@media (min-width: 700px) {
+  .layout-first-border {
+    border-top: 1.5px solid rgba(255, 255, 255, 0.2);
+    border-left: 1.5px solid rgba(255, 255, 255, 0.2);
+    border-right: 1.5px solid rgba(255, 255, 255, 0.2);
+  }
 }
