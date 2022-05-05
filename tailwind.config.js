@@ -26,6 +26,18 @@ module.exports = {
           'spin-slow': 'spin 3s linear infinite',
         }
       },
+    screens: {
+      'sm': '500px',
+      'md': [
+        // Sidebar appears at 768px, so revert to `sm:` styles between 768px
+        // and 868px, after which the main content area is wide enough again to
+        // apply the `md:` styles.
+        {'min': '845px', 'max': '1000px'},
+        {'min': '1000px'}
+      ],
+      'lg': '1100px',
+      'xl': '1400px',
+    }
     },
     plugins: [],
   }

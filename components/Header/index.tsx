@@ -99,7 +99,6 @@ const Header: FunctionComponent = function () {
                 />
               </ul>
             </nav>
-            
             <div {...s.connectWallet}>
               <span
                 {...s.connectWalletText}

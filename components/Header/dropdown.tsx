@@ -6,7 +6,7 @@ import { Context } from "contexts/Dropdown";
 
 let lastOptionId = 0;
 
-export function DropdownOption({ name, content: Content, backgroundHeight, backgroundWidth }) {
+export function DropdownOption({ name , content: Content, backgroundHeight, backgroundWidth }) {
   const idRef = useRef(++lastOptionId);
   const id = idRef.current;
 
