@@ -56,17 +56,11 @@ a {
 .customUlNav {
   left: calc(100% - 14rem);
 }
-@media (min-width: 1000px) {
-  .layout-first-border {
-    border-top: 1.5px solid rgba(255, 255, 255, 0.2);
-    border-left: 1.5px solid rgba(255, 255, 255, 0.2);
-    border-right: 1.5px solid rgba(255, 255, 255, 0.2);
-  }
-  .layout-border {
-    border-left: 1.5px solid rgba(255, 255, 255, 0.2);
-    border-right: 1.5px solid rgba(255, 255, 255, 0.2);
-  }
+
+.cards-carousel-container {
+  height: 500px
 }
+
 
 .swiper {
   height: 700px !important;
@@ -86,30 +80,35 @@ a {
 .swiper-slide {
   transform: scale(0.8) !important;
   transition: 0.4s ease-in;
-  height: 760px !important;
+  height: 860px !important;
 }
 
 .swiper-slide-active {
   transform: scale(1) !important;
   -webkit-transform: translateZ(0) !important;
+  z-index: 1;
 }
-
+    
 .cards-carousel {
-  height: 860px !important;
+  height: 800px !important;
   background-repeat: no-repeat;
   /* background-size: cover; */
-  background-size: 430px;
+  background-size: 380px;
   background-attachment: fixed;
   background-position: center initial;
-
 }
+
 
 .cards-carousel-left {
   background-image: url('/carousel-card-left.png');
+  position: relative;
+
 }
 
 .cards-carousel-middle {
   background-image: url('/carousel-card-middle.png');
+  position: relative;
+
 }
 
 .cards-carousel-right {
@@ -121,3 +120,32 @@ a {
 .custom-slider {
   width: 100%;
 }
+
+@media (min-width: 1000px) {
+  .swiper-slide {
+    height: 860px !important;
+  }
+    
+  .cards-carousel {
+    height: 860px !important;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-size: 430px;
+    background-attachment: fixed;
+    background-position: center initial;
+  }
+  .layout-first-border {
+    border-top: 1.5px solid rgba(255, 255, 255, 0.2);
+    border-left: 1.5px solid rgba(255, 255, 255, 0.2);
+    border-right: 1.5px solid rgba(255, 255, 255, 0.2);
+  }
+  .layout-border {
+    border-left: 1.5px solid rgba(255, 255, 255, 0.2);
+    border-right: 1.5px solid rgba(255, 255, 255, 0.2);
+  }
+  .cards-carousel-container {
+    height: 900px
+  }
+}
+
+

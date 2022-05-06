@@ -20,7 +20,7 @@ const styles = {
     dropdownSection: "absolute h-auto",
     background: "backdrop-filter backdrop-blur-sm bg-white/30 absolute top-0 w-full bg-opacity-20 custom-dropdown",
     logoImage: "",
-    menuBackground: "absolute top-0 right-0 backdrop-filter bottom-0 w-72 z-1 backdrop-blur-sm bg-dblue/80",
+    menuBackground: "absolute top-0 right-0 backdrop-filter bottom-0 w-72 z-10 backdrop-blur-sm bg-dblue/80",
     navMenu: "flex md:hidden"
 }
 

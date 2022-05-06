@@ -15,7 +15,7 @@ const CardsCarousel: FunctionComponent = function () {
     <section {...s.cardsCarousel}>
       <div
         {...s.containerCardsCarousel}
-        style={{ maxWidth: "1440px", width: "100%", height: '900px' }}
+        style={{ maxWidth: "1440px", width: "100%" }}
       >
         <div {...s.containerCardsCarouselBordered} >
           <Swiper
@@ -40,8 +40,8 @@ const CardsCarousel: FunctionComponent = function () {
             {...s.swiper}
           >
             <SwiperSlide>
-              <div className="cards-carousel cards-carousel-left flex flex-col pt-20 items-center">
-                <div className="flex flex-col items-center w-full pl-16 pr-44">
+              <div className="cards-carousel cards-carousel-left flex flex-col pt-10 md:pt-20 items-center">
+                <div className="flex flex-col items-center w-full pl-14 pr-20 md:pl-16 md:pr-44">
                   <h4 {...s.cardTitle}>
                     MMORPG
                   </h4>
@@ -55,8 +55,8 @@ const CardsCarousel: FunctionComponent = function () {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-            <div className="cards-carousel cards-carousel-left flex flex-col pt-20 items-center">
-                <div className="flex flex-col items-center w-full pl-20 pr-48">
+            <div className="cards-carousel cards-carousel-left flex flex-col pt-10 md:pt-20 items-center">
+                <div className="flex flex-col items-center w-full pl-14 pr-20 md:pl-20 md:pr-48">
                   <h4 {...s.cardTitle}>
                     Metaverse
                   </h4>
@@ -70,8 +70,8 @@ const CardsCarousel: FunctionComponent = function () {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="cards-carousel cards-carousel-left flex flex-col pt-20 items-center">
-                <div className="flex flex-col items-center w-full pl-20 pr-48">
+              <div className="cards-carousel cards-carousel-left flex flex-col pt-10 md:pt-20 items-center">
+                <div className="flex flex-col items-center w-full pl-14 pr-20 md:pl-20 md:pr-48">
                   <h4 {...s.cardTitle}>
                     Battle Royale
                   </h4>
