@@ -1,3 +1,4 @@
+/*eslint-disable */
 import * as React from "react";
 import { motion } from "framer-motion";
 import s from './styles'
