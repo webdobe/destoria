@@ -36,7 +36,7 @@ module.exports = {
         {'min': '1000px'}
       ],
       'lg': '1100px',
-      'xl': '1400px',
+      'xl': '1320px',
     }
     },
     plugins: [],

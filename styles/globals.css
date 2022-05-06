@@ -11,7 +11,7 @@ body {
 }
 
 body {
-  background-image: url("/destoriafullbg.png");
+  /* background-image: url("/destoriafullbg.png"); */
 }
 
 a {
@@ -66,4 +66,58 @@ a {
     border-left: 1.5px solid rgba(255, 255, 255, 0.2);
     border-right: 1.5px solid rgba(255, 255, 255, 0.2);
   }
+}
+
+.swiper {
+  height: 700px !important;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.swiper-slide {
+  transform: scale(0.8) !important;
+  transition: 0.4s ease-in;
+  height: 760px !important;
+}
+
+.swiper-slide-active {
+  transform: scale(1) !important;
+  -webkit-transform: translateZ(0) !important;
+}
+
+.cards-carousel {
+  height: 860px !important;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  background-size: 430px;
+  background-attachment: fixed;
+  background-position: center initial;
+
+}
+
+.cards-carousel-left {
+  background-image: url('/carousel-card-left.png');
+}
+
+.cards-carousel-middle {
+  background-image: url('/carousel-card-middle.png');
+}
+
+.cards-carousel-right {
+  background-image: url('/carousel-card-right.png');
+  position: relative;
+  left: -25px !important; 
+}
+
+.custom-slider {
+  width: 100%;
 }

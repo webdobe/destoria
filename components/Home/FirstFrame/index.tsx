@@ -1,10 +1,11 @@
 import { FunctionComponent } from "react";
 import s from "./styles";
 import Image from "next/image";
-
-const Header: FunctionComponent = function () {
+import Header from "components/Header";
+const FirstFrame: FunctionComponent = function () {
   return (
-    <>
+    <div {...s.majorContainer} style={{backgroundImage: "url('/destoriafullbg.png')", backgroundSize: "100%", backgroundRepeat: "no-repeat"}}>
+      <Header />
       <section {...s.exploreTheMetaverse}>
         <div
           {...s.containerExploreTheMetaverse}
@@ -78,8 +79,8 @@ const Header: FunctionComponent = function () {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
-export default Header;
+export default FirstFrame;

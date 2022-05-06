@@ -3,6 +3,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import s from 'styles'
 import FirstFrame from 'components/Home/FirstFrame'
+import dynamic from 'next/dynamic'
+
+const CardCarousel = dynamic(
+  () => import('components/Home/CardsCarousel'),
+  { ssr: false }
+)
 
 const Home: NextPage = () => {
   return (
@@ -13,6 +19,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <FirstFrame />
+      <CardCarousel />
       <main>
       </main>
     </div>
