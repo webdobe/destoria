@@ -4,6 +4,7 @@ import Image from 'next/image'
 import s from 'styles'
 import FirstFrame from 'components/Home/FirstFrame'
 import dynamic from 'next/dynamic'
+import CharactersCarousel from 'components/Home/CharactersCarousel'
 
 const CardCarousel = dynamic(
   () => import('components/Home/CardsCarousel'),
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
       </Head>
       <FirstFrame />
       <CardCarousel />
+      <CharactersCarousel />
       <main>
       </main>
     </div>

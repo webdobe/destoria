@@ -4,7 +4,10 @@ import Image from "next/image";
 import Header from "components/Header";
 const FirstFrame: FunctionComponent = function () {
   return (
-    <div {...s.majorContainer} style={{backgroundImage: "url('/destoriafullbg.png')", backgroundSize: "100%", backgroundRepeat: "no-repeat"}}>
+    <div {...s.majorContainer} >
+      <div {...s.photoLayer}>
+      </div>
+      <div {...s.contentLayer}>
       <Header />
       <section {...s.exploreTheMetaverse}>
         <div
@@ -79,6 +82,8 @@ const FirstFrame: FunctionComponent = function () {
           </div>
         </div>
       </section>
+      </div>
+
     </div>
   );
 };

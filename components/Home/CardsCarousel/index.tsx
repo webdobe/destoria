@@ -13,6 +13,8 @@ import { EffectCoverflow, Pagination } from "swiper";
 const CardsCarousel: FunctionComponent = function () {
   return (
     <section {...s.cardsCarousel}>
+      <div {...s.photoLayer}></div>
+      <div {...s.contentLayer}>
       <div
         {...s.containerCardsCarousel}
         style={{ maxWidth: "1440px", width: "100%" }}
@@ -55,7 +57,7 @@ const CardsCarousel: FunctionComponent = function () {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-            <div className="cards-carousel cards-carousel-left flex flex-col pt-10 md:pt-20 items-center">
+            <div className="cards-carousel cards-carousel-middle flex flex-col pt-10 md:pt-20 items-center">
                 <div className="flex flex-col items-center w-full pl-14 pr-20 md:pl-20 md:pr-48">
                   <h4 {...s.cardTitle}>
                     Metaverse
@@ -70,7 +72,7 @@ const CardsCarousel: FunctionComponent = function () {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="cards-carousel cards-carousel-left flex flex-col pt-10 md:pt-20 items-center">
+              <div className="cards-carousel cards-carousel-right flex flex-col pt-10 md:pt-20 items-center">
                 <div className="flex flex-col items-center w-full pl-14 pr-20 md:pl-20 md:pr-48">
                   <h4 {...s.cardTitle}>
                     Battle Royale
@@ -86,6 +88,7 @@ const CardsCarousel: FunctionComponent = function () {
             </SwiperSlide>
           </Swiper>
         </div>
+      </div>
       </div>
     </section>
   );

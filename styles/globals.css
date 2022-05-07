@@ -25,6 +25,24 @@ a {
   margin: 0;
 }
 
+.first-img-layer {
+  background-color: #050D1D;
+  opacity: 0.6;
+}
+
+.bg-full-img {
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 75%,
+  #050D1D), url('/bgfull.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.bg-full-forest {
+  background: linear-gradient(to bottom, #050D1D 25%, rgba(255,255,255,0) 50%,
+  #050D1D), url('/bgforestfull.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
 
 @keyframes glow {
   from {
