@@ -43,7 +43,7 @@ const CardsCarousel: FunctionComponent = function () {
           >
             <SwiperSlide>
               <div className="cards-carousel cards-carousel-left flex flex-col pt-10 md:pt-20 items-center">
-                <div className="flex flex-col items-center w-full pl-14 pr-20 md:pl-16 md:pr-44">
+                <div className="flex flex-col items-center w-full xl:pl-14 pr-20 md:pl-16 xl:pr-44">
                   <h4 {...s.cardTitle}>
                     MMORPG
                   </h4>
@@ -58,7 +58,7 @@ const CardsCarousel: FunctionComponent = function () {
             </SwiperSlide>
             <SwiperSlide>
             <div className="cards-carousel cards-carousel-middle flex flex-col pt-10 md:pt-20 items-center">
-                <div className="flex flex-col items-center w-full pl-14 pr-20 md:pl-20 md:pr-48">
+                <div className="flex flex-col items-center w-full xl:pl-14 pr-20 md:pl-20 xl:pr-48">
                   <h4 {...s.cardTitle}>
                     Metaverse
                   </h4>
@@ -73,7 +73,7 @@ const CardsCarousel: FunctionComponent = function () {
             </SwiperSlide>
             <SwiperSlide>
               <div className="cards-carousel cards-carousel-right flex flex-col pt-10 md:pt-20 items-center">
-                <div className="flex flex-col items-center w-full pl-14 pr-20 md:pl-20 md:pr-48">
+                <div className="flex flex-col items-center w-full xl:pl-14 pr-20 md:pl-20 xl:pr-48">
                   <h4 {...s.cardTitle}>
                     Battle Royale
                   </h4>

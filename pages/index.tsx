@@ -5,6 +5,7 @@ import s from 'styles'
 import FirstFrame from 'components/Home/FirstFrame'
 import dynamic from 'next/dynamic'
 import CharactersCarousel from 'components/Home/CharactersCarousel'
+import AnimatedGallery from 'components/Home/AnimatedGallery'
 
 const CardCarousel = dynamic(
   () => import('components/Home/CardsCarousel'),
@@ -22,6 +23,7 @@ const Home: NextPage = () => {
       <FirstFrame />
       <CardCarousel />
       <CharactersCarousel />
+      <AnimatedGallery />
       <main>
       </main>
     </div>

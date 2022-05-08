@@ -5,7 +5,7 @@ const styles = {
     photoLayer: "w-full h-full absolute first-img-layer",
     contentLayer: "w-full h-full relative",
     containerCardsCarousel: "cards-carousel-container m-auto h-auto",
-    containerCardsCarouselBordered: "layout-border md:py-10 md: md:mx-5",
+    containerCardsCarouselBordered: "layout-border md:py-10 md:mx-5",
     swiper: "w-full swiper-slide h-96",
     cardTitle: "text-3xl font-bold pb-4 md:pb-10",
     cardBottom: "text-3xl font-bold pt-10 opacity-70",
