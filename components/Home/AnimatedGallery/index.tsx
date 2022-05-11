@@ -28,7 +28,7 @@ const AnimatedGallery: FunctionComponent = function () {
           style={{ maxWidth: "1440px", width: "100%" }}
         >
           <div {...s.containerAnimatedGalleryBordered}>
-            <div {...s.animatedGalleryContent}>
+            <div {...s.animatedGalleryContent} style={{minHeight: '500px'}}>
               <Masonry/>
             </div>
           </div>

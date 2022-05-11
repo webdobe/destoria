@@ -5,10 +5,19 @@ import s from 'styles'
 import FirstFrame from 'components/Home/FirstFrame'
 import dynamic from 'next/dynamic'
 import CharactersCarousel from 'components/Home/CharactersCarousel'
-import AnimatedGallery from 'components/Home/AnimatedGallery'
 
 const CardCarousel = dynamic(
   () => import('components/Home/CardsCarousel'),
+  { ssr: false }
+)
+
+const AnimatedGallery = dynamic(
+  () => import('components/Home/AnimatedGallery'),
+  { ssr: false }
+)
+
+const Faq = dynamic(
+  () => import('components/Home/Faq'),
   { ssr: false }
 )
 
@@ -24,6 +33,7 @@ const Home: NextPage = () => {
       <CardCarousel />
       <CharactersCarousel />
       <AnimatedGallery />
+      <Faq />
       <main>
       </main>
     </div>
