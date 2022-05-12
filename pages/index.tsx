@@ -16,8 +16,8 @@ const AnimatedGallery = dynamic(
   { ssr: false }
 )
 
-const Faq = dynamic(
-  () => import('components/Home/Faq'),
+const LastFrame = dynamic(
+  () => import('components/Home/LastFrame'),
   { ssr: false }
 )
 
@@ -33,7 +33,7 @@ const Home: NextPage = () => {
       <CardCarousel />
       <CharactersCarousel />
       <AnimatedGallery />
-      <Faq />
+      <LastFrame />
       <main>
       </main>
     </div>

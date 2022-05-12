@@ -58,7 +58,7 @@ const Header: FunctionComponent = function () {
           <div {...s.logo}>
             <Image
               src="/destoria.svg"
-              alt="Burger Menu"
+              alt="Destoria"
               width={47}
               height={42}
               {...s.logoImage}
@@ -67,6 +67,12 @@ const Header: FunctionComponent = function () {
           <div {...s.navBox}>
             <nav {...s.nav}>
               <ul {...s.navUl}>
+              <DropdownOption
+                  name="About"
+                  content={Teams}
+                  backgroundHeight={250}
+                  backgroundWidth={185}
+                />
                 <DropdownOption
                   name="Whitepaper"
                   content={Whitepaper}
@@ -74,21 +80,15 @@ const Header: FunctionComponent = function () {
                   backgroundWidth={380}
                 />
                 <DropdownOption
-                  name="Marketplace"
-                  content={Teams}
-                  backgroundHeight={160}
-                  backgroundWidth={185}
-                />
-                <DropdownOption
-                  name="About"
-                  content={Teams}
-                  backgroundHeight={250}
-                  backgroundWidth={185}
-                />
-                <DropdownOption
                   name="Team"
                   content={Teams}
                   backgroundHeight={220}
+                  backgroundWidth={185}
+                />
+                <DropdownOption
+                  name="Marketplace"
+                  content={Teams}
+                  backgroundHeight={160}
                   backgroundWidth={185}
                 />
                 <DropdownOption

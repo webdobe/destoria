@@ -17,6 +17,13 @@ const Faq: FunctionComponent = function () {
           <div {...s.containerFaqBordered}>
             <div {...s.faqContent}>
               <Faqbox />
+              <Faqbox />
+              <Faqbox />
+              <Faqbox />
+              <Faqbox />
+              <Faqbox />
+              <Faqbox />
+              <Faqbox />
             </div>
           </div>
         </div>

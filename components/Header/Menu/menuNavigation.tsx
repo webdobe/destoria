@@ -14,10 +14,10 @@ const variants = {
 
 export const Navigation = () => (
   <motion.ul variants={variants} {...s.navUl}>
-      <MenuItem>Whitepaper</MenuItem>
-      <MenuItem>Marketplace</MenuItem>
       <MenuItem>About</MenuItem>
+      <MenuItem>Whitepaper</MenuItem>
       <MenuItem>Team</MenuItem>
+      <MenuItem>Marketplace</MenuItem>
       <MenuItem>Mint</MenuItem>
   </motion.ul>
 );
