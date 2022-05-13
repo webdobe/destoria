@@ -16,7 +16,6 @@ function DropdownRoot() {
   let [width, height, x] = [0, 0, 0];
 
   if (cachedOption) {
-    console.log(targetId)
     const { optionCenterX, contentDimensions } = cachedOption;
     width = contentDimensions?.width;
     height = contentDimensions?.height;

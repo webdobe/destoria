@@ -41,7 +41,6 @@ const CharactersCarousel: FunctionComponent = function () {
               .click();
           }
           setTimeout(() => {
-            console.log(containerRef.current.querySelector('.bg-characters .swiper-button-next').classList.contains('swiper-button-disabled'))
             if (containerRef.current.querySelector('.bg-characters .swiper-button-next').classList.contains('swiper-button-disabled')) {
               containerRef.current.querySelector('.bg-characters .charac-cursor-right').classList.add('charac-button-disabled')
             }

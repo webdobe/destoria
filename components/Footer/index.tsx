@@ -68,10 +68,13 @@ const Footer: FunctionComponent = function () {
                   Terms & Conditions
                 </div>
               </div>
-              <div {...s.contactUs}>
+              <div {...s.destoriaDescriptionInline}>
               © 2021  Destoria, LLC. All Rights Reserved.
               </div>
             </div>
+              <div {...s.destoriaDescriptionOutline}>
+              © 2021  Destoria, LLC. All Rights Reserved.
+              </div>
           </div>
         </div>
       </div>
