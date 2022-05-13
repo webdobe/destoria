@@ -72,7 +72,7 @@ const Header: FunctionComponent = function () {
                   name="About"
                   content={About}
                   backgroundHeight={250}
-                  backgroundWidth={120}
+                  backgroundWidth={140}
                 />
                 <DropdownOption
                   name="Whitepaper"
@@ -100,6 +100,7 @@ const Header: FunctionComponent = function () {
                 />
               </ul>
             </nav>
+
             <div {...s.connectWallet}>
               <span
                 {...s.connectWalletText}
