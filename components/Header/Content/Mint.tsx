@@ -2,13 +2,13 @@ import { FunctionComponent } from "react";
 import s from "./styles";
 import Image from "next/image";
 
-const Whitepaper: FunctionComponent = function () {
+const Mint: FunctionComponent = function () {
   return (
     <div {...s.wrapper}>
-      <ul {...s.wrapperWhitepaper}>
-        <li {...s.whiteText}>
+      <ul {...s.wrapperMarketplace}>
+        <li {...s.shortItem}>
         <Image
-              src="/headericons-whitepaper.svg"
+              src="/headericons-tool.svg"
               alt="Whiteper"
               width={64}
               height={64}
@@ -21,4 +21,4 @@ const Whitepaper: FunctionComponent = function () {
   );
 };
 
-export default Whitepaper;
+export default Mint;

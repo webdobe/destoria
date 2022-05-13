@@ -16,10 +16,11 @@ function DropdownRoot() {
   let [width, height, x] = [0, 0, 0];
 
   if (cachedOption) {
+    console.log(targetId)
     const { optionCenterX, contentDimensions } = cachedOption;
     width = contentDimensions?.width;
     height = contentDimensions?.height;
-    x = optionCenterX - width / 2 - 15;
+    x = optionCenterX - width / 2 - (targetId == 4 ? 30 : 20);
   }
 
   const [hovering, setHovering] = useState(false);

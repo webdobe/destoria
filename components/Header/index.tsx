@@ -4,6 +4,8 @@ import Image from "next/image";
 import { DropdownOption } from "./dropdown";
 import Teams from "./Content/Teams";
 import About from "./Content/About";
+import Marketplace from "./Content/Marketplace";
+import Mint from "./Content/Mint";
 import Whitepaper from "./Content/Whitepaper";
 import DropdownRoot from "./dropdownRoot";
 import { DropdownProvider } from "contexts/Dropdown";
@@ -71,14 +73,14 @@ const Header: FunctionComponent = function () {
               <DropdownOption
                   name="About"
                   content={About}
-                  backgroundHeight={250}
+                  backgroundHeight={135}
                   backgroundWidth={140}
                 />
                 <DropdownOption
                   name="Whitepaper"
                   content={Whitepaper}
-                  backgroundHeight={160}
-                  backgroundWidth={380}
+                  backgroundHeight={195}
+                  backgroundWidth={160}
                 />
                 <DropdownOption
                   name="Team"
@@ -88,15 +90,15 @@ const Header: FunctionComponent = function () {
                 />
                 <DropdownOption
                   name="Marketplace"
-                  content={Teams}
-                  backgroundHeight={160}
-                  backgroundWidth={185}
+                  content={Marketplace}
+                  backgroundHeight={195}
+                  backgroundWidth={160}
                 />
                 <DropdownOption
                   name="Mint"
-                  content={Teams}
-                  backgroundHeight={220}
-                  backgroundWidth={185}
+                  content={Mint}
+                  backgroundHeight={195}
+                  backgroundWidth={160}
                 />
               </ul>
             </nav>
