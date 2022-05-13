@@ -9,7 +9,7 @@ const styles = {
     logo: "animate-spin-slow",
     nav: "grow flex justify-end",
     navUl: "grow justify-end gap-1 lg:gap-3 hidden md:flex",
-    navLi: "cursor-pointer outline-0 p-4 transition-opacity hover:opacity-50 focus:opacity-50 font-semibold",
+    navLi: "cursor-pointer outline-0 p-4 font-semibold",
     connectWallet: "w-45 h-10 flex justify-center items-center cursor-pointer connect-wallet",
     navBurger: "md:hidden relative z-10",
     connectWalletText: "w-0 glower",

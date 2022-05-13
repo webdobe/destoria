@@ -1,11 +1,11 @@
 import s from "./styles";
 import { FunctionComponent, useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
-const FaqBox: FunctionComponent = function ({ isOpen }) {
+const FaqBox: FunctionComponent = function ({ handleSelect, selected }) {
   const containerRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <div {...s.faqBox} data-open={isOpen} onClick={() => setIsOpen(!isOpen)}>
+    <div {...s.faqBox} data-open={selected} onClick={() => handleSelect()}>
       <div {...s.titleBox}>
         <div {...s.leftBox}>
           <p style={{ width: "calc(100% - 30px)" }}>Some question</p>

@@ -3,16 +3,22 @@ import s from "./styles";
 import { motion } from "framer-motion";
 import { useDimensions } from "hooks/useDimensions";
 import { Context } from "contexts/Dropdown";
+import Image from "next/image";
 
 let lastOptionId = 0;
 
-export function DropdownOption({ name , content: Content, backgroundHeight, backgroundWidth }) {
+export function DropdownOption({
+  name,
+  content: Content,
+  backgroundHeight,
+  backgroundWidth,
+}) {
   const idRef = useRef(++lastOptionId);
   const id = idRef.current;
 
   const [optionHook, optionDimensions] = useDimensions();
   const [registered, setRegistered] = useState(false);
-
+  const [open, setOpen] = useState(false)
   const {
     registerOption,
     updateOptionProps,
@@ -27,16 +33,17 @@ export function DropdownOption({ name , content: Content, backgroundHeight, back
         const contentRef = useRef<HTMLDivElement>();
 
         useEffect(() => {
-          const contentDimensions = contentRef.current && contentRef.current.getBoundingClientRect()
-          updateOptionProps(id, { contentDimensions })
-        }, [])
+          const contentDimensions =
+            contentRef.current && contentRef.current.getBoundingClientRect();
+          updateOptionProps(id, { contentDimensions });
+        }, []);
 
         return (
           <div ref={contentRef}>
-            <Content/>
+            <Content />
           </div>
-        )
-      }
+        );
+      };
 
       registerOption({
         id,
@@ -44,15 +51,15 @@ export function DropdownOption({ name , content: Content, backgroundHeight, back
         optionCenterX: optionDimensions.x + optionDimensions.width / 2,
         WrappedContent,
         backgroundHeight,
-        backgroundWidth
-      })
+        backgroundWidth,
+      });
 
-      setRegistered(true)
+      setRegistered(true);
     } else if (registered && optionDimensions) {
       updateOptionProps(id, {
         optionDimensions,
-        optionCenterX: optionDimensions.x + optionDimensions.width / 2
-      })
+        optionCenterX: optionDimensions.x + optionDimensions.width / 2,
+      });
     }
   }, [
     registerOption,
@@ -62,19 +69,24 @@ export function DropdownOption({ name , content: Content, backgroundHeight, back
     updateOptionProps,
     deleteOptionById,
     backgroundHeight,
-    backgroundWidth
-  ])
+    backgroundWidth,
+  ]);
 
-  const handleOpen = () => setTargetId(id)
-  const handleClose = () => setTargetId(null)
-  const handleTouch = () => (window.isMobile = true)
+  const handleOpen = () => (
+    setOpen(true),
+    setTargetId(id)
+    )
+  const handleClose = () => (
+    setOpen(false),
+    setTargetId(null)
+  )
+  const handleTouch = () => (window.isMobile = true);
 
   const handleClick = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    return targetId === id ? handleClose() : handleOpen()
-  }
-
+    return targetId === id ? handleClose() : handleOpen();
+  };
 
   return (
     <motion.li
@@ -87,7 +99,22 @@ export function DropdownOption({ name , content: Content, backgroundHeight, back
       onFocus={handleOpen}
       onBlur={handleClose}
     >
-      {name}
+      <div className="flex flex-col align-middle justify-center">
+        {name}
+        <div className="absolute top-12">
+          <motion.div
+            initial={false}
+            animate={{ rotate: open ? 180 : 0, y: open ? 5 : 0 }}
+          >
+            <Image
+              src="/arrow-dropdown.svg"
+              alt="Dropdown"
+              width={16}
+              height={8}
+            />
+          </motion.div>
+        </div>
+      </div>
     </motion.li>
   );
 }
