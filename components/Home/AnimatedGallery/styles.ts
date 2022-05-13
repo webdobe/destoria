@@ -5,7 +5,7 @@ const styles = {
     contentLayer: "w-full h-full relative m-auto",
     containerAnimatedGallery: "cards-carousel-container m-auto",
     containerAnimatedGalleryBordered: "layout-border md:py-32 md:mx-5 m-auto",
-    animatedGalleryContent: "flex flex-col lg:flex-row lg:px-2 text-dwhite max-w-6xl m-auto",
+    animatedGalleryContent: "flex flex-col lg:flex-row lg:px-2 text-dwhite max-w-6xl m-auto animated-gallery",
 }
 
 

@@ -59,6 +59,13 @@ a {
   background-repeat: no-repeat;
 }
 
+.bg-full-lore {
+  background: linear-gradient(180deg, rgba(5,13,29,1) 7.5%, rgba(5,13,29,0.1) 21%, rgba(5,13,29,0.0) 50%, rgba(5,13,29,0.1) 90%, rgba(5,13,29,1) 100%), url('/bg-full-lore.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 @keyframes glow {
   from {
     text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7.5px #F24A7C, 0 0 10px #F24A7C, 0 0 12.5px #F24A7C, 0 0 15px #F24A7C, 0 0 17.5px #F24A7C;
@@ -144,6 +151,11 @@ a {
 .custom-slider {
   width: 100%;
 }
+
+  .lore {
+    height: 470px;
+  }
+
 
 @media (min-width: 1000px) {
   .swiper-slide {
@@ -414,50 +426,29 @@ div[data-open="true"] .answer-box .faq-right{
   transition-delay: 0.45s;
   clip-path: polygon(0 0, 100% 0, 100% 0, 100% 88%, 95% 100%, 0 100%, 0 100%, 0 0);
 }
-@media  (min-width: 570px) and (max-width: 800px){
-  .faq-left {
-    padding-left: 24px;
-    border-bottom: 2px solid rgba(248, 248, 248, 1);
-    height: 100%;
-    line-height: 40px;
-    width: calc(100% - 16px);
-    background-color: rgba(255, 255, 255, 0.15);
-  }
-  .answer-text-box {
-    clip-path: polygon(0 0, 100% 0, 100% 0, 100% 86%, 96% 100%, 0 100%, 0 100%, 0 0);
-  }
-  div[data-open="true"] .answer-text-box {
-    height: 110px;
-    transition: 0.45s;
-    padding: 64px 24px 24px 24px;
-  }
-  div[data-open="true"].faq-box {
-    height: 120px;
-    transition-delay: 0.45s;
+
+/* animated-gallery */
+@media  (max-width: 800px) {
+  .animated-gallery {
+    min-height: 835px;
+    height: 835px;
+    margin-top: 36px;
   }
 }
-@media (min-width: 1000px) {
-  .faq-left {
-    padding-left: 24px;
-    border-bottom: 2px solid rgba(248, 248, 248, 1);
-    height: 100%;
-    line-height: 40px;
-    width: calc(100% - 16px);
-    background-color: rgba(255, 255, 255, 0.15);
-  }
-  .answer-text-box {
-    clip-path: polygon(0 0, 100% 0, 100% 0, 100% 86%, 98% 100%, 0 100%, 0 100%, 0 0);
-  }
-  div[data-open="true"] .answer-text-box {
-    height: 136px;
-    transition: 0.45s;
-    padding: 64px 24px 24px 24px;
-  }
-  div[data-open="true"].faq-box {
-    height: 150px;
-    transition-delay: 0.45s;
+
+@media  (min-width: 801px) {
+  .animated-gallery {
+    min-height: 580px;
+    height: 580px;
   }
 }
+
+div[data-open="true"] .answer-text-box {
+  height: 175px;
+  transition: 0.45s;
+  padding: 50px 16px 16px 16px;
+}
+
 
 .faq-box {
   height: 50px;
@@ -470,11 +461,7 @@ div[data-open="true"].faq-box {
   transition-delay: 0.45s;
 }
 
-div[data-open="true"] .answer-text-box {
-  height: 175px;
-  transition: 0.45s;
-  padding: 50px 16px 16px 16px;
-}
+
 
 .answer-right-box {
   width: 18px;
@@ -534,4 +521,50 @@ div[data-open="true"] .-left-3 {
   background: linear-gradient(180deg, rgba(5,13,29,1) 0%, rgba(5,13,29,0.8) 33%, rgba(5,13,29,0.7) 70%, rgba(5,13,29,0.6) 80%, rgba(5,13,29,1) 100%), url('/bg-last.png');
   background-position: cover;
   background-repeat: no-repeat;
+}
+
+@media  (min-width: 570px) and (max-width: 800px){
+
+  .faq-left {
+    padding-left: 24px;
+    border-bottom: 2px solid rgba(248, 248, 248, 1);
+    height: 100%;
+    line-height: 40px;
+    width: calc(100% - 16px);
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  .answer-text-box {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 100% 86%, 96% 100%, 0 100%, 0 100%, 0 0);
+  }
+  div[data-open="true"] .answer-text-box {
+    height: 110px;
+    transition: 0.45s;
+    padding: 64px 24px 24px 24px;
+  }
+  div[data-open="true"].faq-box {
+    height: 120px;
+    transition-delay: 0.45s;
+  }
+}
+@media (min-width: 1000px) {
+  .faq-left {
+    padding-left: 24px;
+    border-bottom: 2px solid rgba(248, 248, 248, 1);
+    height: 100%;
+    line-height: 40px;
+    width: calc(100% - 16px);
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  .answer-text-box {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 100% 86%, 98% 100%, 0 100%, 0 100%, 0 0);
+  }
+  div[data-open="true"] .answer-text-box {
+    height: 136px;
+    transition: 0.45s;
+    padding: 64px 24px 24px 24px;
+  }
+  div[data-open="true"].faq-box {
+    height: 150px;
+    transition-delay: 0.45s;
+  }
 }

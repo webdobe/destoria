@@ -2,6 +2,8 @@ import { FunctionComponent } from "react";
 import s from "./styles";
 import Image from "next/image";
 import Header from "components/Header";
+import Link from 'next/link'
+
 const FirstFrame: FunctionComponent = function () {
   return (
     <div {...s.majorContainer} >
@@ -26,17 +28,23 @@ const FirstFrame: FunctionComponent = function () {
             </div>
             <div {...s.exploreTheMetaverseText}>Explore the Metaverse</div>
             <div {...s.connectWallet}>
-              <span
-                {...s.connectWalletText}
-                style={{
+              <Link
+                
+                
+                  href="/lore"
+                >
+                  <span
+                    {...s.connectWalletText}
+                    style={{
                   whiteSpace: "nowrap",
                   position: "relative",
                   left: "18px",
                   zIndex: 1,
-                }}
-              >
+                  }}>
                 Discover the Lore
-              </span>
+
+                  </span>
+              </Link>
               <Image
                 {...s.connectWalletImage}
                 src="/button-one.svg"
