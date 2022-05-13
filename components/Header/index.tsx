@@ -3,6 +3,7 @@ import s from "./styles";
 import Image from "next/image";
 import { DropdownOption } from "./dropdown";
 import Teams from "./Content/Teams";
+import About from "./Content/About";
 import Whitepaper from "./Content/Whitepaper";
 import DropdownRoot from "./dropdownRoot";
 import { DropdownProvider } from "contexts/Dropdown";
@@ -69,9 +70,9 @@ const Header: FunctionComponent = function () {
               <ul {...s.navUl}>
               <DropdownOption
                   name="About"
-                  content={Teams}
+                  content={About}
                   backgroundHeight={250}
-                  backgroundWidth={185}
+                  backgroundWidth={120}
                 />
                 <DropdownOption
                   name="Whitepaper"

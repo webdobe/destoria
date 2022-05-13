@@ -368,13 +368,13 @@ div[data-open="true"] .faq-title .faq-right::before  {
 
 div[data-open="true"] .faq-title .faq-right__bottom::before  {
   content: '';
-  height: 25px;
+  height: 26px;
   width: 2px;
   display: block;
   background-color: rgba(5, 13, 29, 1);
   transform: rotate(45deg);
   position: relative;
-  left: 6.5px;
+  left: 5.5px;
   top: -7px;
   z-index: 1;
 }
