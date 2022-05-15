@@ -99,12 +99,13 @@ export function DropdownOption({
       onFocus={handleOpen}
       onBlur={handleClose}
     >
-      <div className="flex flex-col align-middle justify-center">
+      <div className="flex flex-col align-middle justify-center" onClick={() => window.location.href = `/${name.toLowerCase()}`}>
         {name}
         <div className="absolute top-12">
           <motion.div
             initial={false}
             animate={{ rotate: open ? 180 : 0, y: open ? 5 : 0 }}
+            
           >
             <Image
               src="/arrow-dropdown.svg"

@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import s from "./styles";
 import Image from "next/image";
-import { DropdownOption } from "./dropdown";
+import { DropdownOption } from "./dropdownOption";
 import Teams from "./Content/Teams";
 import About from "./Content/About";
 import Marketplace from "./Content/Marketplace";
@@ -58,7 +58,7 @@ const Header: FunctionComponent = function () {
         <h1 {...s.pageName}>Destoria</h1>
         <h2 {...s.pageDescription}>Explore the Metaverse</h2>
         <div {...s.container}>
-          <div {...s.logo}>
+          <div {...s.logo} onClick={() => window.location.href = `/`}>
             <Image
               src="/destoria.svg"
               alt="Destoria"
@@ -85,8 +85,8 @@ const Header: FunctionComponent = function () {
                 <DropdownOption
                   name="Team"
                   content={Teams}
-                  backgroundHeight={220}
-                  backgroundWidth={185}
+                  backgroundHeight={140}
+                  backgroundWidth={140}
                 />
                 <DropdownOption
                   name="Marketplace"

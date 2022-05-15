@@ -5,11 +5,8 @@ const Teams: FunctionComponent = function () {
   return (
     <div {...s.wrapper}>
       <ul {...s.wrapper}>
-        <li {...s.item}>temp content</li>
-        <li {...s.item}>temp content</li>
-        <li {...s.item}>temp content</li>
-        <li {...s.item}>temp content</li>
-        <li {...s.item}>temp content</li>
+        <li {...s.shortItem} onClick={() => window.location.href = `/team#3`}>Careers</li>
+        <li {...s.shortItem}>Collabs</li>
       </ul>
     </div>
   );
