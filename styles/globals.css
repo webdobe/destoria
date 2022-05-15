@@ -59,8 +59,28 @@ a {
   background-repeat: no-repeat;
 }
 
+.bg-hire {
+  background: linear-gradient(180deg, rgba(5,13,29,1) 0%, rgba(5,13,29,0.6) 21%, rgba(5,13,29,0.6) 50%, rgba(5,13,29,0.6) 80%, rgba(5,13,29,1) 100%), url('/bghirebottom.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+@media (min-width: 1600px) {
+  .bg-hire {
+    background-size: 100%;
+  }
+}
+
 .bg-full-lore {
   background: linear-gradient(180deg, rgba(5,13,29,1) 7.5%, rgba(5,13,29,0.1) 21%, rgba(5,13,29,0.0) 50%, rgba(5,13,29,0.1) 90%, rgba(5,13,29,1) 100%), url('/bg-full-lore.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg-full-team {
+  background: linear-gradient(180deg, rgba(5,13,29,1) 7.5%, rgba(5,13,29,0.1) 21%, rgba(5,13,29,0.0) 50%, rgba(5,13,29,0.1) 90%, rgba(5,13,29,1) 100%), url('/bg-full-team.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -152,9 +172,13 @@ a {
   width: 100%;
 }
 
-  .lore {
-    height: 470px;
-  }
+.lore {
+  height: 470px;
+}
+
+.leaders-border-bottom {
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
+}
 
 
 @media (min-width: 1000px) {
@@ -567,4 +591,61 @@ div[data-open="true"] .-left-3 {
     height: 150px;
     transition-delay: 0.45s;
   }
+}
+
+/* tabButtonLast: alltabs + "tab-nav-button__last",
+tabButtonFirst: alltabs + "tab-nav-button__first",
+tabButtonInner: allInners + "tab-nav-button-inner",
+tabButtonInnerLast: allInners + "tab-nav-button-inner__last",
+tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
+
+
+.tab-nav-button__last {
+  clip-path: polygon(85% 0, 100% 25%, 100% 100%, 50% 100%, 0 100%, 0 0);
+}
+
+.tab-nav-button__first {
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 15% 100%, 0 80%, 0 0);
+}
+
+.tab-nav-button-inner__last {
+  width: calc(100% - 5px);
+  height: calc(100% - 6px);
+  background-color: #050D1D;
+  clip-path: polygon(85% 0, 100% 25%, 100% 100%, 50% 100%, 0 100%, 0 0);
+}
+
+.tab-nav-button-inner__first {
+  width: calc(100% - 5px);
+  height: calc(100% - 6px);
+  background-color: #050D1D;
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 15% 100%, 0 80%, 0 0);
+}
+
+.tab-nav-button-inner {
+  width: calc(100% - 5px);
+  height: calc(100% - 6px);
+  background-color: #050D1D;
+}
+
+.tab-nav-button-inner:hover {
+  background-color: #F0F0F0;
+  color: #050D1D;
+  transition: 0.4s;
+}
+
+.tab-nav-button-inner__first:hover {
+  background: #F0F0F0;
+  color: #050D1D;
+  transition: 0.4s;
+}
+
+.tab-nav-button-inner__last:hover {
+  background-color: #F0F0F0;
+  color: #050D1D;
+  transition: 0.4s;
+}
+
+.tab-nav-button {
+  background-color: #F0F0F0;
 }

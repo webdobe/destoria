@@ -29,8 +29,6 @@ const FirstFrame: FunctionComponent = function () {
             <div {...s.exploreTheMetaverseText}>Explore the Metaverse</div>
             <div {...s.connectWallet}>
               <Link
-                
-                
                   href="/lore"
                 >
                   <span
