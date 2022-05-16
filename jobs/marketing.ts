@@ -1,8 +1,8 @@
-const engineering = [
+const Marketing = [
   {
-    name: "Software Engineer, Full Stack",
-    field: "Engineering",
-    id: 555,
+    name: "Marketing Specialist, Full Stack",
+    field: "Marketing",
+    id: 455,
     location: "Remote",
     contractType: "Freelance",
     experience: "5 years min",
@@ -25,9 +25,9 @@ const engineering = [
     locationDescription: "Anywhere in the world, our job opportunities are 100% remote!"
   },
   {
-    name: "Software Engineer, Full Stack",
-    field: "Engineering",
-    id: 556,
+    name: "Marketing Specialist, Full Stack",
+    field: "Marketing",
+    id: 456,
     location: "Remote",
     contractType: "Freelance",
     experience: "5 years min",
@@ -50,9 +50,9 @@ const engineering = [
     locationDescription: "Anywhere in the world, our job opportunities are 100% remote!"
   },
   {
-    name: "Software Engineer, Full Stack",
-    field: "Engineering",
-    id: 557,
+    name: "Marketing Specialist, Full Stack",
+    field: "Marketing",
+    id: 457,
     location: "Remote",
     contractType: "Freelance",
     experience: "5 years min",
@@ -75,9 +75,9 @@ const engineering = [
     locationDescription: "Anywhere in the world, our job opportunities are 100% remote!"
   },
   {
-    name: "Software Engineer, Full Stack",
-    field: "Engineering",
-    id: 558,
+    name: "Marketing Specialist, Full Stack",
+    field: "Marketing",
+    id: 458,
     location: "Remote",
     contractType: "Freelance",
     experience: "5 years min",
@@ -101,4 +101,4 @@ const engineering = [
   },
 ];
 
-export default engineering
+export default Marketing

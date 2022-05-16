@@ -16,7 +16,7 @@ const Leaders: FunctionComponent = function () {
     <section {...s.leaders} style={{ maxWidth: "1440px", width: "100%" }}>
       <div {...s.leadersContent}>
         <div {...s.leadersTitle}>
-          Meet the team
+        Meet the team
         </div>
         <div {...s.leadersMembers}>
           <div>

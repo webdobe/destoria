@@ -26,7 +26,7 @@ const HireItem: FunctionComponent<IHireItem> = function ({position}) {
         <div {...s.positionName}>{position.name}</div>
         <div>{ position.field}</div>
       </div>
-      <div {...s.hireNav}>
+      <div {...s.hireNav} onClick={() => window.location.href = `/team/careers/${position.id}`}>
         <Image
           src="/hire-forward.svg"
           alt="Forward"

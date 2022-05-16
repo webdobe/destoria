@@ -13,7 +13,7 @@ import HireItem from 'components/Team/Hire/HireItem'
 import Engineering from "jobs/engineering";
 import Design from "jobs/design";
 import Others from "jobs/others";
-import Marketing from "hooks/marketing";
+import Marketing from "jobs/marketing";
 
 const orderTabs = ["Design", "Engineering", "Marketing", "Others"]
 const selectTabs = {

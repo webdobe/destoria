@@ -86,6 +86,13 @@ a {
   background-position: center;
 }
 
+.bg-full-position {
+  background: linear-gradient(180deg, rgba(5,13,29,1) 5%, rgba(5,13,29,0.5) 40%, rgba(5,13,29,0.6) 50%, rgba(5,13,29,0.25) 90%, rgba(5,13,29,1) 100%), url('/bgpositionfull.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 @keyframes glow {
   from {
     text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7.5px #F24A7C, 0 0 10px #F24A7C, 0 0 12.5px #F24A7C, 0 0 15px #F24A7C, 0 0 17.5px #F24A7C;
@@ -648,4 +655,26 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 
 .tab-nav-button {
   background-color: #F0F0F0;
+}
+
+.job-description-box {
+  background-color: rgba(253, 253, 253, 0.02);
+}
+
+.input-styles {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+
+
+@media (min-width: 415px) and (max-width: 600px) {
+  .form-interactions {
+    transform: translate(-15%, -0%) scale(0.8);
+  }
+}
+
+@media (max-width: 415px) {
+  .form-interactions {
+    transform: translate(-23%, -0%) scale(0.8);
+  }
 }
