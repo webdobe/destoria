@@ -32,7 +32,7 @@ const Faq: FunctionComponent = function () {
               only a hundred years old, Destoria was shaped into a force to be
               reckoned with by the blood and sweat of its people. They are
               currently preoccupied with their most ambitious project yet, a
-              large scale operation called "The Leap". <br/><br/><br/>Before the withering,
+              large scale operation called "The Leap". <br/><br/>Before the withering,
               Destoria was an island belonging to the Destorian Republic, a
               country which spanned the entire western coast of the continent of
               Narkan. The island’s original inhabitants were the primitive
@@ -125,7 +125,7 @@ const Faq: FunctionComponent = function () {
               worship an entity known as the Trinity, but they did not share any
               further information on it.
               <h2 {...s.titleContent}>NOTABLE FACTIONS</h2>
-              The Destorian Outriders are a military organization of rangers
+              <span {...s.descriptive}>The Destorian Outriders</span> are a military organization of rangers
               that keep the peace in all the southern and central territories of
               the island. They are characterised by their pneumatic weaponry,
               tactical armour and gas masks as well as the long coats and hats
