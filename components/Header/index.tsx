@@ -97,8 +97,8 @@ const Header: FunctionComponent = function () {
                 <DropdownOption
                   name="Mint"
                   content={Mint}
-                  backgroundHeight={195}
-                  backgroundWidth={160}
+                  backgroundHeight={135}
+                  backgroundWidth={125}
                 />
               </ul>
             </nav>

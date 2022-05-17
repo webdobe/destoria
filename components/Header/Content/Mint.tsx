@@ -6,16 +6,7 @@ const Mint: FunctionComponent = function () {
   return (
     <div {...s.wrapper}>
       <ul {...s.wrapperMarketplace}>
-        <li {...s.shortItem}>
-        <Image
-              src="/headericons-tool.svg"
-              alt="Whiteper"
-              width={64}
-              height={64}
-            />
-        </li>
-        <li {...s.whiteTitle}>COMING SOON</li>
-        <li {...s.whiteText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+      <li {...s.shortItem}>NFT Drops</li>
       </ul>
     </div>
   );

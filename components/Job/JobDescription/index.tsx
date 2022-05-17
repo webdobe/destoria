@@ -141,7 +141,7 @@ const JobDescription: FunctionComponent = function ({ job }) {
               </div>
             </div>
             <div {...s.interactions} style={{minWidth: '600px'}}>
-              <div {...s.connectWallet}>
+              <div {...s.connectWallet} onClick={() => window.location.href = '/team#3'}>
                 <span
                   {...s.connectWalletText}
                   style={{

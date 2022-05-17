@@ -7,7 +7,7 @@ const styles = {
     containerJobDescriptionBordered: "layout-border md:py-32 md:mx-5",
     jobDescriptionContent: "flex flex-col justify-center items-center text-center text-dwhite bg-no-repeat relative text-5xl font-bold tracking-wider layout-first-border md:pt-28 md:mx-5 xl:mx-5",
     jobDescriptionTitle: "py-16 md:py-0 ",
-    jobDescriptionBox: "flex flex-col justify-between w-full max-w-5xl m-auto md:mt-28 job-description-box p-8",
+    jobDescriptionBox: "flex flex-col justify-between w-full max-w-5xl m-auto md:mt-28 job-description-box p-8 mb-5",
     jobDescriptionBoxTitle: "text-xl ",
     jobDescriptionBoxSubtitle: "text-lg font-normal opacity-70 p-3 tracking-widest",
     jobDescriptionGrid: "w-full grid grid-cols-1 md:grid-cols-3 py-5 md:py-10",

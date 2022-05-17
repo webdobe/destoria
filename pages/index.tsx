@@ -21,6 +21,11 @@ const LastFrame = dynamic(
   { ssr: false }
 )
 
+const FindMore = dynamic(
+  () => import('components/Home/FindMore'),
+  { ssr: false }
+)
+
 const Home: NextPage = () => {
   return (
     <div>
@@ -32,6 +37,7 @@ const Home: NextPage = () => {
       <FirstFrame />
       <CardCarousel />
       <CharactersCarousel />
+      <FindMore />
       <AnimatedGallery />
       <LastFrame />
       <main>
