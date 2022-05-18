@@ -22,11 +22,12 @@ const styles = {
     singleInput: "w-full border-0 outline-0 input-styles px-3 text-base h-full",
     textAreaInput: "w-full border-0 outline-0 input-styles p-3 text-base h-full relative top-2",
     listStyle: "list-disc relative left-5",
-    connectWalletText: "w-0 glower text-xl text-dhOrange",
-    applyNowText: "w-0 glower text-xl text-dhwite relative z-10",
-    connectWalletImage: "",
+    connectWalletText: "w-0 glower text-base md:text-xl text-dhOrange",
+    applyNowText: "w-0 text-base md:text-xl text-dhwite relative z-10 cursor-pointer",
+    connectWalletImage: "cursor-pointer",
+    interactionsDiv: "w-full flex justify-center gap-1 md:gap-4 interaction",
     connectWalletSpan: "cursor-pointer",
-    interactions: "w-full flex justify-center gap-4 form-interactions py-5"
+    interactions: "w-full flex justify-center gap-1 md:gap-4 form-interactions py-3",
 }
 
 

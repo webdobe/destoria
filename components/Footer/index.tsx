@@ -55,7 +55,7 @@ const Footer: FunctionComponent = function () {
                   height={32}
                 />
               </div>
-              <div {...s.contactUs}>
+              <div {...s.contactUs}  onClick={() => window.location.href = '/contact'}>
                 Contact Us
               </div>
             </div>

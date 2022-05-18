@@ -5,9 +5,9 @@ const About: FunctionComponent = function () {
   return (
     <div {...s.wrapper}>
       <ul {...s.wrapper}>
-        <li {...s.shortItem}>Lore</li>
-        <li {...s.shortItem}>FAQ</li>
-        <li {...s.shortItem}>Contact</li>
+        <li {...s.shortItem} onClick={() => window.location.href = '/lore'}>Lore</li>
+        <li {...s.shortItem} onClick={() => window.location.href = '/#faq'}>FAQ</li>
+        <li {...s.shortItem} onClick={() => window.location.href = '/contact'}>Contact</li>
       </ul>
     </div>
   );

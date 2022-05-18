@@ -140,54 +140,57 @@ const JobDescription: FunctionComponent = function ({ job }) {
                 />
               </div>
             </div>
-            <div {...s.interactions} style={{minWidth: '600px'}}>
-              <div {...s.connectWallet} onClick={() => window.location.href = '/team#3'}>
-                <span
+            <div {...s.interactions} >
+              <div {...s.interactionsDiv}>
+                <div
                   {...s.connectWalletText}
+                  onClick={() => window.location.href = '/team#3'}
                   style={{
                     whiteSpace: "nowrap",
                     position: "relative",
-                    left: "115px",
+                    left:  window.innerWidth > 550 ? "65px" : "40px",
+                    top: '10px'
                   }}
                 >
                   Back
-                </span>
-                <span
-                  {...s.connectWalletSpan}
-                  style={{ position: "relative", left: "15px", top: "16px" }}
+                </div>
+                <div {...s.connectWalletSpan}
+                  style={{ position: "relative", left: "0", top: "16px" }}
+                  onClick={() => window.location.href = '/team#3'}
                 >
                   <Image
                     {...s.connectWalletImage}
                     src="/connect-wallet.svg"
                     alt="Apply now"
-                    width={160}
+                    width={window.innerWidth > 550 ? 160 : 130}
                     height={45}
-                    style={{ position: "absolute", left: "100px" }}
+                    style={{ position: "relative", left: "0" }}
                   />
-                </span>
+                </div>
                 <Link href="/lore">
-                  <span
+                  <div
                     {...s.applyNowText}
                     style={{
                       whiteSpace: "nowrap",
                       position: "relative",
-                      left: "65px",
+                      left:  window.innerWidth > 550 ? "65px" : "30px",
+                      top: '10px',
                       zIndex: 1,
                     }}
                   >
                     Apply now
-                  </span>
+                  </div>
                 </Link>
-                <span style={{ position: "relative", left: "-95px", top: "16px" }}>
+                <div style={{ position: "relative", left: "-0", top: "16px" }}>
                 <Image
                   {...s.connectWalletImage}
                   src="/button-one.svg"
                   alt="Apply Now"
-                  width={200}
+                  width={window.innerWidth > 550 ? 200 : 150}
                   height={45}
-                  style={{ position: "absolute" }}
+                  style={{ position: "relative" }}
                 />
-                </span>
+                </div>
               </div>
             </div>
           </div>

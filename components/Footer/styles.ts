@@ -7,7 +7,7 @@ const styles = {
     containerFooterBordered: "layout-border md:mx-5 footer",
     footerContent: "flex justify-between lg:px-2 max-w-6xl m-auto w-full footer-border items-center",
     mediaBox: "flex gap-1 md:gap-3",
-    contactUs: "relative -top-1 hidden md:block",
+    contactUs: "relative -top-1 hidden md:block cursor-pointer hover:opacity-70 ease-in duration-300",
     footerLower: "flex justify-between lg:px-2 max-w-6xl m-auto w-full items-center",
     policyConditions: "flex gap-4 py-6 justify-between md:justify-start w-full",
     destoria: "relative md:-left-4",

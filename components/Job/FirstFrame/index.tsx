@@ -3,8 +3,14 @@ import s from "./styles";
 import Image from "next/image";
 import Header from "components/Header";
 import Leaders from 'components/Team/Leaders'
-import JobDescription from 'components/Job/JobDescription'
 import Footer from 'components/Footer'
+import dynamic from "next/dynamic";
+
+const JobDescription = dynamic(
+  () => import('components/Job/JobDescription'),
+  { ssr: false }
+)
+
 
 const FirstFrame: FunctionComponent = function ({job}) {
   return (
