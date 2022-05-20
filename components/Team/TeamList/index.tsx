@@ -20,201 +20,233 @@ const TeamList: FunctionComponent = function () {
               <div {...s.flexTeamsBox}>
                 <div>
                   <Image
-                    src="/team-placeholder.png"
+                    src="/group-marcos-palante.png"
                     alt="Team"
                     width={145}
                     height={140}
                   />
                   <div {...s.leadersText}>
-                    <div {...s.leadersTextTitle}>Name Surname</div>
-                    <div {...s.leadersTextDescription}>Project Developer</div>
+                    <div {...s.leadersTextTitle}>Marcos Palante</div>
+                    <div {...s.leadersTextDescription}>Development Manager</div>
                     <div {...s.leadersSocialMedia}>
-                      <Image
-                        src="/media-IN.svg"
-                        alt="Linkedin"
-                        width={26}
-                        height={26}
-                      />
+
                     </div>
                   </div>
                 </div>
                 <div>
                   <Image
-                    src="/team-placeholder.png"
+                    src="/group-hossein-nafisinia.png"
                     alt="Team"
                     width={145}
                     height={140}
                   />
                   <div {...s.leadersText}>
-                    <div {...s.leadersTextTitle}>Name Surname</div>
-                    <div {...s.leadersTextDescription}>Project Developer</div>
+                    <div {...s.leadersTextTitle}>Hossein Nafisinia</div>
+                    <div {...s.leadersTextDescription}>3D Artist</div>
                     <div {...s.leadersSocialMedia}>
-                      <Image
-                        src="/media-IN.svg"
-                        alt="Linkedin"
-                        width={26}
-                        height={26}
-                      />
+                      <a
+                        {...s.socialMedia}
+                        href="https://www.linkedin.com/in/honfs/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Image
+                          src="/media-IN.svg"
+                          alt="Linkedin"
+                          width={26}
+                          height={26}
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>
                 <div>
                   <Image
-                    src="/team-placeholder.png"
+                    src="/group-hori-mahina.png"
                     alt="Team"
                     width={145}
                     height={140}
                   />
                   <div {...s.leadersText}>
-                    <div {...s.leadersTextTitle}>Name Surname</div>
-                    <div {...s.leadersTextDescription}>Project Developer</div>
+                    <div {...s.leadersTextTitle}>Hori Mahina</div>
+                    <div {...s.leadersTextDescription}>2D Artist</div>
                     <div {...s.leadersSocialMedia}>
-                      <Image
-                        src="/media-IN.svg"
-                        alt="Linkedin"
-                        width={26}
-                        height={26}
-                      />
+                    <a
+                        {...s.socialMedia}
+                        href="https://www.instagram.com/horimahina/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Image
+                          src="/media-whiteIG.svg"
+                          alt="Linkedin"
+                          width={26}
+                          height={26}
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>
                 <div>
                   <Image
-                    src="/team-placeholder.png"
+                    src="/group-martin-liu.png"
                     alt="Team"
                     width={145}
                     height={140}
                   />
                   <div {...s.leadersText}>
-                    <div {...s.leadersTextTitle}>Name Surname</div>
-                    <div {...s.leadersTextDescription}>Project Developer</div>
+                    <div {...s.leadersTextTitle}>Martin Liu</div>
+                    <div {...s.leadersTextDescription}>Lead Game Developer</div>
                     <div {...s.leadersSocialMedia}>
-                      <Image
-                        src="/media-IN.svg"
-                        alt="Linkedin"
-                        width={26}
-                        height={26}
-                      />
+                    <a
+                        {...s.socialMedia}
+                        href="https://www.linkedin.com/in/martin-liu-58301918/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Image
+                          src="/media-IN.svg"
+                          alt="Linkedin"
+                          width={26}
+                          height={26}
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>
                 <div>
                   <Image
-                    src="/team-placeholder.png"
+                    src="/group-karan-kumar.png"
                     alt="Team"
                     width={145}
                     height={140}
                   />
                   <div {...s.leadersText}>
-                    <div {...s.leadersTextTitle}>Name Surname</div>
-                    <div {...s.leadersTextDescription}>Project Developer</div>
+                    <div {...s.leadersTextTitle}>Karan Kumar</div>
+                    <div {...s.leadersTextDescription}>3D Artist</div>
                     <div {...s.leadersSocialMedia}>
-                      <Image
-                        src="/media-IN.svg"
-                        alt="Linkedin"
-                        width={26}
-                        height={26}
-                      />
+                    <a
+                        {...s.socialMedia}
+                        href="https://karankumar123d.wixsite.com/artbox"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Image
+                          src="/media-whiteWEB.svg"
+                          alt="Linkedin"
+                          width={26}
+                          height={26}
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>
                 <div>
                   <Image
-                    src="/team-placeholder.png"
+                    src="/group-frank-williams.png"
                     alt="Team"
                     width={145}
                     height={140}
                   />
                   <div {...s.leadersText}>
-                    <div {...s.leadersTextTitle}>Name Surname</div>
-                    <div {...s.leadersTextDescription}>Project Developer</div>
+                    <div {...s.leadersTextTitle}>Frank Williams</div>
+                    <div {...s.leadersTextDescription}>Concept Artist</div>
                     <div {...s.leadersSocialMedia}>
-                      <Image
-                        src="/media-IN.svg"
-                        alt="Linkedin"
-                        width={26}
-                        height={26}
-                      />
                     </div>
                   </div>
                 </div>
                 <div>
                   <Image
-                    src="/team-placeholder.png"
+                    src="/group-rui-passos.png"
                     alt="Team"
                     width={145}
                     height={140}
                   />
                   <div {...s.leadersText}>
-                    <div {...s.leadersTextTitle}>Name Surname</div>
-                    <div {...s.leadersTextDescription}>Project Developer</div>
+                    <div {...s.leadersTextTitle}>Rui Passos</div>
+                    <div {...s.leadersTextDescription}>Game Developer</div>
                     <div {...s.leadersSocialMedia}>
-                      <Image
-                        src="/media-IN.svg"
-                        alt="Linkedin"
-                        width={26}
-                        height={26}
-                      />
                     </div>
                   </div>
                 </div>
                 <div>
                   <Image
-                    src="/team-placeholder.png"
+                    src="/group-emmanuel-vallardes.png"
                     alt="Team"
                     width={145}
                     height={140}
                   />
                   <div {...s.leadersText}>
-                    <div {...s.leadersTextTitle}>Name Surname</div>
-                    <div {...s.leadersTextDescription}>Project Developer</div>
+                    <div {...s.leadersTextTitle}>Emmanuel Vallardes</div>
+                    <div {...s.leadersTextDescription}>3D Artist</div>
                     <div {...s.leadersSocialMedia}>
-                      <Image
-                        src="/media-IN.svg"
-                        alt="Linkedin"
-                        width={26}
-                        height={26}
-                      />
+                    <a
+                        {...s.socialMedia}
+                        href="https://www.linkedin.com/in/joas-valladares-78bba5154/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Image
+                          src="/media-IN.svg"
+                          alt="Linkedin"
+                          width={26}
+                          height={26}
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>
                 <div>
                   <Image
-                    src="/team-placeholder.png"
+                    src="/group-monyse-narriman.png"
                     alt="Team"
                     width={145}
                     height={140}
                   />
                   <div {...s.leadersText}>
-                    <div {...s.leadersTextTitle}>Name Surname</div>
-                    <div {...s.leadersTextDescription}>Project Developer</div>
+                    <div {...s.leadersTextTitle}>Monyse Narriman</div>
+                    <div {...s.leadersTextDescription}>Digital Designer / UI</div>
                     <div {...s.leadersSocialMedia}>
-                      <Image
-                        src="/media-IN.svg"
-                        alt="Linkedin"
-                        width={26}
-                        height={26}
-                      />
+                    <a
+                        {...s.socialMedia}
+                        href="https://www.behance.net/monyse_narriman"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Image
+                          src="/media-whiteBE.svg"
+                          alt="Linkedin"
+                          width={26}
+                          height={26}
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>
                 <div>
                   <Image
-                    src="/team-placeholder.png"
+                    src="/group-murilo-araujo.png"
                     alt="Team"
-                    width={145}
+                    width={145} 
                     height={140}
                   />
                   <div {...s.leadersText}>
-                    <div {...s.leadersTextTitle}>Name Surname</div>
-                    <div {...s.leadersTextDescription}>Project Developer</div>
+                    <div {...s.leadersTextTitle}>Murilo Araujo</div>
+                    <div {...s.leadersTextDescription}>Concept Artist</div>
                     <div {...s.leadersSocialMedia}>
-                      <Image
-                        src="/media-IN.svg"
-                        alt="Linkedin"
-                        width={26}
-                        height={26}
-                      />
+                    <a
+                        {...s.socialMedia}
+                        href="https://www.artstation.com/murich"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Image
+                          src="/media-whiteMD.svg"
+                          alt="Linkedin"
+                          width={26}
+                          height={26}
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>

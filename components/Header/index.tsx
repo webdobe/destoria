@@ -74,7 +74,7 @@ const Header: FunctionComponent = function () {
                   name="About"
                   content={About}
                   backgroundHeight={135}
-                  backgroundWidth={140}
+                  backgroundWidth={125}
                 />
                 <DropdownOption
                   name="Whitepaper"
@@ -86,7 +86,7 @@ const Header: FunctionComponent = function () {
                   name="Team"
                   content={Teams}
                   backgroundHeight={140}
-                  backgroundWidth={140}
+                  backgroundWidth={125}
                 />
                 <DropdownOption
                   name="Marketplace"
@@ -98,7 +98,7 @@ const Header: FunctionComponent = function () {
                   name="Mint"
                   content={Mint}
                   backgroundHeight={135}
-                  backgroundWidth={125}
+                  backgroundWidth={105}
                 />
               </ul>
             </nav>

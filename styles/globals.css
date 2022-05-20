@@ -73,14 +73,14 @@ a {
 }
 
 .bg-full-lore {
-  background: linear-gradient(180deg, rgba(5,13,29,1) 7.5%, rgba(5,13,29,0.1) 21%, rgba(5,13,29,0.0) 50%, rgba(5,13,29,0.1) 90%, rgba(5,13,29,1) 100%), url('/bg-full-lore.png');
+  background: linear-gradient(180deg, rgba(5,13,29,1) 15%, rgba(5,13,29,0.75) 26%, rgba(5,13,29,0.0) 50%, rgba(5,13,29,0.3) 70%, rgba(5,13,29,0.9) 90%, rgba(5,13,29,1) 100%), url('/bg-lore23.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .bg-full-team {
-  background: linear-gradient(180deg, rgba(5,13,29,1) 7.5%, rgba(5,13,29,0.1) 21%, rgba(5,13,29,0.0) 50%, rgba(5,13,29,0.1) 90%, rgba(5,13,29,1) 100%), url('/bg-full-team.png');
+  background: linear-gradient(180deg, rgba(5,13,29,1) 15%, rgba(5,13,29,0.7) 21%, rgba(5,13,29,0.2) 50%, rgba(5,13,29,0.7) 90%, rgba(5,13,29,1) 100%), url('/bg-full-team.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -559,6 +559,7 @@ div[data-open="true"] .-left-3 {
   background: linear-gradient(180deg, rgba(5,13,29,1) 0%, rgba(5,13,29,0.8) 33%, rgba(5,13,29,0.7) 70%, rgba(5,13,29,0.6) 80%, rgba(5,13,29,1) 100%), url('/bg-last.png');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 @media  (min-width: 570px) and (max-width: 800px){

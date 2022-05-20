@@ -6,8 +6,6 @@ import Chronicles from 'components/Lore/Chronicles'
 const FirstFrame: FunctionComponent = function () {
   return (
     <div {...s.majorContainer} >
-      <div {...s.photoLayer}>
-      </div>
       <div {...s.contentLayer}>
         <Header />
         <Chronicles />

@@ -10,8 +10,9 @@ const styles = {
     leadersMembers: "px-3 md:px-0 flex justify-between w-full max-w-lg gap-2 m-auto md:pt-28",
     leadersText: "md:py-8 capitalize",
     leadersTextTitle: "font-bold text-xl w-full text-center",
-    leadersTextDescription: "text-base w-full text-center py-3 leaders-border-bottom font-normal",
-    leadersSocialMedia: "flex py-5 justify-evenly"
+    leadersTextDescription: "text-base w-full text-center pt-1 pb-3 leaders-border-bottom font-normal",
+    leadersSocialMedia: "flex justify-center gap-4 pb-4 md:pb-0",
+    socialMedia: "cursor-pointer"
 }
 
 
