@@ -99,7 +99,10 @@ export function DropdownOption({
       onFocus={handleOpen}
       onBlur={handleClose}
     >
-      <div className={`flex flex-col align-middle justify-center ${(name === "Marketplace" || name == "Whitepaper") && "opacity-60" }`} onClick={() => window.location.href = `/${name.toLowerCase()}`}>
+      <div className={`flex flex-col align-middle justify-center ${(name === "Marketplace" || name == "Whitepaper") && "opacity-60"}`} onClick={() => {
+        if (name === "About" || name == "Whitepaper" || name == "Marketplace") return false;
+        window.location.href = `/${name.toLowerCase()}`
+      }}>
         {name}
         <div className="absolute top-12">
           <motion.div

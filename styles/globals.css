@@ -59,6 +59,13 @@ a {
   background-repeat: no-repeat;
 }
 
+.bg-mint-two {
+  background: linear-gradient(180deg, rgba(5,13,29,1) 0%, rgba(5,13,29,0.6) 21%, rgba(5,13,29,0.6) 50%, rgba(5,13,29,0.6) 80%, rgba(5,13,29,1) 100%), url('/bg-mint-two.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
 .bg-hire {
   background: linear-gradient(180deg, rgba(5,13,29,1) 0%, rgba(5,13,29,0.6) 21%, rgba(5,13,29,0.6) 50%, rgba(5,13,29,0.6) 80%, rgba(5,13,29,1) 100%), url('/bghirebottom.png');
   background-size: cover;
@@ -93,8 +100,22 @@ a {
   background-position: center;
 }
 
+.bg-full-mint {
+  background: linear-gradient(180deg, rgba(5,13,29,1) 5%, rgba(5,13,29,0.5) 40%, rgba(5,13,29,0.6) 50%, rgba(5,13,29,0.9) 90%, rgba(5,13,29,1) 100%), url('/bg-full-mint.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg-full-404 {
+  background: linear-gradient(180deg, rgba(5,13,29,1) 5%, rgba(5,13,29,0.5) 40%, rgba(5,13,29,0.6) 50%, rgba(5,13,29,0.9) 90%, rgba(5,13,29,1) 100%), url('/bg-full-404.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .bg-full-contact {
-  background: linear-gradient(180deg, rgba(5,13,29,1) 5%, rgba(5,13,29,0.5) 40%, rgba(5,13,29,0.6) 50%, rgba(5,13,29,0.25) 90%, rgba(5,13,29,1) 100%), url('/bg-full-contact.png');
+  background: linear-gradient(180deg, rgba(5,13,29,1) 5%, rgba(5,13,29,0.5) 40%, rgba(5,13,29,0.5) 50%, rgba(5,13,29,0.25) 90%, rgba(5,13,29,1) 100%), url('/bg-full-contact.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -669,11 +690,29 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   background-color: rgba(253, 253, 253, 0.02);
 }
 
+.transparent-two-box {
+  background-color: rgba(253, 253, 253, 0.08);
+}
+
 .input-styles {
   background: rgba(255, 255, 255, 0.09);
 }
 
-@media (max-width: 600px) {
+.width600 {
+  width: 600px;
+}
+
+
+
+@media (max-width: 800px) {
+  .width600 .justify-evenly {
+    max-width: 380px;
+    margin: auto;
+  }
+  
+  .width600 {
+    width: 100%;
+  }
   .form-interactions {
     padding-right: 20px;
   }

@@ -8,7 +8,7 @@ const engineering = [
     contractType: "Freelance",
     experience: "3 years min",
     jobDescription:
-      "Are you an experienced UI Programmer ready to join our newly ever growing and evolving indie game company Destoria? You will join a small but fast-growing team. You will enjoy successfully planning and implementing new UI systems for games and have experience implementing UI to the highest standard with the ability to write robust, clean and maintainable C++ code. You will work closely with our artists and design leads to ensure that UI meets the aesthetic and functional requirements for Destoria. As a full team member you will be given the opportunity to contribute ideas toward all aspects of the game’s inception and development.",
+      "Are you an experienced UI Programmer ready to join our newly ever growing and evolving indie game company Destoria? You will join a small but fast-growing team. You will enjoy successfully planning and implementing new UI systems for games and have experience implementing UI to the highest standard with the ability to write robust, clean and maintainable C++ code. You will work closely with our artists and design leads to ensure that UI meets the aesthetic and functional requirements for Destoria. As a full team member you will be given the opportunity to contribute ideas toward all aspects of the game's inception and development.",
     yourResponsibilities: [
       "Create UI interface to be applied on HUDs, Main Menu and Inventory items",
       "Able to create animated UI -Proficient Photoshop and Illustrator skills to create production ready assets",
