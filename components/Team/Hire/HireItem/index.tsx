@@ -15,18 +15,19 @@ interface IHireItem {
     position: {
         name: string;
         field: string;
-        id: number;
+      id: number;
+      real: boolean;
     }
 }
 
 const HireItem: FunctionComponent<IHireItem> = function ({position}) {
   return (
-    <div {...s.hireItem}>
+    <div {...position.real ? {...s.hireItem} : {...s.hireBlurred}}>
       <div {...s.hireDescription}>
         <div {...s.positionName}>{position.name}</div>
         <div>{ position.field}</div>
       </div>
-      <div {...s.hireNav} onClick={() => window.location.href = `/team/careers/${position.id}`}>
+      <div {...s.hireNav} onClick={() => position.real && (window.location.href = `/team/careers/${position.id}`)}>
         <Image
           src="/hire-forward.svg"
           alt="Forward"
@@ -36,6 +37,6 @@ const HireItem: FunctionComponent<IHireItem> = function ({position}) {
       </div>
     </div>
   );
-};
+};s
 
 export default HireItem

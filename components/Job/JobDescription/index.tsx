@@ -56,7 +56,13 @@ const JobDescription: FunctionComponent = function ({ job }) {
               Your responsibilities
             </div>
             <div {...s.jobDescriptionBoxContentText}>
-              {job.yourResponsibilities}
+              {typeof job.yourResponsibilities == 'string' ? job.yourResponsibilities : (job.skills.map((item, index) => {
+                  return (
+                    <li {...s.listStyle} key={index}>
+                      {item}
+                    </li>
+                  );
+                }))}
             </div>
           </div>
           <div {...s.jobDescriptionBoxContent}>
@@ -73,8 +79,8 @@ const JobDescription: FunctionComponent = function ({ job }) {
               </ul>
             </div>
           </div>
-          <div {...s.jobDescriptionBoxContent}>
-            <div {...s.jobDescriptionBoxContentTitle}>
+          {job.plus.length ? <div {...s.jobDescriptionBoxContent}>
+            <div {...s.jobDescriptionBoxContentTitle} >
               Will be a plus if you
             </div>
             <div {...s.jobDescriptionBoxContentText}>
@@ -88,7 +94,7 @@ const JobDescription: FunctionComponent = function ({ job }) {
                 })}
               </ul>
             </div>
-          </div>
+          </div> :  ''}
           <div {...s.jobDescriptionBoxContent}>
             <div {...s.jobDescriptionBoxContentTitle}>Location</div>
             <div {...s.jobDescriptionBoxContentText}>

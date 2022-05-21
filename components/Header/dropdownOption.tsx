@@ -105,7 +105,6 @@ export function DropdownOption({
           <motion.div
             initial={false}
             animate={{ rotate: open ? 180 : 0, y: open ? 5 : 0 }}
-            
           >
             <Image
               src="/arrow-dropdown.svg"
