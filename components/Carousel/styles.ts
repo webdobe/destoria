@@ -8,7 +8,7 @@ const styles = {
     containerCardsCarouselBordered: "layout-border md:mx-5 cards-swipe py-10 md:py-16",
     swiper: "w-full swiper-slide h-96",
     cardTitle: "text-3xl font-bold pb-4 md:pb-10",
-    cardBottom: "text-3xl font-bold pt-10 opacity-70",
+    cardBottom: "text-3xl font-bold pt-16 opacity-70",
     cardBottomSpecial: "text-3xl font-bold pt-4 opacity-70",
     cardContent: "text-lg text-center leading-7 px-8"
 }
