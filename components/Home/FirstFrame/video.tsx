@@ -26,7 +26,7 @@ const FirstFrame: FunctionComponent = function () {
         className="video-firstframe-planet"
         controls={false}
         preload="auto"
-
+        muted={true}
         data-setup="{}"
         autoPlay={true}
         loop={true}
@@ -39,6 +39,7 @@ const FirstFrame: FunctionComponent = function () {
         className="video-firstframe-ship"
         controls={false}
         preload="auto"
+        muted={true}
         width="320"
         height="160"
         data-setup="{}"
