@@ -856,3 +856,18 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
     padding-right: 20px;
   }
 }
+
+.video-js {
+  background: transparent;
+}
+
+.video-firstframe-planet {
+  position: relative;
+  left: -15vw;
+}
+
+.video-firstframe-planet video{
+  width: 100%;
+  height: 100%;
+  transform: scale(2.0);
+}

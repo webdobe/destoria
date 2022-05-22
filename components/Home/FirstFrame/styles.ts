@@ -15,8 +15,9 @@ const styles = {
     textBoxDestoriaTheVideoBordered: "p-5 lg:grid lg:gap-10 lg:grid-cols-2 lg:grid-rows-1 justify-around layout-border md:px-12 xl:px-24 md:py-28 md:mx-5",
     textBoxDestoriaTheVideo: "flex flex-col gap-8 text-xl p-5 my-8 md:my-0 xl:ml-16 xl:pl-10 xl:pr-8 ",
     majorContainer: "bg-full-img",
-    photoLayer: "w-full h-full absolute first-img-layer",
-    contentLayer: "w-full h-full relative"
+    photoLayer: "w-full h-full absolute first-img-layer text-dwhite",
+    contentLayer: "w-full h-full relative",
+    videoScene: "flex justify-between w-full overflow-hidden"
 }
 
 

@@ -6,9 +6,9 @@ import { config } from "react-spring";
 export default class Example extends Component {
   state = {
     goToSlide: 1,
-    offsetRadius: 1,
+    offsetRadius: 150,
     showNavigation: false,
-    config: config.gentle,
+    config: config.stiff,
     xDown: null,
     yDown: null
   };
@@ -32,7 +32,7 @@ export default class Example extends Component {
   getTouches = (evt) => {
     return (
       evt.touches || evt.originalEvent.touches // browser API
-    ); // jQuery
+    ); 
   };
 
   handleTouchStart = (evt) => {
@@ -86,6 +86,7 @@ export default class Example extends Component {
           offsetRadius={this.state.offsetRadius}
           showNavigation={this.state.showNavigation}
           animationConfig={this.state.config}
+
         />
         <div
           style={{

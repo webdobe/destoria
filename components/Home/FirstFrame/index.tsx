@@ -3,11 +3,19 @@ import s from "./styles";
 import Image from "next/image";
 import Header from "components/Header";
 import Link from 'next/link'
+import dynamic from "next/dynamic";
 
+const ShipVideo = dynamic(
+  () => import('./video'),
+  { ssr: false }
+)
 const FirstFrame: FunctionComponent = function () {
+
   return (
     <div {...s.majorContainer} >
       <div {...s.photoLayer}>
+        <ShipVideo
+        />
       </div>
       <div {...s.contentLayer}>
       <Header />
