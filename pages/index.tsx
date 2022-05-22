@@ -5,9 +5,15 @@ import s from 'styles'
 import FirstFrame from 'components/Home/FirstFrame'
 import dynamic from 'next/dynamic'
 import CharactersCarousel from 'components/Home/CharactersCarousel'
+import content from 'components/Carousel/CarouselOne'
 
 const CardCarousel = dynamic(
   () => import('components/Home/CardsCarousel'),
+  { ssr: false }
+)
+
+const CardsCarousel = dynamic(
+  () => import('components/Carousel'),
   { ssr: false }
 )
 
