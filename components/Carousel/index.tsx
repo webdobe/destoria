@@ -9,6 +9,8 @@ export default class Example extends Component {
     offsetRadius: 1,
     showNavigation: false,
     config: config.gentle,
+    xDown: null,
+    yDown: null
   };
 
   slides = this.props.content.map((slide, index) => {
@@ -24,9 +26,60 @@ export default class Example extends Component {
     });
   };
 
+  xDown = null;
+  yDown = null;
+
+  getTouches = (evt) => {
+    return (
+      evt.touches || evt.originalEvent.touches // browser API
+    ); // jQuery
+  };
+
+  handleTouchStart = (evt) => {
+    const firstTouch = this.getTouches(evt)[0];
+    this.setState({xDown: firstTouch.clientX})
+    this.setState({yDown: firstTouch.clientY})
+  };
+
+  handleTouchMove = (evt) => {
+    if (!this.state.xDown || !this.state.yDown) {
+      return;
+    }
+
+    let xUp = evt.touches[0].clientX;
+    let yUp = evt.touches[0].clientY;
+
+    let xDiff = this.state.xDown - xUp;
+    let yDiff = this.state.yDown - yUp;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+      /*most significant*/
+      if (xDiff > 0) {
+        /* left swipe */
+        this.setState({ goToSlide: this.state.goToSlide + 1 });
+      } else {
+        /* right swipe */
+        this.setState({ goToSlide: this.state.goToSlide - 1 });
+      }
+    } else {
+      if (yDiff > 0) {
+        /* up swipe */
+      } else {
+        /* down swipe */
+      }
+    }
+    /* reset values */
+    this.setState({xDown: null})
+    this.setState({yDown: null})
+  };
+
   render() {
     return (
-      <div style={{ width: "80%", height: "500px", margin: "0 auto" }}>
+      <div
+        style={{ width: "80%", height: "500px", margin: "0 auto" }}
+        onTouchStart={this.handleTouchStart}
+        onTouchMove={this.handleTouchMove}
+      >
         <Carousel
           slides={this.slides}
           goToSlide={this.state.goToSlide}
