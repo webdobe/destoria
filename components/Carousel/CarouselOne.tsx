@@ -13,7 +13,7 @@ const slides = [
           <p  {...s.cardContent}>
           Freely roam the Destorian multiverse and complete one of the many storylines and side quests. Focusing on combat and P2E, explore a variety of biomes and opportunities. All while engaging with enemies within the environment and other players. And remember, every action has an equal and opposite reaction. Play wisely. 
           </p>
-          <h4 {...s.cardBottom} style={{color: "#F0F0F0", filter: 'blur(1px)'}}>
+          <h4 {...s.cardBottomSpecial} style={{color: "#F0F0F0", filter: 'blur(1px)'}}>
             coming soon...
           </h4>
         </div>
