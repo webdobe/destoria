@@ -15,6 +15,7 @@ const styles = {
     dropdownImage: "block relative -left-3",
     answerBox: "answer-box",
     answerTextBox: "answer-text-box",
+    answerBiggerTextBox: "answer-text-box bigger-answer",
     offsetTopBox: "answer-offset-top-box",
     answerRightBox: "answer-right-box",
     answerTopBox: "answer-right-top-box",

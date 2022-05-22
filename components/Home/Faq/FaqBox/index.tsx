@@ -1,14 +1,28 @@
 import s from "./styles";
 import { FunctionComponent, useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
+import { MotionConfig } from "framer-motion";
+import { motion } from "framer-motion";
+
+
 const FaqBox: FunctionComponent = function ({ handleSelect, selected, q, a }) {
   const containerRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <div {...s.faqBox} data-open={selected} onClick={() => handleSelect()}>
+    <motion.div {...s.faqBox}
+      data-open={selected}
+      onClick={() => {
+        console.log(containerRef.current.offsetHeight + 82)
+        handleSelect()
+      }}
+      animate={{
+        height: selected ? containerRef.current.offsetHeight + 82 +  "px" : '50px',
+      }}
+
+    >
       <div {...s.titleBox}>
         <div {...s.leftBox}>
-          <p style={{ width: "calc(100% - 30px)" }}>{q}</p>
+          <p style={{ width: "calc(100% - 30px)", lineHeight: '15px' }}>{q}</p>
           <div {...s.dropdownImage}>
             <Image
               src="/dropdown-arrow.svg"
@@ -18,17 +32,23 @@ const FaqBox: FunctionComponent = function ({ handleSelect, selected, q, a }) {
             />
           </div>
         </div>
-        <div {...s.rightBox}>
+        <motion.div
+          {...s.rightBox}
+
+        >
           <div {...s.topBox}></div>
           <div {...s.bottomBox}>
             <div {...s.bottomInsideBox}></div>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div {...s.answerBox}>
         <div {...s.offsetTopBox}></div>
-        <div {...s.answerTextBox}>
-        {a}
+        <div {...a.length > 250 ? { ...s.answerTextBox } : { ...s.answerTextBox }} >
+          <p ref={containerRef}>
+            {a}
+
+          </p>
         </div>
         {/* <div {...s.answerRightBox}>
           <div {...s.answerTopBox}></div>
@@ -37,7 +57,7 @@ const FaqBox: FunctionComponent = function ({ handleSelect, selected, q, a }) {
           </div>
         </div> */}
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default FaqBox;
