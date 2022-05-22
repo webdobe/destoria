@@ -2,6 +2,8 @@ import s from "./styles";
 import { FunctionComponent, useEffect, useRef, useMemo, useState, useCallback } from "react";
 import Image from "next/image";
 import Faqbox from './FaqBox'
+import FaqContent from './content'
+
 const Faq: FunctionComponent = function () {
   const containerRef = useRef(null)
   const [selected, setSelected] = useState(-1)
@@ -23,14 +25,11 @@ const Faq: FunctionComponent = function () {
         >
           <div {...s.containerFaqBordered}>
             <div {...s.faqContent}>
-              <Faqbox handleSelect={ () => handleSelect(0) } selected={selected === 0}/>
-              <Faqbox handleSelect={ () => handleSelect(1) } selected={selected === 1}/>
-              <Faqbox handleSelect={ () => handleSelect(2) } selected={selected === 2}/>
-              <Faqbox handleSelect={ () => handleSelect(3) } selected={selected === 3}/>
-              <Faqbox handleSelect={ () => handleSelect(4) } selected={selected === 4}/>
-              <Faqbox handleSelect={ () => handleSelect(5) } selected={selected === 5}/>
-              <Faqbox handleSelect={ () => handleSelect(6) } selected={selected === 6}/>
-              <Faqbox handleSelect={ () => handleSelect(7) } selected={selected === 7}/>
+              {FaqContent.map((item, index) => {
+                return (
+                  <Faqbox key={index} handleSelect={() => handleSelect(index)} selected={selected === index} q={item.q} a={item.a}/>
+                )
+              })}
             </div>
           </div>
         </div>

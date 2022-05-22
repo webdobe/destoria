@@ -6,7 +6,7 @@ const Mint: FunctionComponent = function () {
   return (
     <div {...s.wrapper}>
       <ul {...s.wrapperMarketplace}>
-      <li {...s.shortItem}>NFT Drops</li>
+        <li {...s.shortItem} onClick={() => window.location.href = `/mint`}>NFT Drops</li>
       </ul>
     </div>
   );

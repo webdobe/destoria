@@ -6,7 +6,7 @@ const styles = {
     pageDescription: "hidden",
     container: "w-full flex h-24 justify-between items-center text-base",
     navBox: "hidden md:flex items-center grow max-w-6xl justify-end gap-0 lg:gap-8 pb-2 text-xl font-bold tracking-wide",
-    logo: " cursor-pointer",
+    logo: " cursor-pointer animate-ping",
     nav: "grow flex justify-end",
     navUl: "grow justify-end gap-1 lg:gap-3 hidden md:flex",
     navLi: "cursor-pointer outline-0 p-4 font-semibold",

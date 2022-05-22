@@ -1,14 +1,14 @@
 import s from "./styles";
 import { FunctionComponent, useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
-const FaqBox: FunctionComponent = function ({ handleSelect, selected }) {
+const FaqBox: FunctionComponent = function ({ handleSelect, selected, q, a }) {
   const containerRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false)
   return (
     <div {...s.faqBox} data-open={selected} onClick={() => handleSelect()}>
       <div {...s.titleBox}>
         <div {...s.leftBox}>
-          <p style={{ width: "calc(100% - 30px)" }}>Some question</p>
+          <p style={{ width: "calc(100% - 30px)" }}>{q}</p>
           <div {...s.dropdownImage}>
             <Image
               src="/dropdown-arrow.svg"
@@ -28,7 +28,7 @@ const FaqBox: FunctionComponent = function ({ handleSelect, selected }) {
       <div {...s.answerBox}>
         <div {...s.offsetTopBox}></div>
         <div {...s.answerTextBox}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. 
+        {a}
         </div>
         {/* <div {...s.answerRightBox}>
           <div {...s.answerTopBox}></div>
