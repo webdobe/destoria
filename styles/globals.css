@@ -42,7 +42,7 @@ a {
 .bg-full-img {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 75%, #050d1d),
     url("/bgfull.png");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -841,6 +841,11 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 }
 
 @media (max-width: 800px) {
+  .my-video-dimensions {
+      width: 640px;
+      height: 480px;
+    }
+
   .cards-swipe .swiper.swiper-slide {
     left: 0;
   }
@@ -854,6 +859,11 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   }
   .form-interactions {
     padding-right: 20px;
+  }
+  
+  .video-firstframe-ship {
+    position: relative;
+    top: -50px;
   }
 }
 

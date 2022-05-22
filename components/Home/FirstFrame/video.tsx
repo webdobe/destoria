@@ -26,8 +26,7 @@ const FirstFrame: FunctionComponent = function () {
         className="video-firstframe-planet"
         controls={false}
         preload="auto"
-        width="1200"
-        height="1200"
+
         data-setup="{}"
         autoPlay={true}
         loop={true}
@@ -37,7 +36,7 @@ const FirstFrame: FunctionComponent = function () {
 
       <video
         id="my-video"
-        className="video-js"
+        className="video-firstframe-ship"
         controls={false}
         preload="auto"
         width="320"
