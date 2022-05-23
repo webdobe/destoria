@@ -71,8 +71,9 @@ a {
       rgba(5, 13, 29, 1) 100%
     ),
     url("/bg-roadmap.png");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .bg-characters {
@@ -80,9 +81,9 @@ a {
       180deg,
       rgba(5, 13, 29, 1) 0%,
       rgba(5, 13, 29, 0.6) 21%,
-      rgba(5, 13, 29, 0.6) 50%,
-      rgba(5, 13, 29, 0.6) 80%,
-      rgba(5, 13, 29, 1) 100%
+      rgba(5, 13, 29, 0.6) 20%,
+      rgba(5, 13, 29, 0.0) 80%,
+      rgba(5, 13, 29, 0) 100%
     ),
     url("/bg-characters.png");
   background-size: contain;
@@ -1299,7 +1300,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   .treasure-element {
     position: absolute;
     right: 15vw;
-    bottom: 39px;  
+    top: 900px;  
   }
   .treasure-hunt-text {
     display: none;
@@ -1346,3 +1347,6 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 
 
 
+.bg-none {
+  background: transparent;
+}

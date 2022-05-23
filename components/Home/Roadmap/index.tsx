@@ -186,7 +186,7 @@ const Roadmap: FunctionComponent = function () {
           {...s.labelTwelve}>
         </div>
       </div>
-      <div {...s.photolayerDesktop}>
+      <div {...s.photolayerDesktopActualPhoto}>
           <div {...s.photolayerDesktop}>
             <div
               {...s.contentOne}
@@ -420,7 +420,7 @@ const Roadmap: FunctionComponent = function () {
                 </li>
               </ul>
           </div>
-          <div style={{opacity: showModal ? "1" : "0", pointerEvents: showModal ? 'all' : 'none', transition: '0.6'}} className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full w-full" onClick={() => setShowModal(false)}>
+          <div style={{opacity: showModal ? "1" : "0", pointerEvents: showModal ? 'all' : 'none', transition: '0.6'}} className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full w-full flex align-middle" onClick={() => setShowModal(false)}>
             <div className="relative p-4 w-full max-w-4xl m-auto h-full md:h-auto" onClick={() => console.log(true)} >
               <div style={{background: '#070D31', border: "2px solid #F0F0F0"}} className="relative text-sm md:p-8 shadow text-center text-dhwhite w-full max-w-4xl">
               There are 6 out of place items in this map, hidden as a ticket to enter in the Tegrakian Treasure Hunt. Enter our discord  for the full resolution file to be able to zoom in and and find the them. Goodluck Destorians! <br/>
