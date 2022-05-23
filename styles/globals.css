@@ -35,7 +35,7 @@ a {
 }
 
 .first-img-layer {
-  background-color: #050d1d;
+  /* background-color: #050d1d; */
   opacity: 0.6;
 }
 
@@ -56,6 +56,20 @@ a {
       rgba(5, 13, 29, 1) 100%
     ),
     url("/bgforestfull.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.bg-roadmap {
+  background: linear-gradient(
+      180deg,
+      rgba(5, 13, 29, 1) 0%,
+      rgba(5, 13, 29, 0.6) 38%,
+      rgba(5, 13, 29, 0.6) 50%,
+      rgba(5, 13, 29, 0.6) 62%,
+      rgba(5, 13, 29, 1) 100%
+    ),
+    url("/bg-roadmap.png");
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -887,6 +901,332 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 }
 
 .my-video-two-dimensions {
-  width: 480px;
-  height: 360px;
+  width: 100%;
+  height: auto;
+}
+
+.video-roadmap-planet {
+  max-width: 570px;
+  margin: auto;
+}
+
+.border-custom-circulo {
+  border-radius: 50%;
+  border: 1px solid #f0f0f0;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  left: -16px;
+  top: 16px;
+}
+
+.roadmap-content {
+  min-height: 650px;
+}
+
+.roadmap-ball {
+  width: 13px;
+  height: 13px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+}
+
+.roadmap-ball-one {
+  left: calc(50% - 20px);
+  top: 10px;
+}
+
+.roadmap-ball-two {
+  left: calc(50% + 59px);
+  top: 35px;
+}
+
+.roadmap-ball-three {
+  left: calc(50% + 107px);
+  top: 83px;
+}
+
+.roadmap-ball-four {
+  left: calc(50% + 127px);
+  top: 153px;
+}
+
+.roadmap-ball-five {
+  left: calc(50% + 109px);
+  top: 230px;
+}
+
+.roadmap-ball-six {
+  left: calc(50% + 59px);
+  top: 285px;
+}
+
+.roadmap-ball-seven {
+  left: calc(50% - 20px);
+  top: 309px;
+}
+
+.roadmap-ball-eight {
+  left: calc(50% - 105px);
+  top: 285px;
+}
+
+.roadmap-ball-nine {
+  left: calc(50% - 156px);
+  top: 229px;
+}
+
+.roadmap-ball-ten {
+  left: calc(50% - 172px);
+  top: 153px;
+}
+
+.roadmap-ball-eleven {
+  left: calc(50% - 151px);
+  top: 83px;
+}
+
+.roadmap-ball-twelve {
+  left: calc(50% - 105px);
+  top: 35px;
+}
+
+.roadmap-label {
+  width: 1.5px;
+  height: 20px;
+  background-color: #f0f0f0;
+  opacity: 0.3;
+}
+
+.roadmap-label-one {
+  left: calc(50% - 51px);
+  top: -63px;
+  transform: rotate(-52deg);
+  height: 100px;
+}
+
+.roadmap-label-two {
+  left: calc(50% + 86px);
+  top: -11px;
+  transform: rotate(45deg);
+  height: 60px;
+}
+
+.roadmap-label-three {
+  left: calc(50% + 131px);
+  top: 72px;
+  height: 40px;
+  transform: rotate(98deg);
+}
+
+.roadmap-label-four {
+  left: calc(50% + 167px);
+  top: 131px;
+  height: 80px;
+  transform: rotate(108deg);
+}
+
+.roadmap-label-five {
+  left: calc(50% + 161px);
+  top: 206px;
+  height: 89px;
+  transform: rotate(107deg);
+}
+
+.roadmap-label-six {
+  left: calc(50% + 89px);
+  height: 86px;
+  transform: rotate(145deg);
+  top: 281px;
+}
+
+.roadmap-label-seven {
+  left: calc(50% - 21px);
+  top: 316px;
+  height: 59px;
+  transform: rotate(15deg);
+}
+
+.roadmap-label-eight {
+  left: calc(50% - 134px);
+  top: 273px;
+  height: 89px;
+  transform: rotate(54deg);
+}
+
+.roadmap-label-nine {
+  left: calc(50% - 187px);
+  top: 210px;
+  height: 89px;
+  transform: rotate(63deg);
+}
+
+.roadmap-label-ten {
+  left: calc(50% - 206px);
+  top: 134px;
+  height: 98px;
+  transform: rotate(57deg);
+}
+
+.roadmap-label-eleven {
+  left: calc(50% - 191px);
+  top: 61px;
+  height: 99px;
+  transform: rotate(63deg);
+}
+
+.roadmap-label-twelve {
+  left: calc(50% - 143px);
+  top: 8px;
+  height: 83px;
+  transform: rotate(77deg);
+}
+
+.roadmap-content-text >div >div{
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 0 10px;
+}
+
+.roadmap-content-text >div >div::before{
+  content: "";
+  width: 2px;
+  background-color: #f0f0f0;
+  opacity: 0.3;
+  height: 15px;
+  display: block;
+  position: absolute;
+}
+
+.roadmap-content-text-one {
+  left: calc(50% - 334px);
+  top: -85px;
+  height: 105px;
+  width: 325px;
+  cursor: pointer;
+}
+.roadmap-content-text-one >div >div {
+  max-width: 245px;
+}
+.roadmap-content-text-nine >div >div {
+  max-width: 210px;
+}
+.roadmap-content-text-ten >div >div {
+  max-width: 199px;
+}
+.roadmap-content-text-eleven >div >div {
+  max-width: 215px;
+}
+.roadmap-content-text-one >div >div::before {
+  top: 25px;
+  left: 0px;
+}
+.roadmap-content-text-seven >div >div::before {
+  top: 6px;
+  left: 0px;
+}
+.roadmap-content-text-eight >div >div::before {
+  top: 6px;
+  left: 0px;
+}
+.roadmap-content-text-nine >div >div::before {
+  top: 6px;
+  left: 0px;
+}
+.roadmap-content-text-twelve >div >div::before {
+  top: 6px;
+  left: 0px;
+}
+.roadmap-content-text-ten >div >div::before {
+  top: 25px;
+  left: 0px;
+}
+.roadmap-content-text-two >div >div::before {
+  right: 0;
+  top: 5px;
+}
+.roadmap-content-text-three >div >div::before {
+  right: 0;
+  top: 5px;
+}
+
+.roadmap-content-text-four >div >div::before {
+  right: 0;
+  top: 5px;
+}
+
+.roadmap-content-text-five >div >div::before {
+  right: 0;
+  top: 5px;
+}
+
+.roadmap-content-text-six >div >div::before {
+  right: 0;
+  top: 5px;
+}
+
+.roadmap-content-text-two {
+  left: calc(50% + 108px);
+  top: -23px;
+  height: 60px;
+}
+
+.roadmap-content-text-three {
+  left: calc(50% + 151px);
+  top: 74px;
+  height: 40px;
+
+}
+
+.roadmap-content-text-four {
+  left: calc(50% + 206px);
+  top: 163px;
+  height: 40px;
+}
+
+.roadmap-content-text-five {
+  left: calc(50% + 204px);
+  top: 243px;
+  height: 95px;
+}
+
+.roadmap-content-text-six {
+  left: calc(50% + 115px);
+  height: 86px;
+  top: 338px;
+}
+
+.roadmap-content-text-seven {
+  left: calc(50% - 153px);
+  top: 354px;
+  height: 59px;
+}
+
+.roadmap-content-text-eight {
+  left: calc(50% - 385px);
+  top: 323px;
+  height: 89px;
+}
+
+.roadmap-content-text-nine {
+  left: calc(50% - 400px);
+  top: 254px;
+  height: 40px;
+}
+
+.roadmap-content-text-ten {
+  left: calc(50% - 445px);
+  top: 168px;
+  height: 45px;
+}
+
+.roadmap-content-text-eleven {
+  left: calc(50% - 448px);
+  top: 92px;
+  height: 70px;
+}
+
+.roadmap-content-text-twelve {
+  left: calc(50% - 465px);
+  top: 38px;
+  height: 40px;
 }

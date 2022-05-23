@@ -84,8 +84,8 @@ const CharactersCarousel: FunctionComponent = function () {
                       >
                         <Image
                           {...s.characterImage}
-                          src="/characters-outrider-1.png"
-                          alt="Burger Menu"
+                          src="/characters-cowboy.png"
+                          alt="Cowboy"
                           width={360}
                           height={360}
                           style={{ position: "absolute", minWidth: "360px" }}

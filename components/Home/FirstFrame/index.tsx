@@ -14,10 +14,6 @@ const ShipVideo = dynamic(
 const FirstFrame: FunctionComponent = function () {
   const myRef = useRef(null)
 
-  useEffect(() => {
-    myRef.current.querySelector('.video-firstframe-planet video').playbackRate = 0.5;
-  }, [])
-
   return (
     <div {...s.majorContainer} ref={myRef}>
       <div {...s.photoLayer}>
