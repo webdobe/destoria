@@ -4,7 +4,7 @@ const styles = {
     charactersCarousel: "w-full flex flex-col justify-center text-dwhite items-center text-dwhite bg-no-repeat bg-cover bg-characters",
     contentLayer: "w-full h-full relative m-auto",
     containerCharactersCarousel: "cards-carousel-container m-auto",
-    containerCharactersCarouselBordered: "layout-border md:py-32 md:mx-5 m-auto",
+    containerCharactersCarouselBordered: "layout-border md:py-32 md:mx-5 m-auto super-height",
     charactersContent: "flex flex-col lg:flex-row text-dwhite gap-5 max-w-3xl",
     charactersContentBlurred: "flex flex-col lg:flex-row text-dwhite gap-5 max-w-3xl",
     charactersImageContent: "flex flex-row text-dwhite lg:w-72 justify-center align-center grow w-full",

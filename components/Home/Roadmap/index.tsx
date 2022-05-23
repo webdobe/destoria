@@ -9,6 +9,7 @@ const Roadmap: FunctionComponent = function () {
   const [showModal, setShowModal] = useState(false)
   return (
     <section {...s.roadmap}>
+    <div {...s.containerRoadmapBordered} style={{ maxWidth: '1400px'}}>
       <div {...s.photoLayer}>
         <Video />
       </div>
@@ -186,11 +187,7 @@ const Roadmap: FunctionComponent = function () {
         </div>
       </div>
       <div {...s.photolayerDesktop}>
-        <div
-          {...s.containerRoadmap}
-          style={{ maxWidth: "1440px", width: "100%" }}
-        >
-          <div {...s.containerRoadmapContent}>
+          <div {...s.photolayerDesktop}>
             <div
               {...s.contentOne}
               style={{
@@ -362,9 +359,8 @@ const Roadmap: FunctionComponent = function () {
             </div>
 
           </div>
-        </div>
       </div>
-      <div {...s.contentLayer}>
+      <div {...s.contentLayer} style={{maxWidth: '1400px'}}>
         <div {...s.containerRoadmapBordered}>
           <div className="treasure-hunt-text">
               TREASURE HUNT
@@ -444,6 +440,7 @@ const Roadmap: FunctionComponent = function () {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

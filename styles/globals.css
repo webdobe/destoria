@@ -26,6 +26,7 @@ a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  caret-color: transparent;
 }
 
 *,
@@ -1285,6 +1286,15 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   }
 }
 
+.custom-mx-5  {
+  position: relative;
+  top: -475px;
+}
+
+.super-height {
+  height: 1800px;
+}
+
 @media (min-width: 956px) {
   .treasure-element {
     position: absolute;
@@ -1293,6 +1303,15 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   }
   .treasure-hunt-text {
     display: none;
+  }
+  .custom-mx-5  {
+    margin-left: 1.23rem;
+    margin-right: 1.23rem;
+    position: relative;
+    top: -550px
+  }
+  .super-height {
+    height: 1450px;
   }
 }
 
@@ -1314,6 +1333,10 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   .text-box-charac {
     padding: 12px !important;
   }
+  .font-ultrasmall {
+    font-size: 8px;
+    height: 40px;
+  }
 }
 @media (max-width: 390px) {
   .text-box-charac {
@@ -1321,7 +1344,5 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   }
 }
 
-.font-ultrasmall {
-  font-size: 8px;
-  height: 40px;
-}
+
+
