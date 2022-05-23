@@ -14,11 +14,16 @@ const variants = {
 
 export const Navigation = () => (
   <motion.ul variants={variants} {...s.navUl}>
-      <MenuItem>About</MenuItem>
-      <MenuItem>Whitepaper</MenuItem>
-      <MenuItem>Team</MenuItem>
-      <MenuItem>Marketplace</MenuItem>
-      <MenuItem>Mint</MenuItem>
+      <MenuItem link={"none"}>Connect Wallet</MenuItem>
+    <MenuItem link={"mint"}>Mint</MenuItem>
+      <MenuItem link={"mint"}>3D Mint</MenuItem>
+      <MenuItem link={"mint"}>Free Mint</MenuItem>
+      <MenuItem link={""}>About</MenuItem>
+      <MenuItem link={"lore"}>Lore</MenuItem>
+      <MenuItem link={"contact"}>Contact</MenuItem>
+      <MenuItem link={"team"}>Collabs</MenuItem>
+      <MenuItem link={"team#3"}>Careers</MenuItem>
+    <MenuItem link={"#3"}>FAQ</MenuItem>
   </motion.ul>
 );
 

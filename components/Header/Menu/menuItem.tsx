@@ -19,16 +19,19 @@ const variants = {
   }
 };
 
-export const MenuItem = ({ children }) => {
+export const MenuItem = ({ children, link }) => {
   const style = { border: `2px solid #F83600` };
   return (
     <motion.li
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
+      onClick={() => {
+        if (link == "none") return false;
+        window.location.href = '/' + link
+    }}
       {...s.menuListItem}
     >
-      <div className="icon-placeholder" {...s.iconPlaceholder} style={style} />
       <div className="text-placeholder" {...s.menuItem}>{children}</div>
     </motion.li>
   );
