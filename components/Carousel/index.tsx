@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Carousel from "react-spring-3d-carousel";
 import uuidv4 from "uuid";
 import { config } from "react-spring";
-
+import s from './styles'
+import Image from "next/image";
 export default class Example extends Component {
   state = {
     goToSlide: 1,
@@ -88,6 +89,37 @@ export default class Example extends Component {
           animationConfig={this.state.config}
 
         />
+        <div {...s.dots}>
+          <div style={{cursor: "pointer"}}>
+          <Image
+            src={this.state.goToSlide == 0 ? "/hexagon-active.svg" : "/hexagon-inactive.svg"}
+            width={this.state.goToSlide == 0 ? 15 :12}
+            height={this.state.goToSlide == 0 ? 15 : 12}
+            alt="hexagon"
+            onClick={() => this.setState({ goToSlide: 0 })}
+          />
+          </div>
+          <div style={{cursor: "pointer"}}>
+          <Image
+            src={this.state.goToSlide == 1 ? "/hexagon-active.svg" : "/hexagon-inactive.svg"}
+            width={this.state.goToSlide == 1 ? 15 :12}
+            height={this.state.goToSlide == 1 ? 15 : 12}
+            alt="hexagon"
+            onClick={() => this.setState({ goToSlide: 1 })}
+
+            />
+          </div>
+          <div style={{cursor: "pointer"}}>
+
+          <Image
+            src={this.state.goToSlide == 2 ? "/hexagon-active.svg" : "/hexagon-inactive.svg"}
+            width={this.state.goToSlide == 2 ? 15 :12}
+            height={this.state.goToSlide == 2 ? 15 : 12}
+            alt="hexagon"
+            onClick={() => this.setState({ goToSlide: 2 })}
+            />
+            </div>
+        </div>
         <div
           style={{
             margin: "0 auto",
