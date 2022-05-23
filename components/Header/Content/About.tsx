@@ -6,7 +6,7 @@ const About: FunctionComponent = function () {
     <div {...s.wrapper}>
       <ul {...s.wrapper}>
         <li {...s.shortItem} onClick={() => window.location.href = '/lore'}>Lore</li>
-        <li {...s.shortItem} onClick={() => window.location.href = '/#faq'}>FAQ</li>
+        <li {...s.shortItem} onClick={() => window.location.href = '/#3'}>FAQ</li>
         <li {...s.shortItem} onClick={() => window.location.href = '/contact'}>Contact</li>
       </ul>
     </div>

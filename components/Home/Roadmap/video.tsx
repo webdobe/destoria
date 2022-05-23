@@ -10,7 +10,7 @@ const FirstFrame: FunctionComponent = function () {
         className="video-roadmap-planet"
         controls={false}
         preload="auto"
-        muted={true}
+        muted
         data-setup="{}"
         autoPlay={true}
         loop={true}

@@ -1350,3 +1350,50 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 .bg-none {
   background: transparent;
 }
+
+.find-more-item {
+  height: 485px;
+}
+
+.find-more-text-box {
+  width: 350px;
+}
+
+
+.bg-openworld {
+  background-image: url("/game-mb-openworld.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+@media (min-width: 950px) {
+  .bg-openworld {
+    background-image: url("/game-openworld.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  .bg-combat {
+    background-image: url("/game-combat.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  .bg-customization {
+    background-image: url("/game-customization.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  .bg-interoperability {
+    background-image: url("/game-interoperability.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .find-more-text-box {
+    margin-left: 475px;
+    width: 350px;
+  }
+}
+
