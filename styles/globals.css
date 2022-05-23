@@ -1330,7 +1330,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   padding-top: 16px;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 520px) {
   .text-box-charac {
     padding: 12px !important;
   }
@@ -1343,6 +1343,10 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   .text-box-charac {
     padding: 32px !important;
   }
+
+    .find-more-text-box p {
+      font-size: 13px !important;
+    }
 }
 
 
@@ -1352,12 +1356,22 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 }
 
 .find-more-item {
-  height: 485px;
+  max-height: 900px;
+  height: 100%;
+  margin-left: 7.5px;
+  background-position: center;
+  display: flex;
+  justify-content: center;
 }
 
 .find-more-text-box {
-  width: 350px;
+  width: 313px;
+  margin-top: 50px;
+  padding-left: 6px;
+  padding-bottom: 98px;
 }
+
+
 
 
 .bg-openworld {
@@ -1366,8 +1380,36 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   background-size: contain;
 }
 
+.bg-combat {
+  background-image: url("/game-mb-combat.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.bg-customization {
+  background-image: url("/game-mb-customization.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.bg-interoperability {
+  background-image: url("/game-mb-interoperability.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media (max-width: 950px) {
+  .find-more-text-box { 
+    margin-top: 530px;
+  }
+}
+
 
 @media (min-width: 950px) {
+  .find-more-item {
+    height: 485px;
+  }
+
   .bg-openworld {
     background-image: url("/game-openworld.png");
     background-repeat: no-repeat;
@@ -1392,7 +1434,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
     background-size: contain;
   }
   .find-more-text-box {
-    margin-left: 475px;
+    margin-left: 420px;
     width: 350px;
   }
 }

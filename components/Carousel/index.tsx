@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Carousel from "react-spring-3d-carousel";
 import uuidv4 from "uuid";
 import { config } from "react-spring";
-import s from './styles'
+import s from "./styles";
 import Image from "next/image";
 export default class Example extends Component {
   state = {
@@ -11,7 +11,7 @@ export default class Example extends Component {
     showNavigation: false,
     config: config.stiff,
     xDown: null,
-    yDown: null
+    yDown: null,
   };
 
   slides = this.props.content.map((slide, index) => {
@@ -33,13 +33,13 @@ export default class Example extends Component {
   getTouches = (evt) => {
     return (
       evt.touches || evt.originalEvent.touches // browser API
-    ); 
+    );
   };
 
   handleTouchStart = (evt) => {
     const firstTouch = this.getTouches(evt)[0];
-    this.setState({xDown: firstTouch.clientX})
-    this.setState({yDown: firstTouch.clientY})
+    this.setState({ xDown: firstTouch.clientX });
+    this.setState({ yDown: firstTouch.clientY });
   };
 
   handleTouchMove = (evt) => {
@@ -70,8 +70,8 @@ export default class Example extends Component {
       }
     }
     /* reset values */
-    this.setState({xDown: null})
-    this.setState({yDown: null})
+    this.setState({ xDown: null });
+    this.setState({ yDown: null });
   };
 
   render() {
@@ -87,38 +87,47 @@ export default class Example extends Component {
           offsetRadius={this.state.offsetRadius}
           showNavigation={this.state.showNavigation}
           animationConfig={this.state.config}
-
         />
         <div {...s.dots}>
-          <div style={{cursor: "pointer"}}>
-          <Image
-            src={this.state.goToSlide == 0 ? "/hexagon-active.svg" : "/hexagon-inactive.svg"}
-            width={this.state.goToSlide == 0 ? 15 :12}
-            height={this.state.goToSlide == 0 ? 15 : 12}
-            alt="hexagon"
-            onClick={() => this.setState({ goToSlide: 0 })}
-          />
-          </div>
-          <div style={{cursor: "pointer"}}>
-          <Image
-            src={this.state.goToSlide == 1 ? "/hexagon-active.svg" : "/hexagon-inactive.svg"}
-            width={this.state.goToSlide == 1 ? 15 :12}
-            height={this.state.goToSlide == 1 ? 15 : 12}
-            alt="hexagon"
-            onClick={() => this.setState({ goToSlide: 1 })}
-
+          <div style={{ cursor: "pointer" }}>
+            <Image
+              src={
+                this.state.goToSlide == 0
+                  ? "/hexagon-active.svg"
+                  : "/hexagon-inactive.svg"
+              }
+              width={this.state.goToSlide == 0 ? 15 : 12}
+              height={this.state.goToSlide == 0 ? 15 : 12}
+              alt="hexagon"
+              onClick={() => this.setState({ goToSlide: 0 })}
             />
           </div>
-          <div style={{cursor: "pointer"}}>
-
-          <Image
-            src={this.state.goToSlide == 2 ? "/hexagon-active.svg" : "/hexagon-inactive.svg"}
-            width={this.state.goToSlide == 2 ? 15 :12}
-            height={this.state.goToSlide == 2 ? 15 : 12}
-            alt="hexagon"
-            onClick={() => this.setState({ goToSlide: 2 })}
+          <div style={{ cursor: "pointer" }}>
+            <Image
+              src={
+                this.state.goToSlide == 1
+                  ? "/hexagon-active.svg"
+                  : "/hexagon-inactive.svg"
+              }
+              width={this.state.goToSlide == 1 ? 15 : 12}
+              height={this.state.goToSlide == 1 ? 15 : 12}
+              alt="hexagon"
+              onClick={() => this.setState({ goToSlide: 1 })}
             />
-            </div>
+          </div>
+          <div style={{ cursor: "pointer" }}>
+            <Image
+              src={
+                this.state.goToSlide == 2
+                  ? "/hexagon-active.svg"
+                  : "/hexagon-inactive.svg"
+              }
+              width={this.state.goToSlide == 2 ? 15 : 12}
+              height={this.state.goToSlide == 2 ? 15 : 12}
+              alt="hexagon"
+              onClick={() => this.setState({ goToSlide: 2 })}
+            />
+          </div>
         </div>
         <div
           style={{

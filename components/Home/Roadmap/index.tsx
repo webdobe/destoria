@@ -371,8 +371,8 @@ const Roadmap: FunctionComponent = function () {
             className="treasure-element">
             <Image
               src="/treasure-button.svg"
-              width={window.innerWidth > 950 ? 115 : 165}
-              height={window.innerWidth > 950 ? 115 : 165}
+              width={window.innerWidth > 950 ? 145 : 250}
+              height={window.innerWidth > 950 ? 145 : 250}
             />
           </motion.div>
           <div {...s.roadmapMobileContent} onClick={() => setShowModal(false)}>
