@@ -1310,6 +1310,11 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   padding-top: 16px;
 }
 
+@media (max-width: 420px) {
+  .text-box-charac {
+    padding: 12px !important;
+  }
+}
 @media (max-width: 390px) {
   .text-box-charac {
     padding: 32px !important;

@@ -14,38 +14,55 @@ const CharactersCarousel: FunctionComponent = function () {
   const containerRef = useRef(null)
 
   useEffect(() => {
+    function left () {
+      console.log('click')
+      if (containerRef.current.querySelector(".bg-characters .swiper-button-prev")) {
+        containerRef.current.querySelector('.bg-characters .charac-cursor-right').classList.remove('charac-button-disabled')
+        containerRef.current
+          .querySelector(".bg-characters .swiper-button-prev")
+          .click();
+      }
+      if (containerRef.current.querySelector('.bg-characters .swiper-button-prev').classList.contains('swiper-button-disabled')) {
+        containerRef.current.querySelector('.bg-characters .charac-cursor-left').classList.add('charac-button-disabled')
+      }
+    }
+    function right () {
+      console.log('click')
+      containerRef.current.querySelector('.bg-characters .charac-cursor-left').classList.remove('charac-button-disabled')
+      if (containerRef.current.querySelector(".bg-characters .swiper-button-next")) {
+        containerRef.current
+          .querySelector(".bg-characters .swiper-button-next")
+          .click();
+      }
+      setTimeout(() => {
+        if (containerRef.current.querySelector('.bg-characters .swiper-button-next').classList.contains('swiper-button-disabled')) {
+          containerRef.current.querySelector('.bg-characters .charac-cursor-right').classList.add('charac-button-disabled')
+        }
+      }, 100);
+
+    }
     setTimeout(() => {
       if (containerRef.current.querySelector('.bg-characters .swiper-button-prev').classList.contains('swiper-button-disabled')) {
         containerRef.current.querySelector('.bg-characters .charac-cursor-left').classList.add('charac-button-disabled')
       }
       containerRef.current
+      .querySelector(".charac-cursor-left")
+      ?.removeEventListener("click", left)
+      containerRef.current
+      .querySelector(".charac-cursor-left")
+      ?.removeEventListener("click", left)
+      containerRef.current
+      .querySelector(".charac-cursor-right")
+      ?.removeEventListener("click", right)
+      containerRef.current
+      .querySelector(".charac-cursor-right")
+      ?.removeEventListener("click", right)
+      containerRef.current
         .querySelector(".charac-cursor-left")
-        ?.addEventListener("click", () => {
-          if (containerRef.current.querySelector(".bg-characters .swiper-button-prev")) {
-            containerRef.current.querySelector('.bg-characters .charac-cursor-right').classList.remove('charac-button-disabled')
-            containerRef.current
-              .querySelector(".bg-characters .swiper-button-prev")
-              .click();
-          }
-          if (containerRef.current.querySelector('.bg-characters .swiper-button-prev').classList.contains('swiper-button-disabled')) {
-            containerRef.current.querySelector('.bg-characters .charac-cursor-left').classList.add('charac-button-disabled')
-          }
-        });
+        ?.addEventListener("click", left);
       containerRef.current
         .querySelector(".charac-cursor-right")
-        ?.addEventListener("click", () => {
-          containerRef.current.querySelector('.bg-characters .charac-cursor-left').classList.remove('charac-button-disabled')
-          if (containerRef.current.querySelector(".bg-characters .swiper-button-next")) {
-            containerRef.current
-              .querySelector(".bg-characters .swiper-button-next")
-              .click();
-          }
-          setTimeout(() => {
-            if (containerRef.current.querySelector('.bg-characters .swiper-button-next').classList.contains('swiper-button-disabled')) {
-              containerRef.current.querySelector('.bg-characters .charac-cursor-right').classList.add('charac-button-disabled')
-            }
-          }, 100);
-        });
+        ?.addEventListener("click", right);
     }, 500);
   }, []);
 
@@ -117,14 +134,14 @@ const CharactersCarousel: FunctionComponent = function () {
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="flex flex-col items-center  w-full">
-                    <div {...s.charactersContent}>
+                    <div {...s.charactersContentBlurred}>
                       <div
-                        {...s.charactersImageContent}
+                        {...s.charactersImageContentBlurred}
                         style={{ minWidth: "360px" }}
                       >
                         <Image
                           {...s.characterImage}
-                          src="/characters-outrider-1.png"
+                          src="/characters-newone.png"
                           alt="Burger Menu"
                           width={360}
                           height={360}
@@ -133,8 +150,8 @@ const CharactersCarousel: FunctionComponent = function () {
                       </div>
                       <div {...s.charactersTextContent}>
                         <h5 {...s.charactersTextContentTitle}>Faction</h5>
-                        <h4 {...s.charactersTextContentSubtitle}>Outrider</h4>
-                        <p {...s.charactersTextContentText}>
+                        <h4 {...s.charactersTextContentSubtitle}>Coming soon</h4>
+                        <p {...s.charactersTextContentTextBlurred}>
                           The Destorian Outriders are an organization of rangers
                           that keep the peace in all the southern and central
                           territories of Ordos Prime. They are characterized by
@@ -144,7 +161,49 @@ const CharactersCarousel: FunctionComponent = function () {
                           Ordos Prime on their newly developed hover bikes.
                         </p>
                         <div>
-                        <div {...s.characterImage}>
+                        <div {...s.characterImageBlurred}>
+                          <Image
+                            src="/characters-outrider-status.svg"
+                            alt="Burger Menu"
+                            width={360}
+                            height={71}
+                          />
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="flex flex-col items-center  w-full">
+                    <div {...s.charactersContentBlurred}>
+                      <div
+                        {...s.charactersImageContentBlurred}
+                        style={{ minWidth: "360px" }}
+                      >
+                        <Image
+                          {...s.characterImage}
+                          src="/characters-newtwo.png"
+                          alt="Burger Menu"
+                          width={360}
+                          height={360}
+                          style={{ position: "absolute", minWidth: "360px" }}
+                        />
+                      </div>
+                      <div {...s.charactersTextContent}>
+                        <h5 {...s.charactersTextContentTitle}>Faction</h5>
+                        <h4 {...s.charactersTextContentSubtitle}>Coming soon</h4>
+                        <p {...s.charactersTextContentTextBlurred}>
+                          The Destorian Outriders are an organization of rangers
+                          that keep the peace in all the southern and central
+                          territories of Ordos Prime. They are characterized by
+                          their pneumatic weaponry, tactical armor and gas
+                          masks. Alongside the long coats and hats they wear as
+                          part of their uniform. They are often seen patrolling
+                          Ordos Prime on their newly developed hover bikes.
+                        </p>
+                        <div>
+                        <div {...s.characterImageBlurred}>
                           <Image
                             src="/characters-outrider-status.svg"
                             alt="Burger Menu"
