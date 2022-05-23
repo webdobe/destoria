@@ -15,7 +15,6 @@ const CharactersCarousel: FunctionComponent = function () {
 
   useEffect(() => {
     function left () {
-      console.log('click')
       if (containerRef.current.querySelector(".bg-characters .swiper-button-prev")) {
         containerRef.current.querySelector('.bg-characters .charac-cursor-right').classList.remove('charac-button-disabled')
         containerRef.current
@@ -27,7 +26,6 @@ const CharactersCarousel: FunctionComponent = function () {
       }
     }
     function right () {
-      console.log('click')
       containerRef.current.querySelector('.bg-characters .charac-cursor-left').classList.remove('charac-button-disabled')
       if (containerRef.current.querySelector(".bg-characters .swiper-button-next")) {
         containerRef.current

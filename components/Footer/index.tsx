@@ -1,12 +1,10 @@
 import s from "./styles";
-import { FunctionComponent, useEffect, useRef, useMemo } from "react";
+import { FunctionComponent, useEffect,  useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 const Footer: FunctionComponent = function () {
-  const containerRef = useRef(null);
-
   return (
-    <section {...s.footer} ref={containerRef}>
+    <section {...s.footer}>
       <div {...s.contentLayer}>
         <div
           {...s.containerFooter}
