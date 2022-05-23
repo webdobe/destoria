@@ -1291,11 +1291,28 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
     right: 15vw;
     bottom: 39px;  
   }
+  .treasure-hunt-text {
+    display: none;
+  }
 }
 
 
 .treasure-element {
   cursor: pointer;
   pointer-events: all;
+}
+
+.treasure-hunt-text {
+  margin: auto;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 16px;
+}
+
+@media (max-width: 390px) {
+  .text-box-charac {
+    padding: 32px !important;
+  }
 }
 

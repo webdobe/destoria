@@ -59,6 +59,7 @@ const Header: FunctionComponent = function () {
         <h2 {...s.pageDescription}>Explore the Metaverse</h2>
         <div {...s.container}>
           <div {...s.logo} onClick={() => window.location.href = `/`}>
+            <div className="absolute top-5">
             <Image
               src="/destoria.svg"
               alt="Destoria"
@@ -66,6 +67,7 @@ const Header: FunctionComponent = function () {
               height={42}
               {...s.logoImage}
             />
+            </div>
           </div>
           <div {...s.navBox}>
             <nav {...s.nav}>

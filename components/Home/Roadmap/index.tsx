@@ -366,6 +366,9 @@ const Roadmap: FunctionComponent = function () {
       </div>
       <div {...s.contentLayer}>
         <div {...s.containerRoadmapBordered}>
+          <div className="treasure-hunt-text">
+              TREASURE HUNT
+          </div>
           <motion.div
             whileHover={{ scale: 1.4 }}
             onClick={() => setShowModal(true)}

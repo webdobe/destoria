@@ -7,7 +7,7 @@ const styles = {
     containerCharactersCarouselBordered: "layout-border md:py-32 md:mx-5 m-auto",
     charactersContent: "flex flex-col lg:flex-row text-dwhite gap-5 max-w-3xl",
     charactersImageContent: "flex flex-row text-dwhite lg:w-72 justify-center align-center grow w-full",
-    charactersTextContent: "",
+    charactersTextContent: "text-box-charac",
     charactersTextContentTitle: "text-dhOrange text-base uppercase tracking-widest",
     charactersTextContentSubtitle: "font-bold capitalize tracking-wide text-4xl py-4",
     charactersTextContentText: "text-base tracking-wide pb-5",
