@@ -1,6 +1,6 @@
 import classNameAdder from 'utils/classNameAdder'
 
-const alltabs = "tab-nav-button text-xs md:text-base font-bold h-16 grow uppercase flex items-center justify-center md:my-7 "
+const alltabs = "tab-nav-button font-ultrasmall md:text-xs md:text-base font-bold h-16 grow uppercase flex items-center justify-center md:my-7 "
 const allInners = "relative flex items-center justify-center cursor-pointer "
 
 const styles = {

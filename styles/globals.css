@@ -1321,3 +1321,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   }
 }
 
+.font-ultrasmall {
+  font-size: 8px;
+  height: 40px;
+}
