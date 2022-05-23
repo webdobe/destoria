@@ -7,7 +7,10 @@ const contents = "absolute text-sm text-dwhite m-auto cursor-pointer"
 const styles = {
     roadmap: "w-full flex flex-col justify-center text-dwhite items-center text-dwhite bg-roadmap bg-no-repeat bg-cover roadmap-height",
     photoLayer: "w-full h-full absolute text-dwhite",
+    photolayerDesktop: "w-full h-full absolute text-dwhite photo-layer-desktop",
     contentLayer: "w-full h-full relative m-auto roadmap-content pointer-events-none",
+    roadmapMobileContent: "roadmap-mobile-content backdrop-blur",
+    roadmapList: "list-disc py-2",
     containerRoadmap: "w-full cards-carousel-container m-auto roadmap-content",
     containerRoadmapBordered: "layout-border md:mx-5 roadmap-content",
     faqContent: "flex flex-col px-2 text-dwhite max-w-6xl m-auto w-full",

@@ -12,11 +12,11 @@ const Roadmap: FunctionComponent = function () {
       <div {...s.photoLayer}>
         <Video />
       </div>
-      <div {...s.photoLayer}>
+      <div {...s.photolayerDesktop}>
         <div {...s.circleContainer}>
         </div>
       </div>
-      <div {...s.photoLayer}>
+      <div {...s.photolayerDesktop}>
         <motion.div
           animate={{ scale: selected === 0 ? 1.5 : 1 }}
           onMouseEnter={() => setSelected(0)}
@@ -78,7 +78,7 @@ const Roadmap: FunctionComponent = function () {
           {...s.ballTwelve}>
         </motion.div>
       </div>
-      <div {...s.photoLayer}>
+      <div {...s.photolayerDesktop}>
         <div
           style={{
             filter: selected !== 0 ? 'blur(3px)' : '',
@@ -185,7 +185,7 @@ const Roadmap: FunctionComponent = function () {
           {...s.labelTwelve}>
         </div>
       </div>
-      <div {...s.photoLayer}>
+      <div {...s.photolayerDesktop}>
         <div
           {...s.containerRoadmap}
           style={{ maxWidth: "1440px", width: "100%" }}
@@ -369,19 +369,58 @@ const Roadmap: FunctionComponent = function () {
           <motion.div
             whileHover={{ scale: 1.4 }}
             onClick={() => setShowModal(true)}
-            animate={{
-              cursor: "pointer",
-              position: 'absolute',
-              right: 'calc(50% - 439px)',
-              bottom: '39px',
-              pointerEvents: 'all'
-            }}>
+            className="treasure-element">
             <Image
               src="/treasure-button.svg"
-              width={115}
-              height={115}
+              width={window.innerWidth > 950 ? 115 : 165}
+              height={window.innerWidth > 950 ? 115 : 165}
             />
           </motion.div>
+          <div {...s.roadmapMobileContent} onClick={() => setShowModal(false)}>
+            <div className="roadmap-title">
+            <svg width="205" height="62" viewBox="0 0 205 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 61.3754H65.2679L79.4397 47.2412H157.217L204.585 0H0V61.3754Z" fill="#F0F0F0"/>
+<path d="M41.0429 26.0798V31H38.1586V26.7372L36.8861 25.3163H32.2628V31H29.3785V16.1545H38.6888L40.958 18.4449V22.941L39.5159 24.4043L41.0429 26.0798ZM32.2628 22.941H37.3739L38.1162 22.1987V19.3144L37.3739 18.5722H32.2628V22.941ZM43.4776 28.5611V18.5934L45.9166 16.1545H53.5514L55.9903 18.5934V28.5611L53.5514 31H45.9166L43.4776 28.5611ZM52.0244 28.5399L53.106 27.4583V19.6962L52.0244 18.6146H47.4435L46.3619 19.6962V27.4583L47.4435 28.5399H52.0244ZM62.3855 16.1545H65.0153L70.4445 31H67.5178L66.309 27.7128H61.0918L59.883 31H56.9563L62.3855 16.1545ZM65.6727 25.3375L63.7004 19.6962H63.658L61.7493 25.3375H65.6727ZM71.9393 16.1545H81.4405L83.9854 18.6994V28.455L81.4405 31H71.9393V16.1545ZM80.0196 28.5399L81.1012 27.4583V19.6962L80.0196 18.6146H74.8236V28.5399H80.0196ZM86.5405 16.1545H89.2127L93.6239 25.7404H93.6664L98.0988 16.1545H100.771V31H97.9928V21.9654H97.9504L94.5359 28.9216H92.7544L89.3611 21.9654H89.3187V31H86.5405V16.1545ZM107.68 16.1545H110.31L115.739 31H112.812L111.604 27.7128H106.386L105.178 31H102.251L107.68 16.1545ZM110.967 25.3375L108.995 19.6962H108.953L107.044 25.3375H110.967ZM117.234 16.1545H126.544L128.814 18.4449V23.6409L126.523 25.9525H120.118V31H117.234V16.1545ZM125.229 23.5348L125.972 22.7925V19.3144L125.229 18.5722H120.118V23.5348H125.229Z" fill="#050D1D"/>
+</svg>
+
+
+            </div>
+              <ul className="px-10">
+                <li {...s.roadmapList}>
+                Mini Game released to iOS App Store, Playstore and Steam
+                </li>
+                <li {...s.roadmapList}>
+                Mini Game Tournament for top ten scores
+                </li>
+                <li {...s.roadmapList}>
+                Tesla or Eth equivalent holder giveaway
+                </li>
+                <li {...s.roadmapList}>
+                Tegrakian Treasure Hunt
+                </li>
+                <li {...s.roadmapList}>
+                Introduction to Project Destiny
+                </li>
+                <li {...s.roadmapList}>
+                Tokenomics AMA
+                </li>
+                <li {...s.roadmapList}>
+                Alpha Collaboration
+                </li>
+                <li {...s.roadmapList}>
+                Cut and Sew Online Merch Store
+                </li>
+                <li {...s.roadmapList}>
+                Presale $Stori Token/$Stori Token Sale
+                </li>
+                <li {...s.roadmapList}>
+                NFT holder Airdrop
+                </li>
+                <li {...s.roadmapList}>
+                Post withering Roadmap Launch
+                </li>
+              </ul>
+          </div>
           <div style={{opacity: showModal ? "1" : "0", pointerEvents: showModal ? 'all' : 'none', transition: '0.6'}} className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full w-full" onClick={() => setShowModal(false)}>
             <div className="relative p-4 w-full max-w-4xl m-auto h-full md:h-auto" onClick={() => console.log(true)} >
               <div style={{background: '#070D31', border: "2px solid #F0F0F0"}} className="relative text-sm md:p-8 shadow text-center text-dhwhite w-full max-w-4xl">
@@ -389,7 +428,6 @@ const Roadmap: FunctionComponent = function () {
               <div style={{cursor: "pointer"}}>
                 <Link
                   passHref href="https://discord.com/invite/Y7QSJcWqFH"
-                  target="_blank"
                 >
               <Image 
                 src="/destoria-banner-discord.png"
