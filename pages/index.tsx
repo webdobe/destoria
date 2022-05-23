@@ -29,6 +29,11 @@ const LastFrame = dynamic(
   { ssr: false }
 )
 
+const Roadmap = dynamic(
+  () => import('components/Home/Roadmap'),
+  { ssr: false }
+)
+
 const FindMore = dynamic(
   () => import('components/Home/FindMore'),
   { ssr: false }
@@ -48,6 +53,7 @@ const Home: NextPage = () => {
       <Script src="https://vjs.zencdn.net/7.19.2/video.min.js"></Script>
       <CardCarousel />
       <CharactersCarousel />
+      <Roadmap />
       <FindMore />
       <AnimatedGallery />
       <LastFrame />

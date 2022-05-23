@@ -885,3 +885,8 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 .video-firstframe-ship {
   display: flex;
 }
+
+.my-video-two-dimensions {
+  width: 480px;
+  height: 360px;
+}

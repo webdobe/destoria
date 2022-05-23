@@ -1,4 +1,6 @@
-import { FunctionComponent } from "react";
+// @ts-ignore
+
+import { FunctionComponent, useEffect, useRef } from "react";
 import s from "./styles";
 import Image from "next/image";
 import Header from "components/Header";
@@ -10,9 +12,14 @@ const ShipVideo = dynamic(
   { ssr: false }
 )
 const FirstFrame: FunctionComponent = function () {
+  const myRef = useRef(null)
+
+  useEffect(() => {
+    myRef.current.querySelector('.video-firstframe-planet video').playbackRate = 0.5;
+  }, [])
 
   return (
-    <div {...s.majorContainer} >
+    <div {...s.majorContainer} ref={myRef}>
       <div {...s.photoLayer}>
         <ShipVideo
         />
