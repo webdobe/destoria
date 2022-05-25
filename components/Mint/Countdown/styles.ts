@@ -31,7 +31,7 @@ const styles = {
     connectWalletSpan: "cursor-pointer",
     interactions: "w-full flex justify-center gap-1 md:gap-4 form-interactions py-3",
     hexangle: "mr-5 ml-6",
-    countdownLabels: "text-xl flex w-full justify-between gap-2 md:gap-2 md:px-5"
+    countdownLabels: "text-xl flex w-full justify-between gap-2 md:gap-2 md:px-5 relative left-3"
 }
 
 

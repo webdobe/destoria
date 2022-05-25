@@ -71,7 +71,7 @@ const Countdown: FunctionComponent = function () {
             MINT STARTS IN
           </div>
           <div {...s.countdownItself}>
-            {countdown}
+            ??.??:??:??
             <div {...s.countdownLabels}>
               <div>
                 days

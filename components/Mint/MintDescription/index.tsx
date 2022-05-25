@@ -62,6 +62,12 @@ const MintDescription: FunctionComponent = function () {
               </ul>
             </div>
           </div>
+              <Image
+                src="/mint-monsters.png"
+                width={960}
+                height={446}
+                alt="DESTORIA-Feral"
+              />
         </div>
       </div>
     </section>

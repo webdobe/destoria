@@ -837,7 +837,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 }
 
 .job-description-box {
-  background-color: rgba(253, 253, 253, 0.02);
+  /* background-color: rgba(253, 253, 253, 0.02); */
 }
 
 .transparent-two-box {
@@ -1402,6 +1402,9 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   .find-more-text-box { 
     margin-top: 530px;
   }
+  .mycontent-findmore {
+    min-height: 350px;
+  }
 }
 
 
@@ -1439,3 +1442,39 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   }
 }
 
+
+.backdrop-show {
+  pointer-events: all;
+  min-height: 100vh;
+}
+
+.backdrop-hide {
+  pointer-events: none;
+  min-height: 100vh;
+}
+
+.modal-show {
+ opacity: 1;
+ transition: 0.3s ease-in;
+ z-index: 30;
+}
+
+.modal-hide {
+  opacity: 0;
+  transition: 0.3s ease-in;
+}
+
+.head-image-withering {
+  left: 1rem;
+  top: 1rem;
+  z-index: 50;
+}
+
+.head-image-withering-text {
+  left: 2rem;
+  top: 2rem;
+  z-index: 51;
+  color: #050D1D;
+  font-weight: 700;
+  font-size: 18px;
+}

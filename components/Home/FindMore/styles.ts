@@ -15,7 +15,7 @@ const styles = {
     findmoreBoxInteroperability: findMore + " " + "bg-interoperability",
     findmoreBoxText: "find-more-text-box",
     titleContent: "text-lg font-bold pb-5",
-    textContent: "text-base font-normal"
+    textContent: "text-base font-normal mycontent-findmore"
 }
 
 

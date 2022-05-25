@@ -1,17 +1,21 @@
 // @ts-ignore
 
-import { FunctionComponent, useEffect, useRef } from "react";
+import { FunctionComponent, useEffect, useRef, useState } from "react";
 import s from "./styles";
 import Image from "next/image";
 import Header from "components/Header";
 import Link from 'next/link'
 import dynamic from "next/dynamic";
-
 const ShipVideo = dynamic(
   () => import('./video'),
   { ssr: false }
 )
+const Threed = dynamic(
+  () => import('./3d'),
+  { ssr: false }
+)
 const FirstFrame: FunctionComponent = function () {
+
   const myRef = useRef(null)
 
   return (
@@ -27,7 +31,8 @@ const FirstFrame: FunctionComponent = function () {
           {...s.containerExploreTheMetaverse}
           style={{ maxWidth: "1440px", width: "100%" }}
         >
-          <div {...s.containerExploreTheMetaverseBordered}>
+            <div {...s.containerExploreTheMetaverseBordered}>
+            {/* <Threed/> */}
             <div {...s.destoria}>
               <img
                 {...s.destoriaLogo}
