@@ -39,6 +39,11 @@ const FindMore = dynamic(
   { ssr: false }
 )
 
+const Followup = dynamic(
+  () => import('components/Home/Followup'),
+  { ssr: false }
+)
+
 const Home: NextPage = () => {
   return (
     <div>
@@ -49,6 +54,7 @@ const Home: NextPage = () => {
         
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* <Followup /> */}
       <FirstFrame />
       <Script src="https://vjs.zencdn.net/7.19.2/video.min.js"></Script>
       <CardCarousel />
