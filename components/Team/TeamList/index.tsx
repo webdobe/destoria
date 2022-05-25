@@ -29,7 +29,19 @@ const TeamList: FunctionComponent = function () {
                     <div {...s.leadersTextTitle}>Marcos Palante</div>
                     <div {...s.leadersTextDescription}>Development Manager</div>
                     <div {...s.leadersSocialMedia}>
-
+                    <a
+                        {...s.socialMedia}
+                        href="https://www.artstation.com/mspalante"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Image
+                          src="/media-AT.svg"
+                          alt="Linkedin"
+                          width={26}
+                          height={26}
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -152,6 +164,19 @@ const TeamList: FunctionComponent = function () {
                     <div {...s.leadersTextTitle}>Frank Williams</div>
                     <div {...s.leadersTextDescription}>Concept Artist</div>
                     <div {...s.leadersSocialMedia}>
+                    <a
+                        {...s.socialMedia}
+                        href="https://www.artstation.com/frankwilliam/albums/all"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Image
+                          src="/media-AT.svg"
+                          alt="Linkedin"
+                          width={26}
+                          height={26}
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>
