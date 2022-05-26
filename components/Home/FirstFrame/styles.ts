@@ -17,7 +17,8 @@ const styles = {
     majorContainer: "bg-full-img",
     photoLayer: "w-full h-full absolute first-img-layer text-dwhite",
     contentLayer: "w-full h-full relative",
-    videoScene: "flex justify-between w-full overflow-hidden"
+    videoScene: "flex justify-between w-full overflow-hidden",
+    destoriaHeroVideo: "flex video-box"
 }
 
 

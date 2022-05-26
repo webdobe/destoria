@@ -1560,3 +1560,69 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
       0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
   }
 }
+
+
+.video-box .video-js {
+  position: relative;
+  width: calc(100% - 2px);
+  margin: 1.5px;
+  left: 0px;
+  max-width: 499px;
+  height: auto;
+  z-index: 2;
+  background-color: #f0f0f0;
+  clip-path: polygon(0 67%, 0 11%, 5% 0, 95% 0, 100% 10%, 100% 52%, 97% 61%, 97% 90%, 93% 100%, 8% 100%, 3% 92%, 3% 75%);
+
+}
+
+.video-box video {
+  position: relative !important;
+}
+
+.video-box {
+  /* clip-path: polygon(0 67%, 0 11%, 5% 0, 95% 0, 100% 10%, 100% 52%, 97% 61%, 97% 90%, 93% 100%, 9% 100%, 3% 92%, 3% 75%); */
+}
+
+.video-box-frame {
+  position: absolute;
+  width: 100%;
+  max-width: 500px;
+  max-height: 282px;
+  height: 100%;
+  clip-path: polygon(0 67%, 0 11%, 5% 0, 95% 0, 100% 10%, 100% 52%, 97% 61%, 97% 90%, 93% 100%, 8% 100%, 3% 92%, 3% 75%);
+  background-color: #f0f0f0;
+  z-index: 1;
+}
+
+.video-box-frame-bg {
+  position: absolute;
+  width: 100%;
+  max-width: 500px;
+  max-height: 282px;
+  height: 100%;
+}
+.video-box-frame-bg-img {
+  position: relative;
+  left: -4px;
+  width: calc(100% + 8px);
+  max-width: 600px;
+  max-height: 400px;
+  height: 100%;
+  /* background-color: blue; */
+  background-image: url('/video-frame.png');
+  background-size: 118%;
+  background-position-x: -15px;
+  background-position-y: -18px;
+  z-index: 0;
+  background-repeat: no-repeat;
+}
+
+
+@media (min-width: 500px) {
+  .video-box .video-js {
+    min-width: 462px;
+  }
+  .video-box {
+    width: 500px;
+  }
+}
