@@ -24,7 +24,7 @@ const FirstFrame: FunctionComponent = function () {
             style={{ maxWidth: "1440px", width: "100%" }}
           >
             <div {...s.containerExploreTheMetaverseBordered}>
-              <ThreeD mtlPath="logo/freedom.mtl" objPath="logo/freedom.obj" />
+              <ThreeD mtlPath="logo/logo.mtl" objPath="logo/logo.obj" texturePath="logo/logo_Textures/mesh_basecolor.png" />
               {/* <div {...s.destoria}>
                 <img
                   {...s.destoriaLogo}
