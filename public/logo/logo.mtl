@@ -4,7 +4,7 @@
 # 
 
 newmtl mesh
-map_Kd logo_Textures/mesh_basecolor.png
+map_Kd ./logo_Textures/mesh_basecolor.png
 Ka 0.200000 0.200000 0.200000
 Kd 1.000000 1.000000 1.000000
 Ks 0.200000 0.200000 0.200000
