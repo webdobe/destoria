@@ -1,67 +1,84 @@
-import React, { Component } from "react";
 import * as THREE from "three";
-import OrbitControls from "three-orbitcontrols";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader'
+import { useEffect, useRef } from "react";
 
-class ThreeScene extends Component {
-  componentDidMount() {
-    const width = this.mount.clientWidth;
-    const height = this.mount.clientHeight;
-    this.scene = new THREE.Scene();
+interface PropsType {
+  width?: string;
+  height?: string;
+  wrapperClassName?: string;
+  mtlPath: string;
+  objPath: string;
+}
 
-    //Add Renderer
-    this.renderer = new THREE.WebGLRenderer({ antialias: true });
-    this.renderer.setClearColor("#263238");
-    this.renderer.setSize(width, height);
-    this.mount.appendChild(this.renderer.domElement);
+const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath }: PropsType) => {
+  let scene: THREE.Scene, camera: THREE.Camera, renderer: THREE.WebGLRenderer, frameId: any, freedomMesh: THREE.Group;
+  const mountEl = useRef<any>();
+  useEffect(() => {
+    (async () => {
+      const clientWidth = mountEl.current.clientWidth;
+      const clientHeight = mountEl.current.clientHeight;
+      scene = new THREE.Scene();
+  
+      //Add Renderer
+      renderer = new THREE.WebGLRenderer({ alpha: true });
+      renderer.setClearColor(0xffffff, 0);
+      renderer.setSize(clientWidth, clientHeight);
+      mountEl.current.appendChild(renderer.domElement);
+  
+      //add Camera
+      camera = new THREE.PerspectiveCamera(75, clientWidth / clientHeight, 0.1, 3000);
+      camera.position.z = 20;
+      camera.position.y = 0;
+  
+      //Camera Controls
+      const controls = new OrbitControls(camera, renderer.domElement);
+  
+      //LIGHTS
+      const lights = [];
+      lights[0] = new THREE.PointLight(0x304ffe, 1000, 0);
+      lights[1] = new THREE.PointLight(0xffffff, 1000, 0);
+      lights[2] = new THREE.PointLight(0xffffff, 1000, 0);
+      lights[0].position.set(0, 200, 0);
+      lights[1].position.set(100, 200, 100);
+      lights[2].position.set(-100, -200, -100);
+      scene.add(lights[0]);
+      scene.add(lights[1]);
+      scene.add(lights[2]);
+  
+      //Simple Box with WireFrame
+      await addModels();
+  
+      renderScene();
+      //start animation
+      start();
+    })();
+    return () => {
+      stop();
+      mountEl.current.removeChild(renderer.domElement);
+    }
+  }, []);
 
-    //add Camera
-    this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 3000);
-    this.camera.position.z = 20;
-    this.camera.position.y = 5;
-
-    //Camera Controls
-    const controls = new OrbitControls(this.camera, this.renderer.domElement);
-
-    //LIGHTS
-    var lights = [];
-    lights[0] = new THREE.PointLight(0x304ffe, 1, 0);
-    lights[1] = new THREE.PointLight(0xffffff, 1, 0);
-    lights[2] = new THREE.PointLight(0xffffff, 1, 0);
-    lights[0].position.set(0, 200, 0);
-    lights[1].position.set(100, 200, 100);
-    lights[2].position.set(-100, -200, -100);
-    this.scene.add(lights[0]);
-    this.scene.add(lights[1]);
-    this.scene.add(lights[2]);
-
-    //Simple Box with WireFrame
-    this.addModels();
-
-    this.renderScene();
-    //start animation
-    this.start();
-  }
-
-  addModels() {
-    // -----Step 4--------
+  const addModels = () => (
+    new Promise((resolve, reject) => {
     //Loading 3d Models
     //Loading Material First
-    var mtlLoader = new MTLLoader();
-    mtlLoader.load("https://firebasestorage.googleapis.com/v0/b/burger-5e6b7.appspot.com/o/logodec.mtl", materials => {
+    const mtlLoader = new MTLLoader();
+    mtlLoader.load(mtlPath, materials => {
       materials.preload();
       console.log("Material loaded");
       //Load Object Now and Set Material
-      var objLoader = new OBJLoader();
+      const objLoader = new OBJLoader();
       objLoader.setMaterials(materials);
       objLoader.load(
-        "https://firebasestorage.googleapis.com/v0/b/burger-5e6b7.appspot.com/o/logodec.obj?alt=media&token=22f29a41-68e0-40af-8e8c-619f1a2cd809",
+        objPath,
         object => {
-          this.freedomMesh = object;
-          this.freedomMesh.position.setY(3); //or  this
-          this.freedomMesh.scale.set(0.5, 0.5, 0.5);
-          this.scene.add(this.freedomMesh);
+          freedomMesh = object;
+          freedomMesh.position.setY(-15); //or  this
+          freedomMesh.scale.set(0.1, 0.09, 0.1);
+          scene.add(freedomMesh);
+          resolve(scene);
         },
         xhr => {
           console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
@@ -69,45 +86,48 @@ class ThreeScene extends Component {
         // called when loading has errors
         error => {
           console.log("An error happened" + error);
+          reject(error);
         }
       );
     });
-  }
+    })
+  );
 
-  componentWillUnmount() {
-    this.stop();
-    this.mount.removeChild(this.renderer.domElement);
-  }
-  start = () => {
-    if (!this.frameId) {
-      this.frameId = requestAnimationFrame(this.animate);
+  const start = () => {
+    if (!frameId) {
+      frameId = window.requestAnimationFrame(animate);
     }
   };
-  stop = () => {
-    cancelAnimationFrame(this.frameId);
+
+  const stop = () => {
+    cancelAnimationFrame(frameId);
   };
-  animate = () => {
-    // -----Step 3--------
+
+  const animate = () => {
     //Rotate Models
-    if (this.cube) this.cube.rotation.y += 0.01;
-    if (this.freedomMesh) this.freedomMesh.rotation.y += 0.01;
+    if (freedomMesh) freedomMesh.rotation.y += 0.03;
 
-    this.renderScene();
-    this.frameId = window.requestAnimationFrame(this.animate);
-  };
-  renderScene = () => {
-    if (this.renderer) this.renderer.render(this.scene, this.camera);
+    renderScene();
+    frameId = window.requestAnimationFrame(animate);
   };
 
-  render() {
-    return (
-      <div
-        style={{ width: "800px", height: "800px" }}
-        ref={mount => {
-          this.mount = mount;
-        }}
-      />
-    );
-  }
+  const renderScene = () => {
+    if (renderer) renderer.render(scene, camera);
+  };
+
+  return (
+    <div
+      className={wrapperClassName}
+      style={{ width, height }}
+      ref={mountEl}
+    />
+  );
 }
-export default ThreeScene;
+
+ThreeD.defaultProps = {
+  width: '295px',
+  height: '170px',
+  wrapperClassName: '',
+}
+
+export default ThreeD;
