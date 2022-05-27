@@ -7,7 +7,7 @@ import Header from "components/Header";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 const ShipVideo = dynamic(() => import("./video"), { ssr: false });
-const Threed = dynamic(() => import("./3d"), { ssr: false });
+const ThreeD = dynamic(() => import("./3d"), { ssr: false });
 const FirstFrame: FunctionComponent = function () {
   const myRef = useRef(null);
 
@@ -24,8 +24,8 @@ const FirstFrame: FunctionComponent = function () {
             style={{ maxWidth: "1440px", width: "100%" }}
           >
             <div {...s.containerExploreTheMetaverseBordered}>
-              {/* <Threed/> */}
-              <div {...s.destoria}>
+              <ThreeD mtlPath="logo/freedom.mtl" objPath="logo/freedom.obj" />
+              {/* <div {...s.destoria}>
                 <img
                   {...s.destoriaLogo}
                   src="/large-logo-svg.svg"
@@ -33,7 +33,7 @@ const FirstFrame: FunctionComponent = function () {
                   width={295}
                   height={170}
                 />
-              </div>
+              </div> */}
               <div {...s.exploreTheMetaverseText}>Explore the Metaverse</div>
               <div {...s.connectWallet}>
                 <Link href="/lore">
