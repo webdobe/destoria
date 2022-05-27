@@ -56,7 +56,6 @@ function DropdownRoot() {
             width: { duration: isFirstInteraction ? 0 : refDuration * 0.93 },
             height: { duration: isFirstInteraction ? 0 : refDuration * 0.93 },
             pointerEvents: { delay: 0.08 },
-            delay: "1s"
           }}
           
         >

@@ -103,7 +103,6 @@ const CharactersCarousel: FunctionComponent = function () {
                           alt="Cowboy"
                           width={360}
                           height={360}
-                          style={{ position: "absolute", minWidth: "360px" }}
                         />
                       </div>
                       <div {...s.charactersTextContent}>

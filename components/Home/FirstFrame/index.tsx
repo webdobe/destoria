@@ -99,8 +99,8 @@ const FirstFrame: FunctionComponent = function () {
               <div className="video-box-frame">
               </div>
               <div className="video-box-frame-bg">
-              <div className="video-box-frame-bg-img">
-              </div>
+              <img className="video-box-frame-bg-img">
+              </img>
               </div>
               </div>
             </div>
