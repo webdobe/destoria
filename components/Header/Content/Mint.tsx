@@ -5,7 +5,7 @@ import Image from "next/image";
 const Mint: FunctionComponent = function () {
   return (
     <div {...s.wrapper}>
-      <ul {...s.wrapperMarketplace}>
+      <ul {...s.wrapperMint}>
         <li {...s.shortItem} onClick={() => window.location.href = `/mint`}>NFT Drops</li>
       </ul>
     </div>

@@ -116,13 +116,12 @@ const Header: FunctionComponent = function () {
               >
                 Connect Wallet
               </span>
-              <Image
+              <img
                 {...s.connectWalletImage}
                 src="/connect-wallet.svg"
                 alt="Burger Menu"
                 width={200}
                 height={45}
-                style={{ position: "absolute" }}
               />
             </div>
           </div>

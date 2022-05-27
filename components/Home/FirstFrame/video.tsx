@@ -31,7 +31,7 @@ const FirstFrame: FunctionComponent = function () {
         autoPlay={true}
         loop={true}
       >
-        <source src="https://cdn.streamelements.com/uploads/59fda13d-01e4-4948-9e22-27cc46bf9a73.webm" type="video/webm" />
+        <source src="https://cdn.streamelements.com/uploads/2de557d1-f5cd-4d41-ae8d-4e6c4ad6db73.webm" type="video/webm" />
       </video>
 
       <video
@@ -46,7 +46,7 @@ const FirstFrame: FunctionComponent = function () {
         autoPlay={true}
         loop={true}
       >
-        <source src="https://cdn.streamelements.com/uploads/14ddb106-7ab8-497e-aa6a-0cc394fef01c.webm" type="video/webm" />
+        <source src="https://cdn.streamelements.com/uploads/36891ad6-d100-4d4f-a19e-93eb27f706cc.webm" type="video/webm" />
       </video>
     </div>
   );

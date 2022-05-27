@@ -46,10 +46,18 @@ textarea, input {
 }
 
 .bg-full-img {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 75%, #050d1d),
-    url("/bgfull.png");
+  background: linear-gradient(
+      180deg,
+      rgba(5, 13, 29, 1) 0%,
+      rgba(5, 13, 29, 0.6) 38%,
+      rgba(5, 13, 29, 0.2) 50%,
+      rgba(5, 13, 29, 0.2) 62%,
+      rgba(5, 13, 29, 1) 100%
+    ),
+    url("/bg-full-destoria.png");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position-x: left;
 }
 
 .bg-full-forest {
@@ -895,6 +903,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 .video-firstframe-planet {
   position: relative;
   left: -15vw;
+  opacity: 1;
 }
 
 .video-firstframe-planet video{
@@ -1485,13 +1494,14 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 }
 
 .neon-1:hover {
-  animation: neon1 1.2s ease-in-out infinite alternate;
+  animation: neon5 1.2s ease-in-out infinite alternate;
   transition: 0.6s;
 }
 
-.neon-1-img:hover span {
-  animation: neon1 1.2s ease-in-out infinite alternate;
+.neon-1-img:hover > span {
+  animation: neon5 1.2s ease-in-out infinite alternate;
   transition: 0.6s;
+  display: block !important;
 }
 
 
@@ -1571,7 +1581,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   height: auto;
   z-index: 2;
   background-color: #f0f0f0;
-  clip-path: polygon(0 67%, 0 11%, 5% 0, 95% 0, 100% 10%, 100% 52%, 97% 61%, 97% 90%, 93% 100%, 8% 100%, 3% 92%, 3% 75%);
+  clip-path: polygon(0 67%, 0 11%, 5% 0, 95% 0, 100% 10%, 100% 52%, 97% 61%, 97% 90%, 93% 100%, 8.5% 100%, 3% 92%, 3% 75%);
 
 }
 
@@ -1589,8 +1599,8 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   max-width: 500px;
   max-height: 282px;
   height: 100%;
-  clip-path: polygon(0 67%, 0 11%, 5% 0, 95% 0, 100% 10%, 100% 52%, 97% 61%, 97% 90%, 93% 100%, 8% 100%, 3% 92%, 3% 75%);
-  background-color: #f0f0f0;
+  clip-path: polygon(0 67%, 0 11%, 5% 0, 95% 0, 100% 10%, 100% 52%, 97% 61%, 97% 90%, 93% 100%, 8.5% 100%, 3% 92%, 3% 75%);
+  background-color: white;
   z-index: 1;
 }
 
@@ -1601,15 +1611,16 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   max-height: 282px;
   height: 100%;
 }
+
 .video-box-frame-bg-img {
   position: relative;
-  left: -4px;
-  width: calc(100% + 8px);
+  left: -3px;
+  width: calc(100% + 10px);
   max-width: 600px;
   max-height: 400px;
-  height: 100%;
-  /* background-color: blue; */
-  background-image: url('/video-frame.png');
+  height: calc(100% + 2px);
+  top: -1px;
+  /* background-image: url('/video-frame.png'); */
   background-size: 118%;
   background-position-x: -15px;
   background-position-y: -18px;
@@ -1625,4 +1636,9 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   .video-box {
     width: 500px;
   }
+}
+
+.vjs-big-play-button {
+  top: calc(50% - 22px) !important;
+  left: calc(50% - 44px) !important;
 }

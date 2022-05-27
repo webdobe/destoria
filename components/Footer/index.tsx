@@ -15,52 +15,62 @@ const Footer: FunctionComponent = function () {
               <div {...s.mediaBox}>
                 <div style={{ cursor: "pointer" }}>
                   <Link passHref href="https://mobile.twitter.com/destoria_nft">
+                    <a target="_blank" rel="noreferrer">
                     <Image
                       src="/media-TT.svg"
                       alt="Twitter"
                       width={27.98}
                       height={27.98}
                     />
+                    </a>
                   </Link>
                 </div>
                 <div style={{ cursor: "pointer" }}>
                   <Link passHref href="https://www.instagram.com/destorianft/">
+                    <a target="_blank" rel="noreferrer">
                     <Image
                       src="/media-IG.svg"
                       alt="Twitter"
                       width={27.98}
                       height={27.98}
                     />
+                    </a>
                   </Link>
                 </div>
                 <div style={{ cursor: "pointer" }}>
                   <Link passHref href="https://discord.com/invite/Y7QSJcWqFH">
+                    <a target="_blank" rel="noreferrer">
                     <Image
                       src="/media-DS.svg"
                       alt="Twitter"
                       width={27.98}
                       height={27.98}
                     />
+                    </a>
                   </Link>
                 </div>
                 <div style={{ cursor: "pointer" }}>
                   <Link passHref href="https://www.youtube.com/channel/UCt9yMDkZilkg7keYwOMZ_qA">
+                    <a target="_blank" rel="noreferrer">
                     <Image
                       src="/media-YT.svg"
                       alt="Twitter"
                       width={27.98}
                       height={27.98}
                     />
+                    </a>
                   </Link>
                 </div>
                 <div style={{ cursor: "pointer" }}>
                   <Link passHref href="https://medium.com/@destorianft">
+                    <a target="_blank" rel="noreferrer">
                     <Image
                       src="/media-MD.svg"
                       alt="Twitter"
                       width={27.98}
                       height={27.98}
                     />
+                    </a>
                   </Link>
                 </div>
               </div>
