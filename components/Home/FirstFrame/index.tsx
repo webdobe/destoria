@@ -92,14 +92,14 @@ const FirstFrame: FunctionComponent = function () {
                   loop={false}
                 >
                   <source
-                    src="https://cdn.streamelements.com/uploads/59fda13d-01e4-4948-9e22-27cc46bf9a73.webm"
-                    type="video/webm"
+                    src="https://media.milanote.com/p/files/1NUoIT1PgQ7U2i/b30/Webvideo.mp4"
+                    type="video/mp4"
                   />
                 </video>
               <div className="video-box-frame">
               </div>
               <div className="video-box-frame-bg">
-              <img className="video-box-frame-bg-img">
+              <img className="video-box-frame-bg-img" src="/frame-video-two.png">
               </img>
               </div>
               </div>

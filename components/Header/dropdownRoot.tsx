@@ -15,11 +15,16 @@ function DropdownRoot() {
 
   let [width, height, x] = [0, 0, 0];
 
+
+  const differentials = [
+    20, 20, 20, 40, 20, 20, 20, 40, 20, 20, 20, 40, 20, 20, 20, 40, 20, 20
+  ]
+
   if (cachedOption) {
     const { optionCenterX, contentDimensions } = cachedOption;
     width = contentDimensions?.width;
     height = contentDimensions?.height;
-    x = optionCenterX - width / 2 - (targetId == 4 ? 30 : 20);
+    x = optionCenterX - width / 2 - (targetId == 2 ? 35 : targetId == 4 ? 30 : targetId == 6 ? 35 : targetId == 8 ? 30 : targetId == 10 ? 25 : 20);
   }
 
   const [hovering, setHovering] = useState(false);
