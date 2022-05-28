@@ -24,16 +24,11 @@ const FirstFrame: FunctionComponent = function () {
             style={{ maxWidth: "1440px", width: "100%" }}
           >
             <div {...s.containerExploreTheMetaverseBordered}>
-              <ThreeD mtlPath="logo/freedom.mtl" objPath="logo/freedom.obj" />
-              {/* <div {...s.destoria}>
-                <img
-                  {...s.destoriaLogo}
-                  src="/large-logo-svg.svg"
-                  alt="Burger Menu"
-                  width={295}
-                  height={170}
-                />
-              </div> */}
+              <ThreeD
+                mtlPath="logo/logo.mtl"
+                objPath="logo/logo.obj"
+                texturePath="logo/logo_Textures/mesh_roughness.png"
+              />
               <div {...s.exploreTheMetaverseText}>Explore the Metaverse</div>
               <div {...s.connectWallet}>
                 <Link href="/lore">
