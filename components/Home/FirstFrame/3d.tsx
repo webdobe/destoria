@@ -18,15 +18,15 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
   const mountEl = useRef<any>();
   useEffect(() => {
     (async () => {
-      const clientWidth = mountEl.current.clientWidth;
-      const clientHeight = mountEl.current.clientHeight;
+      const clientWidth = mountEl.current?.clientWidth;
+      const clientHeight = mountEl.current?.clientHeight;
   
       //Add Renderer
       renderer = new THREE.WebGLRenderer();
       renderer.setClearColor("white", 0);
 
       renderer.setSize(clientWidth, clientHeight);
-      mountEl.current.appendChild(renderer.domElement);
+      mountEl.current?.appendChild(renderer.domElement);
   
       //add Camera
       camera = new THREE.PerspectiveCamera(75, clientWidth / clientHeight, 0.1, 100);
@@ -45,7 +45,7 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
     })();
     return () => {
       stop();
-      mountEl.current.removeChild(renderer.domElement);
+      mountEl.current?.removeChild(renderer.domElement);
     }
   }, []);
 

@@ -13,6 +13,7 @@ body {
   background-color: red;
 }
 
+main,
 body {
   overflow-x: hidden;
 }
@@ -1595,7 +1596,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 
 .video-box-frame {
   position: absolute;
-  width: 100%;
+  width: calc(100% - 15px);
   max-width: 500px;
   max-height: 282px;
   height: 100%;
@@ -1606,7 +1607,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 
 .video-box-frame-bg {
   position: absolute;
-  width: 100%;
+  width: calc(100% - 6px);
   max-width: 500px;
   max-height: 282px;
   height: 100%;
@@ -1615,7 +1616,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 .video-box-frame-bg-img {
   position: relative;
   left: -3px;
-  width: calc(100% + 10px);
+  width: 100%;
   max-width: 600px;
   max-height: 400px;
   height: calc(100% + 2px);
@@ -1630,11 +1631,32 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 
 
 @media (min-width: 500px) {
+  .video-box-frame-bg {
+    width: 100%;
+  }
+  .video-box-frame-bg-img {
+    width: calc(100% + 10px);
+  }
   .video-box .video-js {
     min-width: 462px;
   }
   .video-box {
     width: 500px;
+  }
+  .video-box-frame {
+    width: 100%;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1099px) {
+  .video-box-frame {
+    width: 484px;
+  }
+  .video-box-frame-bg-img {
+    width: calc(100% - 5px);
+  }
+  .video-box {
+    margin: 40px auto;
   }
 }
 

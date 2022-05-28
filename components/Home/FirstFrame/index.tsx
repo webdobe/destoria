@@ -1,6 +1,6 @@
 // @ts-ignore
 
-import { FunctionComponent, useEffect, useRef, useState } from "react";
+import { FunctionComponent, useEffect, useLayoutEffect, useRef, useState } from "react";
 import s from "./styles";
 import Image from "next/image";
 import Header from "components/Header";
@@ -10,6 +10,23 @@ const ShipVideo = dynamic(() => import("./video"), { ssr: false });
 const ThreeD = dynamic(() => import("./3d"), { ssr: false });
 const FirstFrame: FunctionComponent = function () {
   const myRef = useRef(null);
+  const myVideo = useRef(null);
+  const [myHeight, setMyHeight] = useState(0)
+
+  useEffect(() => { 
+    getFinalHeight()
+  }, [])
+
+  const getFinalHeight = () => {
+    if (!myVideo.current?.clientHeight) {
+      console.log("trying")
+      setTimeout(() => {
+        return getFinalHeight()
+      }, 200);
+    }
+    console.log('done:', myVideo.current?.clientHeight)
+    setMyHeight(myVideo.current?.clientHeight)
+  }
 
   return (
     <div {...s.majorContainer} ref={myRef}>
@@ -41,6 +58,7 @@ const FirstFrame: FunctionComponent = function () {
                       zIndex: 1,
                     }}
                   >
+
                     Discover the Lore
                   </span>
                 </Link>
@@ -67,8 +85,9 @@ const FirstFrame: FunctionComponent = function () {
                   Destoria is more than just a brand, it’s a destination. With a
                   battle royale and MMORPG in development, Destoria aims to
                   deliver real P2E mechanics through Unreal Engine.
+
                 </p>
-                <p>
+                <p onClick={() => console.log(myVideo.current.clientHeight)}>
                   Destoria is developing the largest open world metaverse on the
                   Ethereum blockchain. This metaverse has the ability to host
                   experiences for entire projects, making this a launchpad for
@@ -85,16 +104,17 @@ const FirstFrame: FunctionComponent = function () {
                   data-setup="{}"
                   autoPlay={false}
                   loop={false}
+                  ref={myVideo}
                 >
                   <source
                     src="https://media.milanote.com/p/files/1NUoIT1PgQ7U2i/b30/Webvideo.mp4"
                     type="video/mp4"
                   />
                 </video>
-              <div className="video-box-frame">
+              <div className="video-box-frame" style={{height: myHeight + 2 + 'px'}}>
               </div>
-              <div className="video-box-frame-bg">
-              <img className="video-box-frame-bg-img" src="/frame-video-two.png">
+              <div className="video-box-frame-bg" style={{height: myHeight + 2 + 'px'}}>
+                <img className="video-box-frame-bg-img" src="/frame-video-two.png" alt="video-frame">
               </img>
               </div>
               </div>
