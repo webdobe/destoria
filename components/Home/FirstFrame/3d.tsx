@@ -56,28 +56,35 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
       const mtlLoader = new MTLLoader();
       mtlLoader.load(mtlPath, async (materials) => {
         materials.preload();
-        console.log("=== Material loaded ===");
+
         //Load Object Now and Set Material
         const objLoader = new OBJLoader();
         objLoader.setMaterials(materials).load(
           objPath,
           (object) => {
             const logo = object;
-            var texture = new THREE.TextureLoader().load(texturePath || '');
 
+            // Add texture to object
+            const texture = new THREE.TextureLoader().load(texturePath || '');
             logo.traverse(function (child) {   // aka setTexture
               if (child instanceof THREE.Mesh) {
                   child.material.map = texture;
               }
             });
+
+            // Scale and set position.
             logo.position.set(-10, -12, 0);
             logo.scale.set(8, 8, 8);
+
+            // Add logo to pivot object to rotate center.
             pivot = new THREE.Object3D();
             pivot.add(logo);
+
+            // Add pivot to scene.
             scene = new THREE.Scene();
             scene.add(pivot);
+
             addLight();
-            console.log('=== object loaded ===');
             resolve(scene);
           },
           xhr => {
