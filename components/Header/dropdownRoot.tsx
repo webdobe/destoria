@@ -36,8 +36,8 @@ function DropdownRoot() {
           rotateX: isActive ? 0 : -15,
         }}
         transition={{
-          opacity: { duration: refDuration, delay: 0.05 },
-          rotateX: { duration: refDuration, delay: 0.05 },
+          opacity: { duration: refDuration, delay: 0.00 },
+          rotateX: { duration: refDuration, delay: 0.00 },
         }}
       >
         <motion.div
@@ -55,7 +55,7 @@ function DropdownRoot() {
             x: -x,
             width: { duration: isFirstInteraction ? 0 : refDuration * 0.93 },
             height: { duration: isFirstInteraction ? 0 : refDuration * 0.93 },
-            pointerEvents: { delay: 0.08 },
+            pointerEvents: { delay: 0.00 },
           }}
           
         >
