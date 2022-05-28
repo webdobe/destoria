@@ -145,7 +145,7 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
 
   const animate = () => {
     //Rotate Models
-    if (pivot) pivot.rotation.y += 0.01;
+    if (pivot) pivot.rotation.y += 0.005;
 
     renderScene();
     frameId = window.requestAnimationFrame(animate);
