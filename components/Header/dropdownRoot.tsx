@@ -19,7 +19,7 @@ function DropdownRoot() {
     const { optionCenterX, contentDimensions } = cachedOption;
     width = contentDimensions?.width;
     height = contentDimensions?.height;
-    x = optionCenterX - width / 2 - (targetId == 2 ? 35 : targetId == 4 ? 30 : targetId == 6 ? 35 : targetId == 8 ? 30 : targetId == 35 ? 30 : 35);
+    x = optionCenterX - width / 2 - (targetId == 1 ? 35 : targetId == 2 ? 35 : targetId == 4 ? 30 : targetId == 5 ? 20 :targetId == 6 ? 35 : targetId == 8 ? 30 : targetId == 35 ? 30 : 20);
   }
 
   const [hovering, setHovering] = useState(false);
@@ -58,7 +58,6 @@ function DropdownRoot() {
             pointerEvents: { delay: 0.00 },
           }}
           >
-          <p className="temp-hidden">{targetId}</p>
           <DropdownBackground />
           <motion.div
             animate={{
