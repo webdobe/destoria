@@ -100,14 +100,13 @@ const FirstFrame: FunctionComponent = function () {
                   className="video-js"
                   controls={true}
                   preload="auto"
-                  muted
                   data-setup="{}"
                   autoPlay={false}
                   loop={false}
                   ref={myVideo}
                 >
                   <source
-                    src="https://media.milanote.com/p/files/1NUoIT1PgQ7U2i/b30/Webvideo.mp4"
+                    src="https://media.milanote.com/p/files/1NV33s1yu5lx4F/u2K/webvideo2.mp4"
                     type="video/mp4"
                   />
                 </video>
