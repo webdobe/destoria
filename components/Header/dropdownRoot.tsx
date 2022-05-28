@@ -19,7 +19,7 @@ function DropdownRoot() {
     const { optionCenterX, contentDimensions } = cachedOption;
     width = contentDimensions?.width;
     height = contentDimensions?.height;
-    x = optionCenterX - width / 2 - (targetId == 2 ? 35 : targetId == 4 ? 30 : targetId == 6 ? 35 : targetId == 8 ? 30 : targetId == 10 ? 25 : 20);
+    x = optionCenterX - width / 2 - (targetId == 2 ? 55 : targetId == 4 ? 30 : targetId == 6 ? 55 : targetId == 8 ? 30 : targetId == 10 ? 30 : 20);
   }
 
   const [hovering, setHovering] = useState(false);
