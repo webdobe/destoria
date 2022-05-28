@@ -63,14 +63,14 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
           objPath,
           (object) => {
             const logo = object;
-
-            // Add texture to object
-            const texture = new THREE.TextureLoader().load(texturePath || '');
+            const material = defaultMaterial();
             logo.traverse(function (child) {   // aka setTexture
               if (child instanceof THREE.Mesh) {
-                  child.material.map = texture;
+                  child.material = material;
               }
             });
+
+            //const logo = new THREE.Mesh(object, texture);
 
             // Scale and set position.
             logo.position.set(-10, -12, 0);
@@ -100,11 +100,37 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
     })
   );
 
+  const defaultMaterial = () => {
+    // Add texture to object
+    const base = new THREE.TextureLoader().load("logo/logo_Textures/mesh_basecolor.png");
+    const emissive = new THREE.TextureLoader().load("logo/logo_Textures/mesh_emissive.png");
+    const roughness = new THREE.TextureLoader().load("logo/logo_Textures/unreal_mesh_orm.png");
+    const metalic = new THREE.TextureLoader().load("logo/logo_Textures/mesh_metallic.png");
+    const normal = new THREE.TextureLoader().load("logo/logo_Textures/mesh_normal.png");
+    return new THREE.MeshStandardMaterial( {
+      color: 0xffffff,
+      map: base,
+      emissive: 0x00c5ff,
+      emissiveMap: emissive,
+      emissiveIntensity: 1,
+      roughness: 0.01,
+      roughnessMap: roughness,
+      metalness: 0.1,
+      metalnessMap: metalic,
+      normalMap: normal,
+    });
+  }
+
   const addLight = () => {
     //LIGHTS
-    const light = new THREE.PointLight();
-    light.position.set(0, 0, 100);
+    const light = new THREE.PointLight(0xffffff, 3, 100, 5);
+    light.position.set(2, 2, 20);
     scene.add(light);
+
+    // add a light helper
+    // const sphereSize = 1;
+    // const pointLightHelper = new THREE.PointLightHelper( light, sphereSize );
+    // scene.add( pointLightHelper );
   }
 
   const start = () => {
