@@ -14,7 +14,7 @@ body {
 }
 
 body {
-  /* background-image: url("/destoriafullbg.png"); */
+  overflow-x: hidden;
 }
 
 a {
