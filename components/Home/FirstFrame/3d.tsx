@@ -35,6 +35,7 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
   
       //Camera Controls
       const controls = new OrbitControls(camera, renderer.domElement);
+      controls.enabled = false;
   
       //Simple Box with WireFrame
       await addModels();
@@ -63,18 +64,16 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
           objPath,
           (object) => {
             const logo = object;
+            const scale = 8;
             const material = defaultMaterial();
-            logo.traverse(function (child) {   // aka setTexture
+            logo.traverse(function (child) {
               if (child instanceof THREE.Mesh) {
-                  child.material = material;
+                const {x,y,z} = getCenterPoint(child, scale);
+                child.position.set(x, y, z);
+                child.scale.set(scale, scale, scale);
+                child.material = material;
               }
             });
-
-            //const logo = new THREE.Mesh(object, texture);
-
-            // Scale and set position.
-            logo.position.set(-10, -12, 0);
-            logo.scale.set(8, 8, 8);
 
             // Add logo to pivot object to rotate center.
             pivot = new THREE.Object3D();
@@ -99,6 +98,19 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
       });
     })
   );
+
+  const getCenterPoint = (mesh, scale) => {
+    let geometry = mesh.geometry;
+    geometry.computeBoundingBox();
+    let center = new THREE.Vector3();
+    geometry.boundingBox.getCenter(center);
+    mesh.localToWorld(center);
+    return {
+      x: center.x * -(scale),
+      y: center.y * -(scale),
+      z: center.z * -(scale),
+    };
+  }
 
   const defaultMaterial = () => {
     // Add texture to object
@@ -166,7 +178,7 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
 
 ThreeD.defaultProps = {
   width: '295px',
-  height: '170px',
+  height: '200px',
   wrapperClassName: '',
 }
 
