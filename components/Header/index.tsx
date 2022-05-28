@@ -75,7 +75,7 @@ const Header: FunctionComponent = function () {
               <DropdownOption
                   name="About"
                   content={About}
-                  backgroundHeight={115}
+                  backgroundHeight={140}
                   backgroundWidth={125}
                 />
                 <DropdownOption
