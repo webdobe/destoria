@@ -15,11 +15,6 @@ function DropdownRoot() {
 
   let [width, height, x] = [0, 0, 0];
 
-
-  const differentials = [
-    20, 20, 20, 40, 20, 20, 20, 40, 20, 20, 20, 40, 20, 20, 20, 40, 20, 20
-  ]
-
   if (cachedOption) {
     const { optionCenterX, contentDimensions } = cachedOption;
     width = contentDimensions?.width;
