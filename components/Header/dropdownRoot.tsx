@@ -57,8 +57,8 @@ function DropdownRoot() {
             height: { duration: isFirstInteraction ? 0 : refDuration * 0.93 },
             pointerEvents: { delay: 0.00 },
           }}
-          
-        >
+          >
+          <p className="temp-hidden">{targetId}</p>
           <DropdownBackground />
           <motion.div
             animate={{

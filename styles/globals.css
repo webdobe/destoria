@@ -1664,3 +1664,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   top: calc(50% - 22px) !important;
   left: calc(50% - 44px) !important;
 }
+
+.temp-hidden {
+  display: none;
+}
