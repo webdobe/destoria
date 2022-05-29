@@ -10,9 +10,10 @@ export default class SimpleSlider extends Component {
   render() {
     return (
       <Carousel
-        // autoPlay={true}
+        autoPlay={true}
         showIndicators={false}
         infiniteLoop={true}
+        swipeable={false}
       >
         <div className="flex flex-col items-center">
           <div {...s.charactersContent}>
@@ -37,12 +38,12 @@ export default class SimpleSlider extends Component {
                 patrolling Ordos Prime on their newly developed hover bikes.
               </p>
               <div {...s.characterImage}>
-                <Image
+                {/* <Image
                   src="/characters-outrider-status.svg"
                   alt="Burger Menu"
                   width={440}
                   height={71}
-                />
+                /> */}
               </div>
             </div>
           </div>
@@ -75,12 +76,12 @@ export default class SimpleSlider extends Component {
               </p>
               <div>
                 <div {...s.characterImageBlurred}>
-                  <Image
+                  {/* <Image
                     src="/characters-outrider-status.svg"
                     alt="Burger Menu"
                     width={440}
                     height={71}
-                  />
+                  /> */}
                 </div>
               </div>
             </div>
@@ -94,7 +95,7 @@ export default class SimpleSlider extends Component {
             >
               <Image
                 {...s.characterImage}
-                src="/characters-newone.png"
+                src="/characters-newtwo.png"
                 alt="Burger Menu"
                 width={440}
                 height={440}
@@ -114,12 +115,12 @@ export default class SimpleSlider extends Component {
               </p>
               <div>
                 <div {...s.characterImageBlurred}>
-                  <Image
+                  {/* <Image
                     src="/characters-outrider-status.svg"
                     alt="Burger Menu"
                     width={440}
                     height={71}
-                  />
+                  /> */}
                 </div>
               </div>
             </div>

@@ -14,7 +14,7 @@ const styles = {
     charactersTextContentTitle: "text-dhOrange text-base uppercase tracking-widest text-left px-6 md:px-0",
     charactersTextContentSubtitle: "font-bold capitalize tracking-wide text-4xl py-4 text-left px-6 md:px-0",
     charactersTextContentText: "text-base tracking-wide pb-5 text-left px-6 md:px-0",
-    charactersTextContentTextBlurred: "text-base tracking-wide pb-5 blur-sm text-left",
+    charactersTextContentTextBlurred: "text-base tracking-wide pb-5 blur-sm text-left px-6 md:px-0",
     characterImage: "relative -left-10 justify-center align-center grow w-full h-32 text-left",
     characterImageBlurred: "relative -left-10 justify-center align-center grow w-full blur-sm h-32",
     swiperAndControls: "w-full flex items-center justify-between pointer-events-auto",
