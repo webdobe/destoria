@@ -134,16 +134,18 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
   }
 
   const addLight = () => {
-    //LIGHTS
+    // Add camera to scene
     scene.add(camera);
+
+    // Add light to camera.
     const light = new THREE.PointLight(0xffffff, 10, 200, 12);
     light.position.set(5, 5, 5);
     camera.add(light);
 
     // add a light helper
-    const sphereSize = 1;
-    const pointLightHelper = new THREE.PointLightHelper(light, sphereSize);
-    camera.add(pointLightHelper);
+    // const sphereSize = 1;
+    // const pointLightHelper = new THREE.PointLightHelper(light, sphereSize);
+    // camera.add(pointLightHelper);
   }
 
   const start = () => {
