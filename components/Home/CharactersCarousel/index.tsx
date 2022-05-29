@@ -1,231 +1,73 @@
 import s from "./styles";
 import { FunctionComponent, useEffect, useRef } from "react";
-import Image from "next/image";
+import dynamic from "next/dynamic";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+const Carousel = dynamic(() => import("./Carousel"), { ssr: false });
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-import { EffectCoverflow, Pagination, Navigation } from "swiper";
 
 const CharactersCarousel: FunctionComponent = function () {
-  const containerRef = useRef(null)
+  const containerRef = useRef()
 
   useEffect(() => {
-    function left () {
-      if (containerRef.current.querySelector(".bg-characters .swiper-button-prev")) {
-        containerRef.current.querySelector('.bg-characters .charac-cursor-right').classList.remove('charac-button-disabled')
-        containerRef.current
-          .querySelector(".bg-characters .swiper-button-prev")
-          .click();
-      }
-      if (containerRef.current.querySelector('.bg-characters .swiper-button-prev').classList.contains('swiper-button-disabled')) {
-        containerRef.current.querySelector('.bg-characters .charac-cursor-left').classList.add('charac-button-disabled')
-      }
-    }
-    function right () {
-      containerRef.current.querySelector('.bg-characters .charac-cursor-left').classList.remove('charac-button-disabled')
-      if (containerRef.current.querySelector(".bg-characters .swiper-button-next")) {
-        containerRef.current
-          .querySelector(".bg-characters .swiper-button-next")
-          .click();
-      }
-      setTimeout(() => {
-        if (containerRef.current.querySelector('.bg-characters .swiper-button-next').classList.contains('swiper-button-disabled')) {
-          containerRef.current.querySelector('.bg-characters .charac-cursor-right').classList.add('charac-button-disabled')
-        }
-      }, 100);
+    changeArrows()
+    function changeArrows() {
+      if (containerRef.current?.querySelector('.control-arrow.control-next')) {
+        containerRef.current?.querySelector('.control-arrow.control-next').innerHTML = (
+          `
+          <svg width="72" height="96" viewBox="0 0 72 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f_78_4815)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M25.7123 91.8437C25.8603 92.0001 26.3042 92 26.3042 92C26.7479 92 27.4876 91.5308 27.4876 91.5308L67.5008 49.2268C68.1665 48.523 68.1665 47.4283 67.5008 46.8027L27.4876 4.49878C27.0438 4.0296 26.304 3.87318 25.7123 4.10777C25.0467 4.34236 24.677 4.9679 24.677 5.67167V31.711C24.677 32.6493 25.4166 33.4313 26.3042 33.4313C27.1917 33.4313 27.9313 32.6493 27.9313 31.711V9.81605L64.0246 47.9757L27.9313 86.1353V64.2405C27.9313 63.3022 27.1917 62.5202 26.3042 62.5202C25.4166 62.5202 24.677 63.3022 24.677 64.2405V90.2797C24.677 90.9834 25.1207 91.6091 25.7123 91.8437ZM5.02276 86.51C5.16885 86.6667 5.60703 86.6668 5.60703 86.6668L5.68015 86.8234C6.04538 86.8234 6.7758 86.2749 6.7758 86.2749L15.3223 77.1059C15.9797 76.4006 15.9797 75.3035 15.3223 74.6765C14.6649 74.0496 13.6423 74.0496 13.0579 74.6765L7.21406 80.9459V16.1359L13.0579 22.3269C13.7153 23.0322 14.7379 23.0322 15.3223 22.3269C15.9797 21.6216 15.9797 20.6028 15.3223 19.8975L6.7758 10.7285C6.33752 10.1799 5.60713 10.1015 5.02276 10.3366C4.36534 10.5717 4 11.1986 4 11.904V84.9427C4 85.648 4.43838 86.2749 5.02276 86.51Z" fill="#F24A7C"/>
+</g>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M25.7123 91.8437C25.8603 92.0001 26.3042 92 26.3042 92C26.7479 92 27.4876 91.5308 27.4876 91.5308L67.5008 49.2268C68.1665 48.523 68.1665 47.4283 67.5008 46.8027L27.4876 4.49878C27.0438 4.0296 26.304 3.87318 25.7123 4.10777C25.0467 4.34236 24.677 4.9679 24.677 5.67167V31.711C24.677 32.6493 25.4166 33.4313 26.3042 33.4313C27.1917 33.4313 27.9313 32.6493 27.9313 31.711V9.81605L64.0246 47.9757L27.9313 86.1353V64.2405C27.9313 63.3022 27.1917 62.5202 26.3042 62.5202C25.4166 62.5202 24.677 63.3022 24.677 64.2405V90.2797C24.677 90.9834 25.1207 91.6091 25.7123 91.8437ZM5.02276 86.51C5.16885 86.6667 5.60703 86.6668 5.60703 86.6668L5.68015 86.8234C6.04538 86.8234 6.7758 86.2749 6.7758 86.2749L15.3223 77.1059C15.9797 76.4006 15.9797 75.3035 15.3223 74.6765C14.6649 74.0496 13.6423 74.0496 13.0579 74.6765L7.21406 80.9459V16.1359L13.0579 22.3269C13.7153 23.0322 14.7379 23.0322 15.3223 22.3269C15.9797 21.6216 15.9797 20.6028 15.3223 19.8975L6.7758 10.7285C6.33752 10.1799 5.60713 10.1015 5.02276 10.3366C4.36534 10.5717 4 11.1986 4 11.904V84.9427C4 85.648 4.43838 86.2749 5.02276 86.51Z" fill="#FF7C1E"/>
+<defs>
+<filter id="filter0_f_78_4815" x="0" y="0" width="72" height="96" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_78_4815"/>
+</filter>
+</defs>
+</svg>
 
-    }
-    setTimeout(() => {
-      if (containerRef.current.querySelector('.bg-characters .swiper-button-prev').classList.contains('swiper-button-disabled')) {
-        containerRef.current.querySelector('.bg-characters .charac-cursor-left').classList.add('charac-button-disabled')
+          `
+        )
+        containerRef.current?.querySelector('.control-arrow.control-prev').innerHTML = (
+          `
+          <svg width="72" height="96" viewBox="0 0 72 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_f_452_371)">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M46.2877 91.8437C46.1397 92.0001 45.6958 92 45.6958 92C45.2521 92 44.5124 91.5308 44.5124 91.5308L4.49919 49.2268C3.83354 48.523 3.83354 47.4283 4.49919 46.8027L44.5124 4.49878C44.9562 4.0296 45.696 3.87318 46.2877 4.10777C46.9533 4.34236 47.323 4.9679 47.323 5.67167V31.711C47.323 32.6493 46.5834 33.4313 45.6958 33.4313C44.8083 33.4313 44.0687 32.6493 44.0687 31.711V9.81605L7.9754 47.9757L44.0687 86.1353V64.2405C44.0687 63.3022 44.8083 62.5202 45.6958 62.5202C46.5834 62.5202 47.323 63.3022 47.323 64.2405V90.2797C47.323 90.9834 46.8793 91.6091 46.2877 91.8437ZM66.9772 86.51C66.8312 86.6667 66.393 86.6668 66.393 86.6668L66.3199 86.8234C65.9546 86.8234 65.2242 86.2749 65.2242 86.2749L56.6777 77.1059C56.0203 76.4006 56.0203 75.3035 56.6777 74.6765C57.3351 74.0496 58.3577 74.0496 58.9421 74.6765L64.7859 80.9459V16.1359L58.9421 22.3269C58.2847 23.0322 57.2621 23.0322 56.6777 22.3269C56.0203 21.6216 56.0203 20.6028 56.6777 19.8975L65.2242 10.7285C65.6625 10.1799 66.3929 10.1015 66.9772 10.3366C67.6347 10.5717 68 11.1986 68 11.904V84.9427C68 85.648 67.5616 86.2749 66.9772 86.51Z" fill="#F24A7C"/>
+          </g>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M46.2877 91.8437C46.1397 92.0001 45.6958 92 45.6958 92C45.2521 92 44.5124 91.5308 44.5124 91.5308L4.49919 49.2268C3.83354 48.523 3.83354 47.4283 4.49919 46.8027L44.5124 4.49878C44.9562 4.0296 45.696 3.87318 46.2877 4.10777C46.9533 4.34236 47.323 4.9679 47.323 5.67167V31.711C47.323 32.6493 46.5834 33.4313 45.6958 33.4313C44.8083 33.4313 44.0687 32.6493 44.0687 31.711V9.81605L7.9754 47.9757L44.0687 86.1353V64.2405C44.0687 63.3022 44.8083 62.5202 45.6958 62.5202C46.5834 62.5202 47.323 63.3022 47.323 64.2405V90.2797C47.323 90.9834 46.8793 91.6091 46.2877 91.8437ZM66.9772 86.51C66.8312 86.6667 66.393 86.6668 66.393 86.6668L66.3199 86.8234C65.9546 86.8234 65.2242 86.2749 65.2242 86.2749L56.6777 77.1059C56.0203 76.4006 56.0203 75.3035 56.6777 74.6765C57.3351 74.0496 58.3577 74.0496 58.9421 74.6765L64.7859 80.9459V16.1359L58.9421 22.3269C58.2847 23.0322 57.2621 23.0322 56.6777 22.3269C56.0203 21.6216 56.0203 20.6028 56.6777 19.8975L65.2242 10.7285C65.6625 10.1799 66.3929 10.1015 66.9772 10.3366C67.6347 10.5717 68 11.1986 68 11.904V84.9427C68 85.648 67.5616 86.2749 66.9772 86.51Z" fill="#FF7C1E"/>
+          <defs>
+          <filter id="filter0_f_452_371" x="0" y="0" width="72" height="96" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+          <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_452_371"/>
+          </filter>
+          </defs>
+          </svg>
+          
+
+          `
+        )
+      } else {
+        setTimeout(() => {
+          changeArrows()
+        }, 1000);
       }
-      containerRef.current
-      .querySelector(".charac-cursor-left")
-      ?.removeEventListener("click", left)
-      containerRef.current
-      .querySelector(".charac-cursor-left")
-      ?.removeEventListener("click", left)
-      containerRef.current
-      .querySelector(".charac-cursor-right")
-      ?.removeEventListener("click", right)
-      containerRef.current
-      .querySelector(".charac-cursor-right")
-      ?.removeEventListener("click", right)
-      containerRef.current
-        .querySelector(".charac-cursor-left")
-        ?.addEventListener("click", left);
-      containerRef.current
-        .querySelector(".charac-cursor-right")
-        ?.addEventListener("click", right);
-    }, 500);
-  }, []);
+    }
+
+  },[])
 
   return (
     <section {...s.charactersCarousel} ref={containerRef}>
       <div {...s.photoLayer}></div>
       <div {...s.contentLayer}>
-        <div
-          {...s.containerCharactersCarousel}
-          style={{ maxWidth: "1440px", width: "100%" }}
-        >
-          <div {...s.containerCharactersCarouselBordered}>
-            <div {...s.swiperAndControls}>
-              <div {...s.controlLeft}>
-                <Image
-                  {...s.buttonImage}
-                  src="/arrow-left.svg"
-                  alt="Click-left"
-                  width={35}
-                  height={48}
-                />
-              </div>
-              <Swiper
-                lazy={true}
-                navigation
-                height={1000}
-                modules={[Navigation]}
-                {...s.swiper}
-              >
-                <SwiperSlide>
-                  <div className="flex flex-col items-center">
-                    <div {...s.charactersContent}>
-                      <div
-                        {...s.charactersImageContent}
-                        style={{ minWidth: "360px" }}
-                      >
-                        <Image
-                          {...s.characterImage}
-                          src="/characters-cowboy.png"
-                          alt="Cowboy"
-                          width={360}
-                          height={360}
-                        />
-                      </div>
-                      <div {...s.charactersTextContent}>
-                        <h5 {...s.charactersTextContentTitle}>Faction</h5>
-                        <h4 {...s.charactersTextContentSubtitle}>Outrider</h4>
-                        <p {...s.charactersTextContentText}>
-                          The Destorian Outriders are an organization of rangers
-                          that keep the peace in all the southern and central
-                          territories of Ordos Prime. They are characterized by
-                          their pneumatic weaponry, tactical armor and gas
-                          masks. Alongside the long coats and hats they wear as
-                          part of their uniform. They are often seen patrolling
-                          Ordos Prime on their newly developed hover bikes.
-                        </p>
-                        <div {...s.characterImage}>
-                          <Image
-                            src="/characters-outrider-status.svg"
-                            alt="Burger Menu"
-                            width={360}
-                            height={71}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="flex flex-col items-center  w-full">
-                    <div {...s.charactersContentBlurred}>
-                      <div
-                        {...s.charactersImageContentBlurred}
-                        style={{ minWidth: "360px" }}
-                      >
-                        <Image
-                          {...s.characterImage}
-                          src="/characters-newone.png"
-                          alt="Burger Menu"
-                          width={360}
-                          height={360}
-                          style={{ position: "absolute", minWidth: "360px" }}
-                        />
-                      </div>
-                      <div {...s.charactersTextContent}>
-                        <h5 {...s.charactersTextContentTitle}>Faction</h5>
-                        <h4 {...s.charactersTextContentSubtitle}>Coming soon</h4>
-                        <p {...s.charactersTextContentTextBlurred}>
-                          The Destorian Outriders are an organization of rangers
-                          that keep the peace in all the southern and central
-                          territories of Ordos Prime. They are characterized by
-                          their pneumatic weaponry, tactical armor and gas
-                          masks. Alongside the long coats and hats they wear as
-                          part of their uniform. They are often seen patrolling
-                          Ordos Prime on their newly developed hover bikes.
-                        </p>
-                        <div>
-                        <div {...s.characterImageBlurred}>
-                          <Image
-                            src="/characters-outrider-status.svg"
-                            alt="Burger Menu"
-                            width={360}
-                            height={71}
-                          />
-                        </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="flex flex-col items-center  w-full">
-                    <div {...s.charactersContentBlurred}>
-                      <div
-                        {...s.charactersImageContentBlurred}
-                        style={{ minWidth: "360px" }}
-                      >
-                        <Image
-                          {...s.characterImage}
-                          src="/characters-newtwo.png"
-                          alt="Burger Menu"
-                          width={360}
-                          height={360}
-                          style={{ position: "absolute", minWidth: "360px" }}
-                        />
-                      </div>
-                      <div {...s.charactersTextContent}>
-                        <h5 {...s.charactersTextContentTitle}>Faction</h5>
-                        <h4 {...s.charactersTextContentSubtitle}>Coming soon</h4>
-                        <p {...s.charactersTextContentTextBlurred}>
-                          The Destorian Outriders are an organization of rangers
-                          that keep the peace in all the southern and central
-                          territories of Ordos Prime. They are characterized by
-                          their pneumatic weaponry, tactical armor and gas
-                          masks. Alongside the long coats and hats they wear as
-                          part of their uniform. They are often seen patrolling
-                          Ordos Prime on their newly developed hover bikes.
-                        </p>
-                        <div>
-                        <div {...s.characterImageBlurred}>
-                          <Image
-                            src="/characters-outrider-status.svg"
-                            alt="Burger Menu"
-                            width={360}
-                            height={71}
-                          />
-                        </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              </Swiper>
-              <div {...s.controlRight}>
-                {" "}
-                <Image
-                  {...s.buttonImage}
-                  src="/arrow-right.svg"
-                  alt="Click-left"
-                  width={35}
-                  height={48}
-                />
-              </div>
-            </div>
-          </div>
+        <div  {...s.containerCharactersCarouselBordered} style={{maxWidth: '1400px'}}>
+        <div  {...s.charactersContent}>
+            <Carousel
+              
+            />
+        </div>
         </div>
       </div>
     </section>
@@ -233,4 +75,3 @@ const CharactersCarousel: FunctionComponent = function () {
 };
 export default CharactersCarousel;
 
-//garagem 412

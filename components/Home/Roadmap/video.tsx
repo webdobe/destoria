@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import s from "./styles";
 
-const FirstFrame: FunctionComponent = function () {
+const PlanetFrame: FunctionComponent = function () {
 
   return (
     <div style={{background: 'transparent'}} {...s.videoScene}>
@@ -15,10 +15,10 @@ const FirstFrame: FunctionComponent = function () {
         autoPlay={true}
         loop={true}
       >
-        <source src="https://cdn.streamelements.com/uploads/59fda13d-01e4-4948-9e22-27cc46bf9a73.webm" type="video/webm" />
+        <source src="https://cdn.streamelements.com/uploads/b5c30951-b172-48c7-8064-0811e2f20234.webm" type="video/webm" />
       </video>
     </div>
   );
 };
 
-export default FirstFrame;
+export default PlanetFrame;

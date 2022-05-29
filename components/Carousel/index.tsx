@@ -17,6 +17,7 @@ export default class Example extends Component {
   slides = this.props.content.map((slide, index) => {
     return { ...slide, onClick: () => this.setState({ goToSlide: index }) };
   });
+
   componentDidMount() {
     this.setState({ gotoSlide: 0 });
   }
@@ -88,7 +89,7 @@ export default class Example extends Component {
           showNavigation={this.state.showNavigation}
           animationConfig={this.state.config}
         />
-        <div {...s.dots}>
+        {this.props.showHexagons && (<div {...s.dots}>
           <div style={{ cursor: "pointer" }}>
             <Image
               src={
@@ -102,6 +103,8 @@ export default class Example extends Component {
               onClick={() => this.setState({ goToSlide: 0 })}
             />
           </div>
+          
+          
           <div style={{ cursor: "pointer" }}>
             <Image
               src={
@@ -128,7 +131,7 @@ export default class Example extends Component {
               onClick={() => this.setState({ goToSlide: 2 })}
             />
           </div>
-        </div>
+        </div>)}
         <div
           style={{
             margin: "0 auto",

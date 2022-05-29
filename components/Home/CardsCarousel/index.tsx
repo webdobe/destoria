@@ -25,7 +25,7 @@ const CardsCarousel: FunctionComponent = function () {
         >
           <div {...s.containerCardsCarouselBordered}>
             <div style={{ maxWidth: "950px", margin: "auto" }}>
-              <Carousel content={content} />
+              <Carousel content={content} showHexagons={true} />
             </div>
           </div>
         </div>

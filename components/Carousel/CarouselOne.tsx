@@ -5,8 +5,8 @@ const slides = [
     {
       key: uuidv4(),
       content: (
-        <div className="cards-carousel cards-carousel-left flex flex-col pt-10 md:pt-20 items-center max-w-xs">
-        <div className="flex flex-col items-center">
+        <div className="cards-carousel cards-carousel-left flex flex-col pt-10 md:pt-20 items-center max-w-xs h-full">
+        <div className="flex flex-col items-center h-full">
           <h4 {...s.cardTitle}>
             MMORPG
           </h4>
@@ -23,8 +23,8 @@ const slides = [
     {
       key: uuidv4(),
       content: (
-        <div className="cards-carousel cards-carousel-middle flex flex-col pt-10 md:pt-20 items-center max-w-xs">
-        <div className="flex flex-col items-center">
+        <div className="cards-carousel cards-carousel-middle flex flex-col pt-10 md:pt-20 items-center max-w-xs h-full">
+        <div className="flex flex-col items-center h-full">
           <h4 {...s.cardTitle}>
             Metaverse
           </h4>
@@ -42,7 +42,7 @@ const slides = [
       key: uuidv4(),
       content: (
         <div className="cards-carousel cards-carousel-right flex flex-col pt-10 md:pt-20 items-center max-w-xs">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center h-full">
           <h4 {...s.cardTitle}>
             Battle Royale
           </h4>

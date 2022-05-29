@@ -9,7 +9,7 @@ const styles = {
     photoLayer: "w-full h-full absolute text-dwhite forced-height",
     photolayerDesktop: "w-full h-full absolute text-dwhite photo-layer-desktop bg-none",
     photolayerDesktopActualPhoto: "w-full h-full  absolute text-dwhite photo-layer-desktop bg-none",
-    contentLayer: "w-full h-full relative m-auto roadmap-content pointer-events-none",
+    contentLayer: "w-full h-full relative m-auto roadmap-content pointer-events-none layout-border",
     roadmapMobileContent: "roadmap-mobile-content backdrop-blur",
     roadmapList: "list-disc py-2",
     containerRoadmap: "w-full cards-carousel-container m-auto roadmap-content-parent flex justify-center",

@@ -87,7 +87,7 @@ const FirstFrame: FunctionComponent = function () {
                   deliver real P2E mechanics through Unreal Engine.
 
                 </p>
-                <p onClick={() => console.log(myVideo.current.clientHeight)}>
+                <p>
                   Destoria is developing the largest open world metaverse on the
                   Ethereum blockchain. This metaverse has the ability to host
                   experiences for entire projects, making this a launchpad for

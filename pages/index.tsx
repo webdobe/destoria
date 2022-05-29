@@ -4,10 +4,14 @@ import Image from 'next/image'
 import s from 'styles'
 import FirstFrame from 'components/Home/FirstFrame'
 import dynamic from 'next/dynamic'
-import CharactersCarousel from 'components/Home/CharactersCarousel'
 import content from 'components/Carousel/CarouselOne'
 import Script from 'next/script'
 
+
+const CharactersCarousel = dynamic(
+  () => import('components/Home/CharactersCarousel'),
+  { ssr: false }
+)
 
 const CardCarousel = dynamic(
   () => import('components/Home/CardsCarousel'),
