@@ -35,7 +35,7 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
   
       //Camera Controls
       const controls = new OrbitControls(camera, renderer.domElement);
-      controls.enabled = false;
+      //controls.enableZoom = false;
   
       //Simple Box with WireFrame
       await addModels();
@@ -135,14 +135,15 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
 
   const addLight = () => {
     //LIGHTS
-    const light = new THREE.PointLight(0xffffff, 3, 100, 5);
-    light.position.set(2, 2, 20);
-    scene.add(light);
+    scene.add(camera);
+    const light = new THREE.PointLight(0xffffff, 10, 200, 12);
+    light.position.set(5, 5, 5);
+    camera.add(light);
 
     // add a light helper
-    // const sphereSize = 1;
-    // const pointLightHelper = new THREE.PointLightHelper( light, sphereSize );
-    // scene.add( pointLightHelper );
+    const sphereSize = 1;
+    const pointLightHelper = new THREE.PointLightHelper(light, sphereSize);
+    camera.add(pointLightHelper);
   }
 
   const start = () => {
