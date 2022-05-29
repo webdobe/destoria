@@ -35,7 +35,8 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
   
       //Camera Controls
       const controls = new OrbitControls(camera, renderer.domElement);
-      //controls.enableZoom = false;
+      controls.enableZoom = false;
+      controls.enablePan = false;
   
       //Simple Box with WireFrame
       await addModels();
