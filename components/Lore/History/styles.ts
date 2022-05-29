@@ -5,7 +5,7 @@ const styles = {
     contentLayer: "w-full h-full relative m-auto",
     containerFaq: "w-full cards-carousel-container m-auto",
     containerFaqBordered: "layout-border md:py-16 md:mx-5",
-    faqContent: "px-2 text-dwhite max-w-4xl m-auto w-full text-center pb-5",
+    faqContent: "px-3 text-dwhite max-w-4xl m-auto w-full text-center pb-5",
     titles: "text-xl text-center font-bold pb-5",
     titleContent: "uppercase font-bold tracking-wider text-3xl py-6",
     descriptive: "inline font-bold"

@@ -1,7 +1,7 @@
 import classNameAdder from 'utils/classNameAdder'
 
 const styles = {
-    header: "mx-auto text-dhOrange px-7 md:px-4 bg-no-repeat bg-cover",
+    header: "mx-auto text-dhOrange px-4 md:px-4 bg-no-repeat bg-cover",
     pageName: "hidden",
     pageDescription: "hidden",
     container: "w-full flex h-24 justify-between items-center text-base",

@@ -8,7 +8,6 @@ export default [
   { css: '/frame-13.png', height: 265 },
   { css: '/frame-14.png', height: 265 },
   { css: '/frame-15.png', height: 265 },
-  { css: '/frame-16.png', height: 265 },
   { css: '/frame-17.png', height: 265 },
   { css: '/frame-18.png', height: 530 },
   { css: '/frame-19.png', height: 600 },

@@ -137,6 +137,7 @@ const Header: FunctionComponent = function () {
               variants={sidebar}
               style={{
                 pointerEvents: isOpen ? "none" : "unset",
+                backgroundColor: isOpen ? '' : 'transparent'
               }}
             />
             <Navigation />

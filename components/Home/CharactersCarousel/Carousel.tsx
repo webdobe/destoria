@@ -10,7 +10,7 @@ export default class SimpleSlider extends Component {
   render() {
     return (
       <Carousel
-        autoPlay={true}
+        // autoPlay={true}
         showIndicators={false}
         infiniteLoop={true}
       >

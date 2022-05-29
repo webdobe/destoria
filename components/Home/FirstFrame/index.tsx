@@ -1,6 +1,6 @@
 // @ts-ignore
 
-import { FunctionComponent, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { FunctionComponent, useEffect, useCallback, useRef, useState } from "react";
 import s from "./styles";
 import Image from "next/image";
 import Header from "components/Header";
@@ -12,21 +12,24 @@ const FirstFrame: FunctionComponent = function () {
   const myRef = useRef(null);
   const myVideo = useRef(null);
   const [myHeight, setMyHeight] = useState(0)
+  const [count, setCount] = useState(0)
 
   useEffect(() => { 
     getFinalHeight()
   }, [])
 
-  const getFinalHeight = () => {
-    if (!myVideo.current?.clientHeight) {
-      console.log("trying")
+  const getFinalHeight = useCallback(() => {
+    console.log('updating?,', !myVideo.current?.clientHeight)
+    console.log('updating?,', count)
+    if (!myVideo.current?.clientHeight || count < 4) {
       setTimeout(() => {
+        console.log('updating')
+        setCount(count + 1)
         return getFinalHeight()
-      }, 200);
+      }, 1000);
     }
-    console.log('done:', myVideo.current?.clientHeight)
     setMyHeight(myVideo.current?.clientHeight)
-  }
+  }, [count])
 
   return (
     <div {...s.majorContainer} ref={myRef}>

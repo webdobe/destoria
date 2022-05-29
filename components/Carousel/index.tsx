@@ -78,7 +78,7 @@ export default class Example extends Component {
   render() {
     return (
       <div
-        style={{ width: "80%", height: "500px", margin: "0 auto" }}
+        style={{ width: window.innerWidth > 800 ? '80%' : '100%', height: "500px", margin: "0 auto" }}
         onTouchStart={this.handleTouchStart}
         onTouchMove={this.handleTouchMove}
       >
