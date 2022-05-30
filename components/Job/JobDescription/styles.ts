@@ -25,7 +25,7 @@ const styles = {
     connectWalletText: "w-0 glower text-base md:text-xl text-dhOrange neon-1-img neon-1 ",
     applyNowText: "w-0 text-base md:text-xl text-dhwite relative z-10 cursor-pointer neon-1-img neon-1 ",
     connectWalletImage: "cursor-pointer neon-1",
-    interactionsDiv: "w-full flex justify-center gap-1 md:gap-4 interaction",
+    interactionsDiv: "w-full flex justify-between gap-1 md:gap-4 interaction",
     connectWalletSpan: "cursor-pointer neon-1",
     interactions: "w-full flex justify-center gap-1 md:gap-4 form-interactions py-3",
 }

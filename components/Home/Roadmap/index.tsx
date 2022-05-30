@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useState } from "react";
+import React, { FunctionComponent, useEffect, useState, useRef } from "react";
 import s from "./styles";
 import Video from "./video";
 import { motion } from "framer-motion";
@@ -7,6 +7,8 @@ import Image from "next/image";
 const Roadmap: FunctionComponent = function () {
   const [selected, setSelected] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const roadmapRef = useRef()
+  
   useEffect(() => {
     window.addEventListener('scroll', () => setShowModal(false))
     return () => {
@@ -14,7 +16,7 @@ const Roadmap: FunctionComponent = function () {
     }
   })
   return (
-    <section {...s.roadmap}>
+    <section {...s.roadmap} ref={roadmapRef}>
       <div {...s.containerRoadmapBordered} style={{ maxWidth: "1400px" }}>
         <div {...s.photoLayer}>
           <Video />

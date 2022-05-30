@@ -72,7 +72,7 @@ const ContactForm: FunctionComponent = function () {
                   style={{
                     whiteSpace: "nowrap",
                     position: "relative",
-                    left: window.innerWidth > 550 ? "65px" : "40px",
+                    left: window.innerWidth > 550 ? "65px" : "0",
                     top: '10px'
                   }}
                 >

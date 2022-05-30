@@ -56,6 +56,7 @@ const JobDescription: FunctionComponent = function ({ job }) {
               Your responsibilities
             </div>
             <div {...s.jobDescriptionBoxContentText}>
+              <ul>
               {typeof job.yourResponsibilities == 'string' ? job.yourResponsibilities : (job.skills.map((item, index) => {
                   return (
                     <li {...s.listStyle} key={index}>
@@ -63,6 +64,7 @@ const JobDescription: FunctionComponent = function ({ job }) {
                     </li>
                   );
                 }))}
+              </ul>
             </div>
           </div>
           <div {...s.jobDescriptionBoxContent}>
@@ -154,14 +156,14 @@ const JobDescription: FunctionComponent = function ({ job }) {
                   style={{
                     whiteSpace: "nowrap",
                     position: "relative",
-                    left:  window.innerWidth > 550 ? "65px" : "40px",
+                    left:  window.innerWidth > 550 ? "65px" : "0",
                     top: '10px'
                   }}
                 >
                   Back
                 </div>
                 <div {...s.connectWalletSpan}
-                  style={{ position: "relative", left: "0", top: "16px" }}
+                  style={{ position: "relative", left: "-30px", top: "16px" }}
                   onClick={() => window.location.href = '/team#3'}
                 >
                   <Image

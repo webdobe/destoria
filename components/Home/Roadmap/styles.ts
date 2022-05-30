@@ -13,7 +13,7 @@ const styles = {
     roadmapMobileContent: "roadmap-mobile-content backdrop-blur",
     roadmapList: "list-disc py-2",
     containerRoadmap: "w-full cards-carousel-container m-auto roadmap-content-parent flex justify-center",
-    containerRoadmapBordered: "custom-mx-5 roadmap-content-base bg-roadmap bg-no-repeat bg-cover  w-full h-full",
+    containerRoadmapBordered: "custom-mx-5 roadmap-content-base bg-roadmap bg-no-repeat bg-cover w-full h-full",
     faqContent: "flex flex-col px-2 text-dwhite max-w-6xl m-auto w-full",
     circleContainer: "max-w-xl m-auto border-custom-circulo opacity-30",
     ballOne: `roadmap-ball roadmap-ball-one ${balls}`,
