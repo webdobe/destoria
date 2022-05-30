@@ -47,7 +47,7 @@ const FirstFrame: FunctionComponent = function () {
               <ThreeD
                 mtlPath="logo/logo.mtl"
                 objPath="logo/logo.obj"
-                texturePath="logo/logo_Textures/mesh_roughness.png"
+                texturePath="logo/logo_Textures/mesh_emissive.png"
               />
               <div {...s.exploreTheMetaverseText}>Explore the Metaverse</div>
               <div {...s.connectWallet}>

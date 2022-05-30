@@ -35,6 +35,8 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
   
       //Camera Controls
       const controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableZoom = false;
+      controls.enablePan = false;
   
       //Simple Box with WireFrame
       await addModels();
@@ -63,18 +65,16 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
           objPath,
           (object) => {
             const logo = object;
-
-            // Add texture to object
-            const texture = new THREE.TextureLoader().load(texturePath || '');
-            logo.traverse(function (child) {   // aka setTexture
+            const scale = 8;
+            const material = defaultMaterial();
+            logo.traverse(function (child) {
               if (child instanceof THREE.Mesh) {
-                  child.material.map = texture;
+                const {x,y,z} = getCenterPoint(child, scale);
+                child.position.set(x, y, z);
+                child.scale.set(scale, scale, scale);
+                child.material = material;
               }
             });
-
-            // Scale and set position.
-            logo.position.set(-10, -12, 0);
-            logo.scale.set(8, 8, 8);
 
             // Add logo to pivot object to rotate center.
             pivot = new THREE.Object3D();
@@ -100,11 +100,53 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
     })
   );
 
+  const getCenterPoint = (mesh, scale) => {
+    let geometry = mesh.geometry;
+    geometry.computeBoundingBox();
+    let center = new THREE.Vector3();
+    geometry.boundingBox.getCenter(center);
+    mesh.localToWorld(center);
+    return {
+      x: center.x * -(scale),
+      y: center.y * -(scale),
+      z: center.z * -(scale),
+    };
+  }
+
+  const defaultMaterial = () => {
+    // Add texture to object
+    const base = new THREE.TextureLoader().load("logo/logo_Textures/mesh_basecolor.png");
+    const emissive = new THREE.TextureLoader().load("logo/logo_Textures/mesh_emissive.png");
+    const roughness = new THREE.TextureLoader().load("logo/logo_Textures/unreal_mesh_orm.png");
+    const metalic = new THREE.TextureLoader().load("logo/logo_Textures/mesh_metallic.png");
+    const normal = new THREE.TextureLoader().load("logo/logo_Textures/mesh_normal.png");
+    return new THREE.MeshStandardMaterial( {
+      color: 0xffffff,
+      map: base,
+      emissive: 0x00c5ff,
+      emissiveMap: emissive,
+      emissiveIntensity: 1,
+      roughness: 0.01,
+      roughnessMap: roughness,
+      metalness: 0.1,
+      metalnessMap: metalic,
+      normalMap: normal,
+    });
+  }
+
   const addLight = () => {
-    //LIGHTS
-    const light = new THREE.PointLight();
-    light.position.set(0, 0, 100);
-    scene.add(light);
+    // Add camera to scene
+    scene.add(camera);
+
+    // Add light to camera.
+    const light = new THREE.PointLight(0xffffff, 10, 200, 12);
+    light.position.set(5, 5, 5);
+    camera.add(light);
+
+    // add a light helper
+    // const sphereSize = 1;
+    // const pointLightHelper = new THREE.PointLightHelper(light, sphereSize);
+    // camera.add(pointLightHelper);
   }
 
   const start = () => {
@@ -119,7 +161,7 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
 
   const animate = () => {
     //Rotate Models
-    if (pivot) pivot.rotation.y += 0.02;
+    if (pivot) pivot.rotation.y += 0.005;
 
     renderScene();
     frameId = window.requestAnimationFrame(animate);
@@ -140,7 +182,7 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
 
 ThreeD.defaultProps = {
   width: '295px',
-  height: '170px',
+  height: '200px',
   wrapperClassName: '',
 }
 
