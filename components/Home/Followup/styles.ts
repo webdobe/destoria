@@ -1,7 +1,7 @@
 import classNameAdder from 'utils/classNameAdder'
 
 const styles = {
-    planetSection: "flex flex-col justify-center items-center text-dwhite bg-no-repeat",
+    container: "fixed sticky-container flex flex-col justify-between items-start"
 }
 
 

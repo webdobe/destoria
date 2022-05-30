@@ -1737,7 +1737,7 @@ button.control-arrow::before {
 }
 
 .main-neon {
-  background: linear-gradient(90deg, #ffa0ae 0%, #aacaef 75%);
+  /* background: linear-gradient(90deg, #ffa0ae 0%, #aacaef 75%); */ 
   position: absolute;
   top: 0;
   left: 0;
@@ -1750,4 +1750,13 @@ button.control-arrow::before {
 .main-button {
   position: relative;
   z-index: 1;
+}
+
+
+.sticky-container {
+  right: 90%;
+  z-index: 500;
+  width: 127px;
+  height: 309px;
+  align-items: flex-start;
 }

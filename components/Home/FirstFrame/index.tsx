@@ -17,6 +17,13 @@ import { motion } from "framer-motion";
 const ShipVideo = dynamic(() => import("./video"), { ssr: false });
 const ThreeD = dynamic(() => import("./3d"), { ssr: false });
 
+
+const Followup = dynamic(
+  () => import('components/Home/Followup'),
+  { ssr: false }
+)
+
+
 const FirstFrame: FunctionComponent = function () {
   const myRef = useRef(null);
   const myVideo = useRef(null);
@@ -47,14 +54,11 @@ const FirstFrame: FunctionComponent = function () {
   }, []);
 
   const getFinalHeight = useCallback(() => {
-    console.log("updating?,", !myVideo.current?.clientHeight);
-    console.log("updating?,", count);
     if (!myVideo.current?.clientHeight || count < 4) {
       setTimeout(() => {
-        console.log("updating");
         setCount(count + 1);
         return getFinalHeight();
-      }, 1000);
+      }, 2000);
     }
     setMyHeight(myVideo.current?.clientHeight);
   }, [count]);
@@ -67,6 +71,7 @@ const FirstFrame: FunctionComponent = function () {
       <div {...s.contentLayer}>
         <Header />
         <section {...s.exploreTheMetaverse}>
+          <Followup />
           <div
             {...s.containerExploreTheMetaverse}
             style={{ maxWidth: "1440px", width: "100%" }}

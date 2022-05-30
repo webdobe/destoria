@@ -4,26 +4,37 @@ import {
   motion,
   useViewportScroll,
   useSpring,
-  useTransform
+  useTransform,
 } from "framer-motion";
+const colorOutput = ["#f00", "#fff", "#0f0"]
 
 const Followup: FunctionComponent = function () {
   const [isComplete, setIsComplete] = useState(false);
   const { scrollYProgress } = useViewportScroll();
   const yRange = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
-  const pathLength = useSpring(yRange, { stiffness: 400, damping: 90 });
-  const [currentView, setCurrentView] = useState(0)
-  useEffect(() => yRange.onChange(v => {
-    console.log(v)
-    setIsComplete(v >= 1)
-  }, [yRange]));
-
+  const pathLength = useSpring(yRange);
+  const [currentView, setCurrentView] = useState(0);
+  const [currentY, setCurrentY] = useState(0)
 
   return (
-    <div className="sticky top-10 bg-red z-50">
-      <p>{JSON.stringify(pathLength)}</p>
-      <p>{JSON.stringify(yRange)}</p>
-      <p>{JSON.stringify(scrollYProgress)}</p>
+    <div
+      {...s.container}
+      onClick={() => console.log(pathLength)}
+      style={{opacity: 0, pointerEvents: 'none'}}
+    >
+      <motion.p
+        style={{
+         height: pathLength
+        }}
+      >
+        About
+      </motion.p>
+      <motion.p>Upcoming</motion.p>
+      <motion.p>Classes</motion.p>
+      <motion.p>Roadmap</motion.p>
+      <motion.p>Game Specs</motion.p>
+      <motion.p>Partners</motion.p>
+      <motion.p>FAQ</motion.p>
     </div>
   );
 };
