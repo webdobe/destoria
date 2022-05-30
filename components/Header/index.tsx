@@ -15,7 +15,7 @@ import { Navigation } from "./Menu/menuNavigation";
 import { MenuToggle } from "./Menu/menuToggle";
 import { useRef } from "react";
 
-const Path = props => (
+const Path = (props) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
@@ -31,8 +31,8 @@ const sidebar = {
     transition: {
       type: "spring",
       stiffness: 20,
-      restDelta: 2
-    }
+      restDelta: 2,
+    },
   }),
   closed: {
     clipPath: "circle(30px at 230px 45px)",
@@ -40,17 +40,34 @@ const sidebar = {
       delay: 0.5,
       type: "spring",
       stiffness: 400,
-      damping: 40
-    }
-  }
+      damping: 40,
+    },
+  },
 };
-
 
 const Header: FunctionComponent = function () {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useMobileDimensions(containerRef);
 
+  const cardVariants = {
+    hover: {
+      scale: 1.05,
+    },
+    initial: {
+      scale: 1,
+    },
+  };
+
+  const glowVariants = {
+    hover: {
+      opacity: 0.8,
+    },
+    initial: {
+      scale: 1.05,
+      opacity: 0,
+    },
+  };
 
   return (
     <header style={{ maxWidth: "1440px" }} {...s.header}>
@@ -58,21 +75,21 @@ const Header: FunctionComponent = function () {
         <h1 {...s.pageName}>Destoria</h1>
         <h2 {...s.pageDescription}>Explore the Metaverse</h2>
         <div {...s.container}>
-          <div {...s.logo} onClick={() => window.location.href = `/`}>
+          <div {...s.logo} onClick={() => (window.location.href = `/`)}>
             <div className="absolute top-5">
-            <Image
-              src="/destoria.svg"
-              alt="Destoria"
-              width={47}
-              height={42}
-              {...s.logoImage}
-            />
+              <Image
+                src="/destoria.svg"
+                alt="Destoria"
+                width={47}
+                height={42}
+                {...s.logoImage}
+              />
             </div>
           </div>
           <div {...s.navBox}>
             <nav {...s.nav}>
               <ul {...s.navUl}>
-              <DropdownOption
+                <DropdownOption
                   name="About"
                   content={About}
                   backgroundHeight={140}
@@ -104,26 +121,45 @@ const Header: FunctionComponent = function () {
                 />
               </ul>
             </nav>
-
-            <div {...s.connectWallet}>
-              <span
-                {...s.connectWalletText}
-                style={{
-                  whiteSpace: "nowrap",
-                  position: "relative",
-                  left: "25px",
+            <motion.div
+              {...s.connectWalletWrapper}
+              initial="initial"
+              whileHover="hover"
+            >
+              <motion.div
+                {...s.connectWalletNeon}
+                variants={glowVariants}
+                transition={{
+                  ease: "easeOut",
+                  delay: 0.15,
                 }}
-              >
-                Connect Wallet
-              </span>
-              <img
-                {...s.connectWalletImage}
-                src="/connect-wallet.svg"
-                alt="Burger Menu"
-                width={200}
-                height={45}
-              />
-            </div>
+              ></motion.div>
+              <motion.div {...s.connectWallet}                   variants={cardVariants}
+                  transition={{
+                    ease: "easeOut",
+                    delay: 0.15,
+                    duration: 0.5,
+                  }}>
+                <span
+                  {...s.connectWalletText}
+
+                  style={{
+                    whiteSpace: "nowrap",
+                    position: "relative",
+                    left: "25px",
+                  }}
+                >
+                  Connect Wallet
+                </span>
+                <img
+                  {...s.connectWalletImage}
+                  src="/connect-wallet.svg"
+                  alt="Burger Menu"
+                  width={200}
+                  height={45}
+                />
+              </motion.div>
+            </motion.div>
           </div>
           <motion.nav
             initial={false}
@@ -137,11 +173,11 @@ const Header: FunctionComponent = function () {
               variants={sidebar}
               style={{
                 pointerEvents: isOpen ? "none" : "unset",
-                backgroundColor: isOpen ? '' : 'transparent'
+                backgroundColor: isOpen ? "" : "transparent",
               }}
             />
             <Navigation />
-            <MenuToggle toggle={() => toggleOpen()} {...s.navBurger}/>
+            <MenuToggle toggle={() => toggleOpen()} {...s.navBurger} />
           </motion.nav>
         </div>
         <DropdownRoot />

@@ -189,7 +189,7 @@ textarea, input {
 .bg-full-mint {
   background: linear-gradient(
       180deg,
-      rgba(5, 13, 29, 1) 5%,
+      rgb(5, 13, 29) 5%,
       rgba(5, 13, 29, 0.5) 40%,
       rgba(5, 13, 29, 0.6) 50%,
       rgba(5, 13, 29, 0.9) 90%,
@@ -1725,4 +1725,29 @@ button.control-arrow::before {
   .custom-mx-5 {
     width: calc(100% - 40px);
   }
+}
+
+.main-wrapper {
+  position: relative;
+  width: 220px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-neon {
+  background: linear-gradient(90deg, #ffa0ae 0%, #aacaef 75%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(15px);
+  border-radius: 16px;
+}
+
+.main-button {
+  position: relative;
+  z-index: 1;
 }

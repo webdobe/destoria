@@ -1,35 +1,63 @@
 // @ts-ignore
 
-import { FunctionComponent, useEffect, useCallback, useRef, useState } from "react";
+import {
+  FunctionComponent,
+  useEffect,
+  useCallback,
+  useRef,
+  useState,
+} from "react";
 import s from "./styles";
 import Image from "next/image";
 import Header from "components/Header";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { motion } from "framer-motion";
+
 const ShipVideo = dynamic(() => import("./video"), { ssr: false });
 const ThreeD = dynamic(() => import("./3d"), { ssr: false });
+
 const FirstFrame: FunctionComponent = function () {
   const myRef = useRef(null);
   const myVideo = useRef(null);
-  const [myHeight, setMyHeight] = useState(0)
-  const [count, setCount] = useState(0)
+  const [myHeight, setMyHeight] = useState(0);
+  const [count, setCount] = useState(0);
 
-  useEffect(() => { 
-    getFinalHeight()
-  }, [])
+  const cardVariants = {
+    hover: {
+      scale: 1.05,
+    },
+    initial: {
+      scale: 1,
+    },
+  };
+
+  const glowVariants = {
+    hover: {
+      opacity: 0.8,
+    },
+    initial: {
+      scale: 1.05,
+      opacity: 0,
+    },
+  };
+
+  useEffect(() => {
+    getFinalHeight();
+  }, []);
 
   const getFinalHeight = useCallback(() => {
-    console.log('updating?,', !myVideo.current?.clientHeight)
-    console.log('updating?,', count)
+    console.log("updating?,", !myVideo.current?.clientHeight);
+    console.log("updating?,", count);
     if (!myVideo.current?.clientHeight || count < 4) {
       setTimeout(() => {
-        console.log('updating')
-        setCount(count + 1)
-        return getFinalHeight()
+        console.log("updating");
+        setCount(count + 1);
+        return getFinalHeight();
       }, 1000);
     }
-    setMyHeight(myVideo.current?.clientHeight)
-  }, [count])
+    setMyHeight(myVideo.current?.clientHeight);
+  }, [count]);
 
   return (
     <div {...s.majorContainer} ref={myRef}>
@@ -50,30 +78,52 @@ const FirstFrame: FunctionComponent = function () {
                 texturePath="logo/logo_Textures/mesh_emissive.png"
               />
               <div {...s.exploreTheMetaverseText}>Explore the Metaverse</div>
-              <div {...s.connectWallet}>
-                <Link href="/lore">
-                  <span
-                    {...s.connectWalletText}
-                    style={{
-                      whiteSpace: "nowrap",
-                      position: "relative",
-                      left: "18px",
-                      zIndex: 1,
+              <motion.div
+                {...s.connectWalletWrapper}
+                initial="initial"
+                whileHover="hover"
+              >
+                <motion.div
+                  {...s.connectWalletNeon}
+                  variants={glowVariants}
+                  transition={{
+                    ease: "easeOut",
+                    delay: 0.15,
+                  }}
+                >
+                </motion.div>
+                  <motion.div
+                    {...s.connectWallet}
+                    variants={cardVariants}
+                    transition={{
+                      ease: "easeOut",
+                      delay: 0.15,
+                      duration: 0.5,
                     }}
                   >
-
-                    Discover the Lore
-                  </span>
-                </Link>
-                <Image
-                  {...s.connectWalletImage}
-                  src="/button-one.svg"
-                  alt="Burger Menu"
-                  width={200}
-                  height={45}
-                  style={{ position: "absolute" }}
-                />
-              </div>
+                    <Link href="/lore">
+                      <span
+                        {...s.connectWalletText}
+                        style={{
+                          whiteSpace: "nowrap",
+                          position: "relative",
+                          left: "18px",
+                          zIndex: 1,
+                        }}
+                      >
+                        Discover the Lore
+                      </span>
+                    </Link>
+                    <Image
+                      {...s.connectWalletImage}
+                      src="/button-one.svg"
+                      alt="Burger Menu"
+                      width={200}
+                      height={45}
+                      style={{ position: "absolute" }}
+                    />
+                  </motion.div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -88,7 +138,6 @@ const FirstFrame: FunctionComponent = function () {
                   Destoria is more than just a brand, it’s a destination. With a
                   battle royale and MMORPG in development, Destoria aims to
                   deliver real P2E mechanics through Unreal Engine.
-
                 </p>
                 <p>
                   Destoria is developing the largest open world metaverse on the
@@ -113,12 +162,20 @@ const FirstFrame: FunctionComponent = function () {
                     type="video/mp4"
                   />
                 </video>
-              <div className="video-box-frame" style={{height: myHeight + 2 + 'px'}}>
-              </div>
-              <div className="video-box-frame-bg" style={{height: myHeight + 2 + 'px'}}>
-                <img className="video-box-frame-bg-img" src="/frame-video-two.png" alt="video-frame">
-              </img>
-              </div>
+                <div
+                  className="video-box-frame"
+                  style={{ height: myHeight + 2 + "px" }}
+                ></div>
+                <div
+                  className="video-box-frame-bg"
+                  style={{ height: myHeight + 2 + "px" }}
+                >
+                  <img
+                    className="video-box-frame-bg-img"
+                    src="/frame-video-two.png"
+                    alt="video-frame"
+                  ></img>
+                </div>
               </div>
             </div>
           </div>

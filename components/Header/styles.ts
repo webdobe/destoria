@@ -14,6 +14,8 @@ const styles = {
     navBurger: "md:hidden relative z-10",
     connectWalletText: "w-0 ",
     connectWalletImage: "neon-1",
+    connectWalletWrapper: "main-wrapper top-1",
+    connectWalletNeon: "main-neon",
     dropdownRoot: "z-10 absolute top-20 left-0",
     dropdownArrow: "",
     dropdownContainer: "absolute p-3 w-auto h-auto",
