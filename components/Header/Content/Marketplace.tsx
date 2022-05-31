@@ -7,12 +7,12 @@ const Marketplace: FunctionComponent = function () {
     <div {...s.wrapper}>
       <ul {...s.wrapperMarketplace}>
         <li {...s.shortItem}>
-        <Image
-              src="/headericons-pricetag.svg"
-              alt="Whiteper"
-              width={64}
-              height={64}
-            />
+          <Image
+            src="/headericons-pricetag.svg"
+            alt="Whiteper"
+            width={64}
+            height={64}
+          />
         </li>
         <li {...s.whiteTitle}>COMING SOON</li>
         <li {...s.whiteText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>

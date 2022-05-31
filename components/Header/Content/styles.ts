@@ -8,7 +8,7 @@ const styles = {
     wrapperMarketplace: "w-auto h-auto relative -left-3",
     wrapperMint: "w-auto h-auto relative -left-3",
     item: "w-44 font-semibold text-xl cursor-pointer text-dwhite",
-    shortItem: "w-20 font-semibold text-xl cursor-pointer flex justify-center text-center text-dwhite",
+    shortItem: "w-20 font-semibold text-xl cursor-pointer flex justify-center text-center mx-auto",
     itemWhitepaper: "w-96 font-semibold text-xl cursor-pointer",
     whiteTitle: "flex justify-center text-center text-dwhite uppercase font-semibold text-sm py-3",
     whiteText: "flex justify-center text-center w-32 text-dwhite text-xs"
