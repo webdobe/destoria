@@ -78,9 +78,15 @@ const FirstFrame: FunctionComponent = function () {
           >
             <div {...s.containerExploreTheMetaverseBordered}>
               <ThreeD
+                wrapperClassName="mb-7"
                 mtlPath="logo/logo.mtl"
                 objPath="logo/logo.obj"
                 texturePath="logo/logo_Textures/mesh_emissive.png"
+              />
+              <img
+                {...s.destoriaLetter}
+                src="/destoria-letter.svg"
+                alt="DESTORIA"
               />
               <div {...s.exploreTheMetaverseText}>Explore the Metaverse</div>
               <motion.div

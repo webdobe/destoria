@@ -20,7 +20,8 @@ const styles = {
     photoLayer: "w-full h-full absolute first-img-layer text-dwhite",
     contentLayer: "w-full h-full relative",
     videoScene: "flex justify-between w-full overflow-hidden",
-    destoriaHeroVideo: "flex video-box mx-auto px-6 lg:px-0 mb-12 lg:mb-0"
+    destoriaHeroVideo: "flex video-box mx-auto px-6 lg:px-0 mb-12 lg:mb-0",
+    destoriaLetter: "mb-11",
 }
 
 
