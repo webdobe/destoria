@@ -1,9 +1,10 @@
-import React, { useRef, useState, useContext, useEffect } from "react";
-import s from "./styles";
-import { motion } from "framer-motion";
-import { useDimensions } from "hooks/useDimensions";
-import { Context } from "contexts/Dropdown";
-import Image from "next/image";
+import React, { useRef, useState, useContext, useEffect } from 'react';
+import classNames from 'classnames';
+import s from './styles';
+import { motion, m } from 'framer-motion';
+import { useDimensions } from 'hooks/useDimensions';
+import { Context } from 'contexts/Dropdown';
+import Image from 'next/image';
 
 let lastOptionId = 0;
 
@@ -18,7 +19,7 @@ export function DropdownOption({
 
   const [optionHook, optionDimensions] = useDimensions();
   const [registered, setRegistered] = useState(false);
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   const {
     registerOption,
     updateOptionProps,
@@ -72,14 +73,8 @@ export function DropdownOption({
     backgroundWidth,
   ]);
 
-  const handleOpen = () => (
-    setOpen(true),
-    setTargetId(id)
-    )
-  const handleClose = () => (
-    setOpen(false),
-    setTargetId(null)
-  )
+  const handleOpen = () => (setOpen(true), setTargetId(id));
+  const handleClose = () => (setOpen(false), setTargetId(null));
   const handleTouch = () => (window.isMobile = true);
 
   const handleClick = (e) => {
@@ -87,6 +82,8 @@ export function DropdownOption({
 
     return targetId === id ? handleClose() : handleOpen();
   };
+
+  console.log('targetId = ', targetId, 'id =', id);
 
   return (
     <motion.li
@@ -99,12 +96,18 @@ export function DropdownOption({
       onFocus={handleOpen}
       onBlur={handleClose}
     >
-      <div className={`flex flex-col align-middle justify-center ${(name === "Marketplace" || name == "Whitepaper") && "opacity-60"}`} onClick={() => {
-        if (name === "About" || name == "Whitepaper" || name == "Marketplace") return false;
-        window.location.href = `/${name.toLowerCase()}`
-      }}>
+      <div
+        className={`flex flex-col align-middle justify-center relative ${
+          (name === 'Marketplace' || name == 'Whitepaper') && 'opacity-60'
+        }`}
+        onClick={() => {
+          if (name === 'About' || name == 'Whitepaper' || name == 'Marketplace')
+            return false;
+          window.location.href = `/${name.toLowerCase()}`;
+        }}
+      >
         {name}
-        <div className="absolute top-12">
+        <div className="absolute top-full leading-none -mt-1">
           <motion.div
             initial={false}
             animate={{ rotate: open ? 180 : 0, y: open ? 5 : 0 }}
@@ -117,6 +120,20 @@ export function DropdownOption({
             />
           </motion.div>
         </div>
+        <motion.div
+          className={classNames(
+            s.dropdownContainer.className,
+            s.background.className
+          )}
+          initial={{
+            translateY: '-1rem',
+            opacity: 0
+          }}
+          animate={{ translateY: open ? 0 : '-1rem', opacity: open ? 1 : 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          <Content />
+        </motion.div>
       </div>
     </motion.li>
   );

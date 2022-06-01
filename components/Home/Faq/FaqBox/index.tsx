@@ -14,11 +14,6 @@ const FaqBox: FunctionComponent = function ({ handleSelect, selected, q, a }) {
       onClick={() => {
         handleSelect();
       }}
-      animate={{
-        height: selected
-          ? containerRef.current.offsetHeight + 82 + "px"
-          : "50px",
-      }}
     >
       <div {...s.titleBox}>
         <div {...s.leftBox}>
@@ -45,7 +40,7 @@ const FaqBox: FunctionComponent = function ({ handleSelect, selected, q, a }) {
         </motion.div>
       </div>
       <div {...s.answerBox}>
-        <div {...s.offsetTopBox}></div>
+        {/* <div {...s.offsetTopBox}></div> */}
         <div
           {...(a.length > 250
             ? { ...s.answerTextBox }

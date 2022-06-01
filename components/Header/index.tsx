@@ -134,15 +134,17 @@ const Header: FunctionComponent = function () {
                   delay: 0.15,
                 }}
               ></motion.div>
-              <motion.div {...s.connectWallet}                   variants={cardVariants}
-                  transition={{
-                    ease: "easeOut",
-                    delay: 0.15,
-                    duration: 0.5,
-                  }}>
+              <motion.div
+                {...s.connectWallet}
+                variants={cardVariants}
+                transition={{
+                  ease: "easeOut",
+                  delay: 0.15,
+                  duration: 0.5,
+                }}
+              >
                 <span
                   {...s.connectWalletText}
-
                   style={{
                     whiteSpace: "nowrap",
                     position: "relative",
@@ -180,7 +182,6 @@ const Header: FunctionComponent = function () {
             <MenuToggle toggle={() => toggleOpen()} {...s.navBurger} />
           </motion.nav>
         </div>
-        <DropdownRoot />
       </DropdownProvider>
     </header>
   );
