@@ -1,7 +1,8 @@
 import React, { useRef, useState, useContext, useEffect } from "react";
+import { useRouter } from "next/router";
 import classNames from "classnames";
 import s from "./styles";
-import { motion, m } from "framer-motion";
+import { motion } from "framer-motion";
 import { useDimensions } from "hooks/useDimensions";
 import { Context } from "contexts/Dropdown";
 import Image from "next/image";
@@ -14,6 +15,7 @@ export function DropdownOption({
   backgroundHeight,
   backgroundWidth,
 }) {
+  const router = useRouter();
   const idRef = useRef(++lastOptionId);
   const id = idRef.current;
 
@@ -28,6 +30,8 @@ export function DropdownOption({
     cachedId,
     setCachedId,
   } = useContext(Context);
+
+  const isBlackDropDown = ['/team', '/lore', '/mint'].includes(router.pathname);
 
   useEffect(() => {
     if (!registered && optionDimensions) {
@@ -128,7 +132,8 @@ export function DropdownOption({
           <motion.div
             className={classNames(
               s.dropdownContainer.className,
-              s.background.className
+              s.background.className,
+              isBlackDropDown ? 'bg-black-border' : ''
             )}
             initial={{
               translateY: "-1rem",

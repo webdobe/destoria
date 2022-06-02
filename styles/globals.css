@@ -243,6 +243,13 @@ textarea, input {
   }
 }
 
+.bg-black-border {
+  box-sizing: border-box;
+  background: #050D1D !important;
+  mix-blend-mode: normal;
+  border: 1.11875px solid #232C5B;
+}
+
 .glower:hover {
   font-size: 400px !important;
 }
