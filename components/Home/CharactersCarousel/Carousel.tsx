@@ -65,14 +65,15 @@ export default class SimpleSlider extends Component {
             </div>
             <div {...s.charactersTextContent}>
               <h5 {...s.charactersTextContentTitle}>Faction</h5>
-              <h4 {...s.charactersTextContentSubtitle}>Coming soon</h4>
+              <h4 {...s.charactersTextContentSubtitle}>Tegrak </h4>
               <p {...s.charactersTextContentTextBlurred}>
-                The Destorian Outriders are an organization of rangers that keep
-                the peace in all the southern and central territories of Ordos
-                Prime. They are characterized by their pneumatic weaponry,
-                tactical armor and gas masks. Alongside the long coats and hats
-                they wear as part of their uniform. They are often seen
-                patrolling Ordos Prime on their newly developed hover bikes.
+                The Fists of Tegrak are a group of combined tribal forces that guard the villages of
+                the tribal people located in the northern mountainous region of Ordos Prime.
+                Apart from their excellent skills in close combat, they are also masters of
+                spiritual magic which they utilize in battle. The shamans are the most important
+                members of the Fist of Tegrak as they are able to cover an entire unit with
+                spectral armor or large shields to protect against missiles. The Fists of Tegrak
+                also use magically enhanced animals such as battle bears.
               </p>
               <div>
                 <div {...s.characterImageBlurred}>
@@ -104,14 +105,13 @@ export default class SimpleSlider extends Component {
             </div>
             <div {...s.charactersTextContent}>
               <h5 {...s.charactersTextContentTitle}>Faction</h5>
-              <h4 {...s.charactersTextContentSubtitle}>Coming soon</h4>
+              <h4 {...s.charactersTextContentSubtitle}>Laidar</h4>
               <p {...s.charactersTextContentTextBlurred}>
-                The Destorian Outriders are an organization of rangers that keep
-                the peace in all the southern and central territories of Ordos
-                Prime. They are characterized by their pneumatic weaponry,
-                tactical armor and gas masks. Alongside the long coats and hats
-                they wear as part of their uniform. They are often seen
-                patrolling Ordos Prime on their newly developed hover bikes.
+                The Shimmering Legion is an elite fighting order housed on the floating ship
+                which serves as the home of the Laidar. They are characterized by their
+                glowing power armor (hence the name shimmering) and deadly energy weapons.
+                The Iaidar also favor using shields and flamethrowers in combat, which
+                is why they can be seen in a testudo battle formation whenever they are in combat.
               </p>
               <div>
                 <div {...s.characterImageBlurred}>

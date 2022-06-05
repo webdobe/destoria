@@ -3,7 +3,7 @@ import classNameAdder from 'utils/classNameAdder'
 const styles = {
     exploreTheMetaverse: "flex flex-col justify-center items-center text-dwhite bg-no-repeat relative explore-metaverse",
     containerExploreTheMetaverse: "",
-    containerExploreTheMetaverseBordered: "flex flex-col justify-center items-center layout-first-border md:py-24 md:mx-5 xl:mx-5 h-60 md:h-auto",
+    containerExploreTheMetaverseBordered: "flex flex-col justify-center items-center layout-first-border md:py-24 md:mx-5 xl:mx-5 h-85 md:h-auto",
     destoria: "pl-2",
     destoriaLogo: "w-80",
     exploreTheMetaverseText: "uppercase tracking-wide text-dwhite md:text-5xl md:font-bold my-5 md:my-0",

@@ -1724,7 +1724,7 @@ button.control-arrow::before {
 
 @media (max-width: 1450px) {
   .custom-mx-5 {
-    width: calc(100% - 40px);
+    //width: calc(100% - 40px);
   }
 }
 

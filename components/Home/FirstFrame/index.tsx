@@ -146,15 +146,17 @@ const FirstFrame: FunctionComponent = function () {
             <div {...s.textBoxDestoriaTheVideoBordered}>
               <div {...s.textBoxDestoriaTheVideo}>
                 <p>
-                  Destoria is more than just a brand, it’s a destination. With a
-                  battle royale and MMORPG in development, Destoria aims to
-                  deliver real P2E mechanics through Unreal Engine.
+                  Destoria is so much more than a brand, it’s a destination,
+                  a family, an event, a community hub, an incubator, metaverse
+                  and real P2E opportunities all rolled into one.
                 </p>
                 <p>
-                  Destoria is developing the largest open world metaverse on the
-                  Ethereum blockchain. This metaverse has the ability to host
-                  experiences for entire projects, making this a launchpad for
-                  other communities and businesses.
+                  It's the next level, the change we all want, the evolution of what is to come.
+                  With a Battle Royale and MMORPG in differing stages near completion, Destoria
+                  aims to deliver for the first time real P2E mechanics through its use of Unreal Engine.
+                  Destoria is developing the largest open world metaverse on the Ethereum blockchain
+                  with the ability to host experiences for entire projects both start-ups or established,
+                  making this a perfect launchpad for all communities.
                 </p>
               </div>
               <div {...s.destoriaHeroVideo}>
