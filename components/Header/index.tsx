@@ -121,8 +121,8 @@ const Header: FunctionComponent = function () {
           <div {...s.navBox}>
             <nav {...s.nav}>
               <ul {...s.navUl}>
-                {dropDownOptionData.map((dropDownOptions) => (
-                  <DropdownOption {...dropDownOptions} />
+                {dropDownOptionData.map((dropDownOptions, key) => (
+                  <DropdownOption key={key} {...dropDownOptions} />
                 ))}
               </ul>
             </nav>
