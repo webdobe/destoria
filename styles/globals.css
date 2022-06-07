@@ -303,8 +303,7 @@ textarea, input {
   background-repeat: no-repeat;
   /* background-size: cover; */
   background-size: 100%;
-  background-attachment: fixed;
-  background-position: center initial;
+  background-position: center top;
   width: 339px;
   height: 600px;
 }
@@ -314,7 +313,6 @@ textarea, input {
   position: relative;
   background-size: contain;
   background-repeat: no-repeat;
-
 }
 
 .cards-carousel-middle {
@@ -327,7 +325,6 @@ textarea, input {
 .cards-carousel-right {
   background-image: url("/carousel-card-right.png");
   position: relative;
-  left: -25px !important;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -1462,7 +1459,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 
 @media (max-width: 950px) {
   .find-more-text-box { 
-    margin-top: 380px;
+    margin-top: 400px;
   }
   .mycontent-findmore {
     min-height: 350px;

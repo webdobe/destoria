@@ -11,7 +11,7 @@ const styles = {
     photolayerDesktopActualPhoto: "w-full h-full absolute text-dwhite photo-layer-desktop bg-none",
     contentLayer: "w-full h-full relative m-auto roadmap-content pointer-events-none",
     roadmapMobileWrapper: "roadmap-mobile-wrapper w-full h-full relative m-auto mb-20",
-    roadmapMobileContent: "roadmap-mobile-content backdrop-blur",
+    roadmapMobileContent: "roadmap-mobile-content backdrop-blur relative",
     roadmapList: "list-disc py-2",
     containerRoadmap: "w-full m-auto roadmap-content-parent flex justify-center relative",
     containerRoadmapBordered: "roadmap-content-base layout-border md:mx-5 bg-no-repeat bg-cover w-full h-full relative",
