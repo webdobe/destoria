@@ -13,7 +13,7 @@ const faqContent = [
   },
   {
     q: "Why purchase a 3D character NFT?",
-    a: "You will be able to play as your unique NFT character within the P2E Battle Royale and P2E MMORPG, as well as the Destorian Metaverse. You will also start off your Destorian adventures with a head start. Characters from the NFT Collection will hold special and unique utility which free characters may not. Complete details on abilities and utility for the 3D NFT characters will be announced soon."
+    a: "You will be able to play as your unique NFT character within the P2E Battle Royale and P2E MMORPG, as well as the Destorian Metaverse. You will also begin your Destorian adventures with a head start. Characters from the NFT Collection will hold special and unique utility which free characters may not. Complete details on abilities and utility for the 3D NFT characters will be announced soon."
   },
   {
     q: "How can I own land in Destoria?",
