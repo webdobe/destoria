@@ -369,6 +369,9 @@ textarea, input {
   width: 100%;
 }
 
+.character-image {
+}
+
 .charac-button-disabled {
   opacity: 0.35;
   cursor: auto;
