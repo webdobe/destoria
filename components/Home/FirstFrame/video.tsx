@@ -1,8 +1,14 @@
 import { FunctionComponent } from "react";
 import s from "./styles";
 import VREPlayer from "videojs-react-enhanced";
+import useDeviceDetect from "../../../hooks/useDeviceDetect";
 
 const FirstFrame: FunctionComponent = function () {
+  const {isMobile} = useDeviceDetect();
+  if (isMobile) {
+    return;
+  }
+
   const playerOptions = {
     src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     controls: false,
