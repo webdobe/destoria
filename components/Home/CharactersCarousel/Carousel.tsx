@@ -14,6 +14,7 @@ export default class SimpleSlider extends Component {
         showIndicators={false}
         infiniteLoop={true}
         swipeable={false}
+        showThumbs={false}
       >
         <div className="flex flex-col items-center">
           <div {...s.charactersContent}>

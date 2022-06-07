@@ -12,5 +12,4 @@ const styles = {
     cardContent: "text-base text-center leading-7 px-10",
 }
 
-
 export default classNameAdder(styles)

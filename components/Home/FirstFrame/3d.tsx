@@ -117,7 +117,7 @@ const ThreeD = ({ width, height, wrapperClassName, mtlPath, objPath, texturePath
     // Add texture to object
     const base = new THREE.TextureLoader().load("logo/logo_Textures/mesh_basecolor.png");
     const emissive = new THREE.TextureLoader().load("logo/logo_Textures/mesh_emissive.png");
-    const roughness = new THREE.TextureLoader().load("logo/logo_Textures/unreal_mesh_orm.png");
+    const roughness = new THREE.TextureLoader().load("logo/logo_Textures/mesh_roughness.png");
     const metalic = new THREE.TextureLoader().load("logo/logo_Textures/mesh_metallic.png");
     const normal = new THREE.TextureLoader().load("logo/logo_Textures/mesh_normal.png");
     return new THREE.MeshStandardMaterial( {

@@ -47,6 +47,7 @@ const FirstFrame: FunctionComponent = function () {
         loop={true}
       >
         <source src="https://cdn.streamelements.com/uploads/36891ad6-d100-4d4f-a19e-93eb27f706cc.webm" type="video/webm" />
+        <source src="https://storage.googleapis.com/jltech-assets/destoria/spaceship.mov" type="video/mp4" />
       </video>
     </div>
   );
