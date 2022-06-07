@@ -21,7 +21,7 @@ export const Navigation = () => (
       <MenuItem link={""}>About</MenuItem>
       <MenuItem link={"lore"}>Lore</MenuItem>
       <MenuItem link={"contact"}>Contact</MenuItem>
-      <MenuItem link={"team"}>Collabs</MenuItem>
+      <MenuItem link={"contact"}>Collabs</MenuItem>
       <MenuItem link={"team#3"}>Careers</MenuItem>
     <MenuItem link={"#3"}>FAQ</MenuItem>
   </motion.ul>

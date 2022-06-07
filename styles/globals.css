@@ -71,7 +71,6 @@ textarea, input {
       rgba(5, 13, 29, 1) 100%
     ),
     url("/bgforestfull.png");
-  background-size: 100%;
   background-repeat: no-repeat;
 }
 
@@ -101,6 +100,7 @@ textarea, input {
     ),
     url("/bg-characters.png");
   background-size: contain;
+  background-position: 0 0;
   background-repeat: no-repeat;
 }
 
@@ -345,8 +345,6 @@ textarea, input {
 }
 
 @media (min-width: 1000px) {
-
-
   .cards-carousel {
     height: 600px !important;
     background-repeat: no-repeat;
@@ -364,6 +362,14 @@ textarea, input {
     border-left: 1.5px solid rgba(255, 255, 255, 0.2);
     border-right: 1.5px solid rgba(255, 255, 255, 0.2);
   }
+}
+
+.characters-container {
+  width: 100%;
+}
+
+.characters-container .layout-border {
+  width: 100%;
 }
 
 .charac-button-disabled {
@@ -1114,6 +1120,22 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   transform: rotate(77deg);
 }
 
+.roadmap-content-base {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.roadmap-desktop-treasure {
+  position: absolute;
+  right: 5rem;
+}
+
+.photo-layer-desktop {
+  top: 10rem;
+  left: 0;
+  right: 0;
+}
+
 .roadmap-content-text >div >div{
   border-bottom: 2px solid rgba(255, 255, 255, 0.3);
   padding: 0 10px;
@@ -1267,10 +1289,13 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   height: 40px;
 }
 
+.roadmap-mobile-wrapper {
+  display: none;
+}
+
 .roadmap-mobile-content {
   background-color: rgba(255, 255, 255, 0.05);
   border: 2px solid rgba(248, 248, 248, 1);
-  display: none;
 }
 
 .roadmap-title {
@@ -1285,11 +1310,22 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   top: 0;
   left: 0;
 }
+
+.roadmap-content-parent {
+  display: none;
+}
+
+.roadmap-mobile-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
 .roadmap-mobile-content {
   display: flex;
   margin: 0 16px;
   width: calc(100% - 32px);
-  padding: 72px 8px 8px 8px;
+  padding: 72px 8px 8px 0;
   pointer-events: all;
 }
 
@@ -1356,7 +1392,6 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   font-size: 24px;
   font-weight: 600;
   text-align: center;
-  padding-top: 115px;
 }
 
 @media (max-width: 520px) {
@@ -1398,11 +1433,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   width: 313px;
   margin-top: 50px;
   padding-left: 6px;
-  padding-bottom: 98px;
 }
-
-
-
 
 .bg-openworld {
   background-image: url("/game-mb-openworld.png");
@@ -1414,6 +1445,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   background-image: url("/game-mb-combat.png");
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: 0 0;
 }
 
 .bg-customization {
@@ -1430,7 +1462,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 
 @media (max-width: 950px) {
   .find-more-text-box { 
-    margin-top: 530px;
+    margin-top: 380px;
   }
   .mycontent-findmore {
     min-height: 350px;
@@ -1685,13 +1717,17 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 }
 
 .carousel-root {
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   width: 100%;
+  height: auto;
+  /*position: absolute;*/
+  /*top: 25%;*/
+  /*left: 50%;*/
+  /*transform: translate(-50%, -50%);*/
+  /*width: 100%;*/
   max-width: 1080px;
 }
+
 .carousel-status {
   display: none;
 }

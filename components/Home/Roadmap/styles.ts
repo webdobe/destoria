@@ -5,15 +5,17 @@ const labels = "absolute m-auto cursor-pointer"
 const contents = "absolute text-sm text-dwhite m-auto cursor-pointer"
 
 const styles = {
-    roadmap: "w-full flex flex-col justify-center text-dwhite items-center text-dwhite bg-roadmap bg-no-repeat bg-cover absolute",
-    photoLayer: "w-full h-full absolute text-dwhite forced-height",
+    roadmap: "w-full flex flex-col justify-center text-dwhite items-center text-dwhite bg-roadmap bg-no-repeat bg-cover relative w-full h-full",
+    photoLayer: "w-full h-full text-dwhite",
     photolayerDesktop: "w-full h-full absolute text-dwhite photo-layer-desktop bg-none",
-    photolayerDesktopActualPhoto: "w-full h-full  absolute text-dwhite photo-layer-desktop bg-none",
-    contentLayer: "w-full h-full relative m-auto roadmap-content pointer-events-none layout-border",
+    photolayerDesktopActualPhoto: "w-full h-full absolute text-dwhite photo-layer-desktop bg-none",
+    contentLayer: "w-full h-full relative m-auto roadmap-content pointer-events-none",
+    roadmapMobileWrapper: "roadmap-mobile-wrapper w-full h-full relative m-auto mb-20",
     roadmapMobileContent: "roadmap-mobile-content backdrop-blur",
     roadmapList: "list-disc py-2",
-    containerRoadmap: "w-full cards-carousel-container m-auto roadmap-content-parent flex justify-center",
-    containerRoadmapBordered: "custom-mx-5 roadmap-content-base bg-roadmap bg-no-repeat bg-cover w-full h-full",
+    containerRoadmap: "w-full m-auto roadmap-content-parent flex justify-center relative",
+    containerRoadmapBordered: "roadmap-content-base layout-border md:mx-5 bg-no-repeat bg-cover w-full h-full relative",
+    containerRoadmapMobile: "w-full m-auto flex flex-col justify-center relative",
     faqContent: "flex flex-col px-2 text-dwhite max-w-6xl m-auto w-full",
     circleContainer: "max-w-xl m-auto border-custom-circulo opacity-30",
     ballOne: `roadmap-ball roadmap-ball-one ${balls}`,

@@ -60,14 +60,11 @@ const CharactersCarousel: FunctionComponent = function () {
 
   return (
     <section {...s.charactersCarousel} ref={containerRef}>
-      <div {...s.photoLayer}></div>
       <div {...s.contentLayer}>
-        <div  {...s.containerCharactersCarouselBordered} style={{maxWidth: '1400px'}}>
-        <div  {...s.charactersContent}>
-            <Carousel
-              
-            />
-        </div>
+        <div {...s.containerCharactersCarouselBordered} style={{maxWidth: '1400px', width: '100%'}}>
+          <div {...s.charactersContent}>
+              <Carousel />
+          </div>
         </div>
       </div>
     </section>
