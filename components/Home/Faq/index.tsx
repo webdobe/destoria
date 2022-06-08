@@ -16,7 +16,7 @@ const Faq: FunctionComponent = function () {
     }, 400);
   }, [selected, setSelected])
   return (
-    <section {...s.faq} ref={containerRef} id="3">
+    <section {...s.faq} ref={containerRef} id="faq">
       <div {...s.photoLayer}></div>
       <div {...s.contentLayer}>
         <div
