@@ -23,14 +23,14 @@ const ContactForm: FunctionComponent = function () {
           <div {...s.contactFormBoxTitle}>Whitelist for new projects</div>
           <div {...s.contactFormRegularText}>
             To invite Destoria to take part in your NFT project's Whitelist ,
-            please contact <span {...s.highlight}>support@destoria.io</span>
+            please contact <span {...s.highlight}>contact@destoria.io</span>
           </div>
           <div {...s.contactFormBoxTitle}>Collaborations</div>
           <div {...s.contactFormRegularText}>
             If you are a founder or part of a project and would like to discuss
             implementation of your collection, or the development of an Unreal
             Engine island or P2E game please contact{" "}
-            <span {...s.highlight}>support@destoria.io</span>
+            <span {...s.highlight}>collabs@destoria.io</span>
           </div>
           <div {...s.contactFormRegularText}>
             <br />

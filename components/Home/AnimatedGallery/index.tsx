@@ -1,26 +1,19 @@
 import s from "./styles";
-import { FunctionComponent, useEffect, useRef, useMemo } from "react";
-import Image from "next/image";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-
+import { FunctionComponent } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-import { EffectCoverflow, Pagination, Navigation } from "swiper";
 import dynamic from 'next/dynamic'
 
 const Masonry = dynamic(
   () => import('./Masonry'),
   { ssr: false }
 )
-const AnimatedGallery: FunctionComponent = function () {
-  const containerRef = useRef(null)
-
+const AnimatedGallery: FunctionComponent = (props) => {
+  const {sectionRef} = props;
 
   return (
-    <section {...s.animatedGallery} ref={containerRef}>
+    <section {...s.animatedGallery} ref={sectionRef}>
       <div {...s.photoLayer}></div>
       <div {...s.contentLayer}>
         <div

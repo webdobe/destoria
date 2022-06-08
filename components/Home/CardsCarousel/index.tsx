@@ -14,9 +14,10 @@ import content from "components/Carousel/CarouselOne";
 
 const Carousel = dynamic(() => import("components/Carousel"), { ssr: false });
 
-const CardsCarousel: FunctionComponent = function () {
+const CardsCarousel: FunctionComponent = (props) => {
+  const {sectionRef} = props;
   return (
-    <section {...s.cardsCarousel}>
+    <section {...s.cardsCarousel} ref={sectionRef} id="upcoming">
       <div {...s.photoLayer}></div>
       <div {...s.contentLayer}>
         <div

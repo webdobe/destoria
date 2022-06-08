@@ -1,26 +1,31 @@
-import React, { createContext, useState, useCallback, useEffect, FunctionComponent } from "react";
-
+import React, {
+  createContext,
+  useState,
+  useCallback,
+  useEffect,
+  FunctionComponent,
+} from "react";
 
 interface IDropDownContext {
-  registerOption: (param: any) => void
-  updateOptionProps: any
-  getOptionById: any
-  deleteOptionById: any
-  options: any 
-  targetId: any 
-  setTargetId: any
-  cachedId: any
-  setCachedId: any
+  registerOption: (param: any) => void;
+  updateOptionProps: any;
+  getOptionById: any;
+  deleteOptionById: any;
+  options: any;
+  targetId: any;
+  setTargetId: any;
+  cachedId: any;
+  setCachedId: any;
 }
 
 interface IItems {
-  id: 'string' | number
-  optionDimensions: any
-  optionCenterX: any
-  WrappedContent: any
-  backgroundHeight: any
-  optionId: any
-  backgroundWidth: any
+  id: "string" | number;
+  optionDimensions: any;
+  optionCenterX: any;
+  WrappedContent: any;
+  backgroundHeight: any;
+  optionId: any;
+  backgroundWidth: any;
 }
 
 export const Context = createContext<IDropDownContext>(null);
@@ -37,7 +42,7 @@ export const DropdownProvider: FunctionComponent = ({ children }) => {
       optionCenterX,
       WrappedContent,
       backgroundHeight,
-      backgroundWidth
+      backgroundWidth,
     }) => {
       setOptions((items: IItems) => [
         ...items,
@@ -47,7 +52,7 @@ export const DropdownProvider: FunctionComponent = ({ children }) => {
           optionCenterX,
           WrappedContent,
           backgroundHeight,
-          backgroundWidth
+          backgroundWidth,
         },
       ]);
     },
@@ -81,10 +86,6 @@ export const DropdownProvider: FunctionComponent = ({ children }) => {
     [setOptions]
   );
 
-  useEffect(() => {
-    if (targetId !== null) setCachedId(targetId);
-  }, [targetId]);
-
   return (
     <Context.Provider
       value={{
@@ -102,4 +103,4 @@ export const DropdownProvider: FunctionComponent = ({ children }) => {
       {children}
     </Context.Provider>
   );
-}
+};

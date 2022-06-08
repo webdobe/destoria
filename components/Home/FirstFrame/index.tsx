@@ -17,14 +17,8 @@ import { motion } from "framer-motion";
 const ShipVideo = dynamic(() => import("./video"), { ssr: false });
 const ThreeD = dynamic(() => import("./3d"), { ssr: false });
 
-
-const Followup = dynamic(
-  () => import('components/Home/Followup'),
-  { ssr: false }
-)
-
-
-const FirstFrame: FunctionComponent = function () {
+const FirstFrame: FunctionComponent = (props) => {
+  const {sectionRef} = props;
   const myRef = useRef(null);
   const myVideo = useRef(null);
   const [myHeight, setMyHeight] = useState(0);
@@ -64,23 +58,28 @@ const FirstFrame: FunctionComponent = function () {
   }, [count]);
 
   return (
-    <div {...s.majorContainer} ref={myRef}>
+    <div {...s.majorContainer} ref={sectionRef} id="about">
       <div {...s.photoLayer}>
         <ShipVideo />
       </div>
       <div {...s.contentLayer}>
         <Header />
         <section {...s.exploreTheMetaverse}>
-          <Followup />
           <div
             {...s.containerExploreTheMetaverse}
             style={{ maxWidth: "1440px", width: "100%" }}
           >
             <div {...s.containerExploreTheMetaverseBordered}>
               <ThreeD
+                wrapperClassName="mb-7"
                 mtlPath="logo/logo.mtl"
                 objPath="logo/logo.obj"
                 texturePath="logo/logo_Textures/mesh_emissive.png"
+              />
+              <img
+                {...s.destoriaLetter}
+                src="/destoria-letter.svg"
+                alt="DESTORIA"
               />
               <div {...s.exploreTheMetaverseText}>Explore the Metaverse</div>
               <motion.div
@@ -140,15 +139,17 @@ const FirstFrame: FunctionComponent = function () {
             <div {...s.textBoxDestoriaTheVideoBordered}>
               <div {...s.textBoxDestoriaTheVideo}>
                 <p>
-                  Destoria is more than just a brand, it’s a destination. With a
-                  battle royale and MMORPG in development, Destoria aims to
-                  deliver real P2E mechanics through Unreal Engine.
+                  Destoria is so much more than a brand, it’s a destination,
+                  a family, an event, a community hub, an incubator, metaverse
+                  and real P2E opportunities all rolled into one.
                 </p>
                 <p>
-                  Destoria is developing the largest open world metaverse on the
-                  Ethereum blockchain. This metaverse has the ability to host
-                  experiences for entire projects, making this a launchpad for
-                  other communities and businesses.
+                  It's the next level, the change we all want, the evolution of what is to come.
+                  With a Battle Royale and MMORPG in differing stages near completion, Destoria
+                  aims to deliver for the first time real P2E mechanics through its use of Unreal Engine.
+                  Destoria is developing the largest open world metaverse on the Ethereum blockchain
+                  with the ability to host experiences for entire projects both start-ups or established,
+                  making this a perfect launchpad for all communities.
                 </p>
               </div>
               <div {...s.destoriaHeroVideo}>

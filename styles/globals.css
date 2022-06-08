@@ -71,7 +71,6 @@ textarea, input {
       rgba(5, 13, 29, 1) 100%
     ),
     url("/bgforestfull.png");
-  background-size: 100%;
   background-repeat: no-repeat;
 }
 
@@ -101,6 +100,7 @@ textarea, input {
     ),
     url("/bg-characters.png");
   background-size: contain;
+  background-position: 0 0;
   background-repeat: no-repeat;
 }
 
@@ -243,6 +243,13 @@ textarea, input {
   }
 }
 
+.bg-black-border {
+  box-sizing: border-box;
+  background: #050D1D !important;
+  mix-blend-mode: normal;
+  border: 1.11875px solid #232C5B;
+}
+
 .glower:hover {
   font-size: 400px !important;
 }
@@ -296,8 +303,7 @@ textarea, input {
   background-repeat: no-repeat;
   /* background-size: cover; */
   background-size: 100%;
-  background-attachment: fixed;
-  background-position: center initial;
+  background-position: center top;
   width: 339px;
   height: 600px;
 }
@@ -307,7 +313,6 @@ textarea, input {
   position: relative;
   background-size: contain;
   background-repeat: no-repeat;
-
 }
 
 .cards-carousel-middle {
@@ -320,7 +325,6 @@ textarea, input {
 .cards-carousel-right {
   background-image: url("/carousel-card-right.png");
   position: relative;
-  left: -25px !important;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -338,8 +342,6 @@ textarea, input {
 }
 
 @media (min-width: 1000px) {
-
-
   .cards-carousel {
     height: 600px !important;
     background-repeat: no-repeat;
@@ -357,6 +359,17 @@ textarea, input {
     border-left: 1.5px solid rgba(255, 255, 255, 0.2);
     border-right: 1.5px solid rgba(255, 255, 255, 0.2);
   }
+}
+
+.characters-container {
+  width: 100%;
+}
+
+.characters-container .layout-border {
+  width: 100%;
+}
+
+.character-image {
 }
 
 .charac-button-disabled {
@@ -575,7 +588,8 @@ div[data-open="true"] img {
 div[data-open="true"] .answer-box {
   opacity: 1;
   display: flex;
-  top: -45px;
+  top: 0;
+  margin-top: -45px;
   color: #000;
   align-items: stretch;
   transition: 0.45s;
@@ -597,10 +611,9 @@ div[data-open="true"] .answer-box .faq-right {
   padding: 0px;
   width: 100%;
   height: 0px;
-  transition: 0.2s;
+  transition: 0.4s;
   overflow: hidden;
   box-sizing: border-box !important;
-  transition-delay: 0.2s;
   clip-path: polygon(
     0 0,
     100% 0,
@@ -631,18 +644,15 @@ div[data-open="true"] .answer-box .faq-right {
 
 div[data-open="true"] .answer-text-box {
   height: min-content !important;
-  transition: 0.2s;
+  transition: 0.4s;
   padding: 50px 16px 16px 16px;
 }
 
 .faq-box {
-  height: 50px;
-  transition: 0.2s;
-  /* transition-delay: 0.2s; */
+  transition: 0.4s;
 }
 
 div[data-open="true"].faq-box {
-  transition-delay: 0.2s;
 }
 
 .answer-right-box {
@@ -650,7 +660,7 @@ div[data-open="true"].faq-box {
   height: 0px;
   display: flex;
   flex-direction: column;
-  transition: 0.2s;
+  transition: 0.4s;
 }
 
 div[data-open="true"] .answer-right-box {
@@ -658,21 +668,21 @@ div[data-open="true"] .answer-right-box {
   height: 140px;
   display: flex;
   flex-direction: column;
-  transition: 0.2s;
+  transition: 0.4s;
 }
 
 .answer-right-top-box {
   background-color: rgba(255, 255, 255, 1);
   height: 0px;
   width: 100%;
-  transition: 0.2s;
+  transition: 0.4s;
 }
 
 div[data-open="true"] .answer-right-top-box {
   background-color: rgba(255, 255, 255, 1);
   height: calc(100% - 16px);
   width: 100%;
-  transition: 0.2s;
+  transition: 0.4s;
 }
 
 div[data-open="true"] .-left-3 {
@@ -744,15 +754,14 @@ div[data-open="true"] .-left-3 {
     );
   }
   div[data-open="true"] .answer-text-box {
-    transition: 0.2s;
-    padding: 64px 24px 24px 24px;
+    transition: 0.4s;
+    padding: 24px 24px 24px 24px;
   }
   div[data-open="true"].faq-box {
-    transition-delay: 0.1s;
   }
   div[data-open="true"] .answer-text-box.bigger-answer {
-    transition: 0.2s;
-    padding: 64px 24px 24px 24px;
+    transition: 0.4s;
+    padding: 24px 24px 24px 24px;
   }
 }
 @media (min-width: 1000px) {
@@ -778,16 +787,14 @@ div[data-open="true"] .-left-3 {
   }
   div[data-open="true"] .answer-text-box {
     height: 136px;
-    transition: 0.2s;
+    transition: 0.4s;
     padding: 64px 24px 24px 24px;
   }
   div[data-open="true"].faq-box {
-    height: 150px;
-    transition-delay: 0.2s;
   }
   div[data-open="true"] .answer-text-box.bigger-answer {
     height: 234px;
-    transition: 0.2s;
+    transition: 0.4s;
     padding: 64px 24px 24px 24px;
   }
 }
@@ -1113,6 +1120,22 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   transform: rotate(77deg);
 }
 
+.roadmap-content-base {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.roadmap-desktop-treasure {
+  position: absolute;
+  right: 5rem;
+}
+
+.photo-layer-desktop {
+  top: 10rem;
+  left: 0;
+  right: 0;
+}
+
 .roadmap-content-text >div >div{
   border-bottom: 2px solid rgba(255, 255, 255, 0.3);
   padding: 0 10px;
@@ -1266,10 +1289,13 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   height: 40px;
 }
 
+.roadmap-mobile-wrapper {
+  display: none;
+}
+
 .roadmap-mobile-content {
   background-color: rgba(255, 255, 255, 0.05);
   border: 2px solid rgba(248, 248, 248, 1);
-  display: none;
 }
 
 .roadmap-title {
@@ -1284,11 +1310,22 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   top: 0;
   left: 0;
 }
+
+.roadmap-content-parent {
+  display: none;
+}
+
+.roadmap-mobile-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
 .roadmap-mobile-content {
   display: flex;
   margin: 0 16px;
   width: calc(100% - 32px);
-  padding: 72px 8px 8px 8px;
+  padding: 72px 8px 8px 0;
   pointer-events: all;
 }
 
@@ -1355,7 +1392,6 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   font-size: 24px;
   font-weight: 600;
   text-align: center;
-  padding-top: 115px;
 }
 
 @media (max-width: 520px) {
@@ -1369,7 +1405,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 }
 @media (max-width: 390px) {
   .text-box-charac {
-    padding: 32px !important;
+    padding: 0 32px !important;
   }
 
     .find-more-text-box p {
@@ -1397,11 +1433,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   width: 313px;
   margin-top: 50px;
   padding-left: 6px;
-  padding-bottom: 98px;
 }
-
-
-
 
 .bg-openworld {
   background-image: url("/game-mb-openworld.png");
@@ -1413,6 +1445,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   background-image: url("/game-mb-combat.png");
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: 0 0;
 }
 
 .bg-customization {
@@ -1429,7 +1462,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 
 @media (max-width: 950px) {
   .find-more-text-box { 
-    margin-top: 530px;
+    margin-top: 400px;
   }
   .mycontent-findmore {
     min-height: 350px;
@@ -1684,13 +1717,17 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 }
 
 .carousel-root {
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   width: 100%;
+  height: auto;
+  /*position: absolute;*/
+  /*top: 25%;*/
+  /*left: 50%;*/
+  /*transform: translate(-50%, -50%);*/
+  /*width: 100%;*/
   max-width: 1080px;
 }
+
 .carousel-status {
   display: none;
 }
@@ -1723,7 +1760,7 @@ button.control-arrow::before {
 
 @media (max-width: 1450px) {
   .custom-mx-5 {
-    width: calc(100% - 40px);
+    //width: calc(100% - 40px);
   }
 }
 

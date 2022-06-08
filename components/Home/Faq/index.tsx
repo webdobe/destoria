@@ -4,8 +4,8 @@ import Image from "next/image";
 import Faqbox from './FaqBox'
 import FaqContent from './content'
 
-const Faq: FunctionComponent = function () {
-  const containerRef = useRef(null)
+const Faq: FunctionComponent = (props) => {
+  const {sectionRef} = props;
   const [selected, setSelected] = useState(-1)
   const handleSelect = useCallback((index) => {
     if (index === selected) return setSelected(-1)
@@ -16,7 +16,7 @@ const Faq: FunctionComponent = function () {
     }, 400);
   }, [selected, setSelected])
   return (
-    <section {...s.faq} ref={containerRef} id="3">
+    <section {...s.faq} ref={sectionRef} id="faq">
       <div {...s.photoLayer}></div>
       <div {...s.contentLayer}>
         <div

@@ -11,7 +11,7 @@ const slides = [
             MMORPG
           </h4>
           <p  {...s.cardContent}>
-          Freely roam the Destorian multiverse and complete one of the many storylines and side quests. Focusing on combat and P2E, explore a variety of biomes and opportunities. All while engaging with enemies within the environment and other players. And remember, every action has an equal and opposite reaction. Play wisely. 
+            Welcome and get ready for the future of Battle Royale. The ultimate BR within a P2E environment. Create your account on our site and you will be able to trade your earned XP or Minerals for our $STORI token that is exchangeable on the Eth blockchain. Prepare yourself to play to earn like never before on your console.
           </p>
           <h4 {...s.cardBottomSpecial} style={{color: "#F0F0F0", filter: 'blur(1px)'}}>
             coming soon...
@@ -29,7 +29,7 @@ const slides = [
             Metaverse
           </h4>
           <p  {...s.cardContent}  style={{marginBottom: '20px'}}>
-          Users can set up an island with a passive income shop, or host a P2E experience. Be the Destorian Mechanic or a Landlord and rent out housing. Use this space as not only a safe spot within our ecosystem, but also a place for you to grow with us.
+            Lose yourself and the reality of time in Destoria as you focus on the combat and real P2E possibilities. Explore our biomes and a multitude of opportunities as you engage with enemies, NPC's and other players within the environments. But never forget that every action within Destoria will affect your path forward... PLAY WISELY
           </p>
           <h4 {...s.cardBottom} style={{color: "#F0F0F0", filter: 'blur(1px)'}}>
             coming soon...
@@ -47,7 +47,7 @@ const slides = [
             Battle Royale
           </h4>
           <p  {...s.cardContent}>
-          This game will be like most other last man or last team standing blueprints, except with a few twists of our own. Create an account on our site to be able to trade in your XP and minerals for our $STORI token and be able to play to earn like you never have before on console. 
+            In conjunction with our dev team you will be able to set up an island with passive income opportunities, a real life or virtual business or even host your own P2E experiences. Be a Destorian mechanic, a landlord, or sell your services or products from your virtual business within Destorias Metaverse. Utilise your island by adding your NFT's and developing P2E games of your own that can enhance your project's utilities.
           </p>
           <h4 {...s.cardBottom} style={{color: "#F0F0F0", filter: 'blur(1px)'}}>
             coming soon...

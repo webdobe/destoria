@@ -7,7 +7,6 @@ import About from "./Content/About";
 import Marketplace from "./Content/Marketplace";
 import Mint from "./Content/Mint";
 import Whitepaper from "./Content/Whitepaper";
-import DropdownRoot from "./dropdownRoot";
 import { DropdownProvider } from "contexts/Dropdown";
 import { motion, useCycle } from "framer-motion";
 import { useMobileDimensions } from "hooks/useMobileDimensions";
@@ -44,6 +43,39 @@ const sidebar = {
     },
   },
 };
+
+const dropDownOptionData = [
+  {
+    name: "About",
+    content: About,
+    backgroundHeight: 140,
+    backgroundWidth: 125,
+  },
+  {
+    name: "Whitepaper",
+    content: Whitepaper,
+    backgroundHeight: 195,
+    backgroundWidth: 160,
+  },
+  {
+    name: "Team",
+    content: Teams,
+    backgroundHeight: 140,
+    backgroundWidth: 125,
+  },
+  {
+    name: "Marketplace",
+    content: Marketplace,
+    backgroundHeight: 195,
+    backgroundWidth: 160,
+  },
+  {
+    name: "Mint",
+    content: Mint,
+    backgroundHeight: 135,
+    backgroundWidth: 105,
+  },
+];
 
 const Header: FunctionComponent = function () {
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -89,36 +121,9 @@ const Header: FunctionComponent = function () {
           <div {...s.navBox}>
             <nav {...s.nav}>
               <ul {...s.navUl}>
-                <DropdownOption
-                  name="About"
-                  content={About}
-                  backgroundHeight={140}
-                  backgroundWidth={125}
-                />
-                <DropdownOption
-                  name="Whitepaper"
-                  content={Whitepaper}
-                  backgroundHeight={195}
-                  backgroundWidth={160}
-                />
-                <DropdownOption
-                  name="Team"
-                  content={Teams}
-                  backgroundHeight={140}
-                  backgroundWidth={125}
-                />
-                <DropdownOption
-                  name="Marketplace"
-                  content={Marketplace}
-                  backgroundHeight={195}
-                  backgroundWidth={160}
-                />
-                <DropdownOption
-                  name="Mint"
-                  content={Mint}
-                  backgroundHeight={135}
-                  backgroundWidth={105}
-                />
+                {dropDownOptionData.map((dropDownOptions, key) => (
+                  <DropdownOption key={key} {...dropDownOptions} />
+                ))}
               </ul>
             </nav>
             <motion.div
@@ -134,15 +139,17 @@ const Header: FunctionComponent = function () {
                   delay: 0.15,
                 }}
               ></motion.div>
-              <motion.div {...s.connectWallet}                   variants={cardVariants}
-                  transition={{
-                    ease: "easeOut",
-                    delay: 0.15,
-                    duration: 0.5,
-                  }}>
+              <motion.div
+                {...s.connectWallet}
+                variants={cardVariants}
+                transition={{
+                  ease: "easeOut",
+                  delay: 0.15,
+                  duration: 0.5,
+                }}
+              >
                 <span
                   {...s.connectWalletText}
-
                   style={{
                     whiteSpace: "nowrap",
                     position: "relative",
@@ -180,7 +187,6 @@ const Header: FunctionComponent = function () {
             <MenuToggle toggle={() => toggleOpen()} {...s.navBurger} />
           </motion.nav>
         </div>
-        <DropdownRoot />
       </DropdownProvider>
     </header>
   );

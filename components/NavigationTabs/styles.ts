@@ -4,7 +4,7 @@ const alltabs = "tab-nav-button font-ultrasmall md:text-xs md:text-base font-bol
 const allInners = "relative flex items-center justify-center cursor-pointer "
 
 const styles = {
-    tabs: "w-full flex justify-between text-dwhite items-stretch text-dwhite bg-no-repeat bg-cover max-w-3xl m-auto px-5 md:px-0 py-3 relative top-7 md:top-0",
+    tabs: "w-full flex justify-between text-dwhite items-stretch text-dwhite bg-no-repeat bg-cover max-w-3xl m-auto px-5 md:px-0 py-3 relative md:top-0",
     tabButton: alltabs,
     tabButtonLast: alltabs + "tab-nav-button__last",
     tabButtonFirst: alltabs + "tab-nav-button__first",

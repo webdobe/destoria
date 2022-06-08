@@ -3,7 +3,7 @@ import classNameAdder from 'utils/classNameAdder'
 const findMore = "bg-cover flex w-full max-w-4xl find-more-item"
 
 const styles = {
-    findMore: "flex flex-col justify-center items-center text-dwhite bg-no-repeat bg-cover bg-characters relative",
+    findMore: "flex flex-col justify-center items-center text-dwhite bg-no-repeat bg-cover relative",
     photoLayer: "w-full h-full absolute first-img-layer",
     contentLayer: "w-full h-full relative",
     findmoreContent: "w-full flex justify-center px-3",

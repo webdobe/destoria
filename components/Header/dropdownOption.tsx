@@ -1,4 +1,6 @@
 import React, { useRef, useState, useContext, useEffect } from "react";
+import { useRouter } from "next/router";
+import classNames from "classnames";
 import s from "./styles";
 import { motion } from "framer-motion";
 import { useDimensions } from "hooks/useDimensions";
@@ -13,19 +15,23 @@ export function DropdownOption({
   backgroundHeight,
   backgroundWidth,
 }) {
+  const router = useRouter();
   const idRef = useRef(++lastOptionId);
   const id = idRef.current;
 
   const [optionHook, optionDimensions] = useDimensions();
   const [registered, setRegistered] = useState(false);
-  const [open, setOpen] = useState(false)
   const {
     registerOption,
     updateOptionProps,
     deleteOptionById,
     setTargetId,
     targetId,
+    cachedId,
+    setCachedId,
   } = useContext(Context);
+
+  const isBlackDropDown = ['/team', '/lore', '/mint'].includes(router.pathname);
 
   useEffect(() => {
     if (!registered && optionDimensions) {
@@ -72,14 +78,10 @@ export function DropdownOption({
     backgroundWidth,
   ]);
 
-  const handleOpen = () => (
-    setOpen(true),
-    setTargetId(id)
-    )
-  const handleClose = () => (
-    setOpen(false),
-    setTargetId(null)
-  )
+  const handleOpen = () => setTargetId(id);
+  const handleClose = () => setTargetId(null);
+  const handleOpenContent = () => setCachedId(id);
+  const handleCloseContent = () => setCachedId(null);
   const handleTouch = () => (window.isMobile = true);
 
   const handleClick = (e) => {
@@ -87,6 +89,9 @@ export function DropdownOption({
 
     return targetId === id ? handleClose() : handleOpen();
   };
+
+  const isOpened = () =>
+    (targetId && targetId === id) || (cachedId && cachedId === id);
 
   return (
     <motion.li
@@ -99,15 +104,21 @@ export function DropdownOption({
       onFocus={handleOpen}
       onBlur={handleClose}
     >
-      <div className={`flex flex-col align-middle justify-center ${(name === "Marketplace" || name == "Whitepaper") && "opacity-60"}`} onClick={() => {
-        if (name === "About" || name == "Whitepaper" || name == "Marketplace") return false;
-        window.location.href = `/${name.toLowerCase()}`
-      }}>
+      <div
+        className={`flex flex-col align-middle justify-center relative ${
+          (name === "Marketplace" || name == "Whitepaper") && "opacity-60"
+        }`}
+        onClick={() => {
+          if (name === "About" || name == "Whitepaper" || name == "Marketplace")
+            return false;
+          window.location.href = `/${name.toLowerCase()}`;
+        }}
+      >
         {name}
-        <div className="absolute top-12">
+        <div className="absolute top-full leading-none -mt-1">
           <motion.div
             initial={false}
-            animate={{ rotate: open ? 180 : 0, y: open ? 5 : 0 }}
+            animate={isOpened() ? { rotate: 180, y: 5 } : { rotate: 0, y: 0 }}
           >
             <Image
               src="/arrow-dropdown.svg"
@@ -117,6 +128,25 @@ export function DropdownOption({
             />
           </motion.div>
         </div>
+        {isOpened() && (
+          <motion.div
+            className={classNames(
+              s.dropdownContainer.className,
+              s.background.className,
+              isBlackDropDown ? 'bg-black-border' : ''
+            )}
+            initial={{
+              translateY: "-1rem",
+              opacity: 0,
+            }}
+            animate={{ translateY: 0, opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            onHoverStart={() => !window.isMobile && handleOpenContent()}
+            onHoverEnd={() => !window.isMobile && handleCloseContent()}
+          >
+            <Content />
+          </motion.div>
+        )}
       </div>
     </motion.li>
   );

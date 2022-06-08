@@ -11,11 +11,12 @@ import NavigationTabs from "components/NavigationTabs";
 import React, { useState } from "react";
 const orderTabs = ["Open World", "Combat", "Customization", "Interoperability"];
 
-const FindMore: FunctionComponent = function () {
+const FindMore: FunctionComponent = (props) => {
+  const {sectionRef} = props;
   const [currentTab, setCurrentTab] = useState(0);
 
   return (
-    <section {...s.findMore}>
+    <section {...s.findMore} ref={sectionRef} id="game-specs">
       <div {...s.photoLayer}></div>
       <div {...s.contentLayer}>
         <div
