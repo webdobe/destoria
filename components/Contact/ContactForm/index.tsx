@@ -10,7 +10,43 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-const ContactForm: FunctionComponent = function () {
+const ContactForm: FunctionComponent = () => {
+
+  const defaultContact = {
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  };
+
+  const [contact, setContact] = useState(defaultContact);
+
+  const handleOnChange = (e, field) => {
+    let values = {...contact}
+    values[field] = e.target.value;
+    setContact(values);
+  }
+
+  const handleSubmit = () => {
+
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(contact)
+    }).then((res) => {
+      console.log('Response received')
+      if (res.status === 200) {
+        console.log('Response succeeded!')
+        setContact(defaultContact)
+      }
+    })
+  }
+
+  console.log(contact);
+
   return (
     <section {...s.contactForm} style={{ maxWidth: "1440px", width: "100%" }}>
       <div {...s.contactFormContent}>
@@ -44,22 +80,35 @@ const ContactForm: FunctionComponent = function () {
           </div>
           <div {...s.contactFormGrid}>
             <div {...s.gridSingle}>
-              <input type="text" placeholder="Full Name*" {...s.singleInput} />
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name*"
+                onChange={(e) => handleOnChange(e, 'name')}
+                {...s.singleInput}
+              />
             </div>
             <div {...s.gridSingle}>
               <input
                 type="text"
                 placeholder="Email*"
+                onChange={(e) => handleOnChange(e, 'email')}
                 {...s.singleInput}
               />
             </div>
             <div {...s.gridSingle}>
-              <input type="text" placeholder="Subject*" {...s.singleInput} />
+              <input
+                type="text"
+                placeholder="Subject*"
+                onChange={(e) => handleOnChange(e, 'subject')}
+                {...s.singleInput}
+              />
             </div>
             <div {...s.gridDouble}>
               <textarea
                 type="text"
                 placeholder="Message"
+                onChange={(e) => handleOnChange(e, 'message')}
                 {...s.textAreaInput}
               />
             </div>
@@ -91,20 +140,19 @@ const ContactForm: FunctionComponent = function () {
                     style={{ position: "relative", left: "0" }}
                   />
                 </div>
-                <Link href="/lore">
-                  <div
-                    {...s.applyNowText}
-                    style={{
-                      whiteSpace: "nowrap",
-                      position: "relative",
-                      left:  window.innerWidth > 550 ? "32.5px" : "20px",
-                      top: '10px',
-                      zIndex: 1,
-                    }}
-                  >
-                    Send message
-                  </div>
-                </Link>
+                <div
+                  {...s.applyNowText}
+                  onClick={handleSubmit}
+                  style={{
+                    whiteSpace: "nowrap",
+                    position: "relative",
+                    left:  window.innerWidth > 550 ? "32.5px" : "20px",
+                    top: '10px',
+                    zIndex: 1,
+                  }}
+                >
+                  Send message
+                </div>
                 <div style={{ position: "relative", left: "-0", top: "16px" }}>
                 <Image
                   {...s.connectWalletImage}
