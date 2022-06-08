@@ -17,14 +17,8 @@ import { motion } from "framer-motion";
 const ShipVideo = dynamic(() => import("./video"), { ssr: false });
 const ThreeD = dynamic(() => import("./3d"), { ssr: false });
 
-
-const Followup = dynamic(
-  () => import('components/Home/Followup'),
-  { ssr: false }
-)
-
-
-const FirstFrame: FunctionComponent = function () {
+const FirstFrame: FunctionComponent = (props) => {
+  const {sectionRef} = props;
   const myRef = useRef(null);
   const myVideo = useRef(null);
   const [myHeight, setMyHeight] = useState(0);
@@ -64,14 +58,13 @@ const FirstFrame: FunctionComponent = function () {
   }, [count]);
 
   return (
-    <div {...s.majorContainer} ref={myRef}>
+    <div {...s.majorContainer} ref={sectionRef} id="about">
       <div {...s.photoLayer}>
         <ShipVideo />
       </div>
       <div {...s.contentLayer}>
         <Header />
         <section {...s.exploreTheMetaverse}>
-          <Followup />
           <div
             {...s.containerExploreTheMetaverse}
             style={{ maxWidth: "1440px", width: "100%" }}

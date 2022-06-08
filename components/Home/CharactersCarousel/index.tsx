@@ -5,7 +5,8 @@ import dynamic from "next/dynamic";
 const Carousel = dynamic(() => import("./Carousel"), { ssr: false });
 
 
-const CharactersCarousel: FunctionComponent = function () {
+const CharactersCarousel: FunctionComponent = (props) => {
+  const {sectionRef} = props;
   const containerRef = useRef()
 
   useEffect(() => {
@@ -59,8 +60,8 @@ const CharactersCarousel: FunctionComponent = function () {
   },[])
 
   return (
-    <section {...s.charactersCarousel} ref={containerRef}>
-      <div {...s.contentLayer}>
+    <section {...s.charactersCarousel} ref={sectionRef} id="characters">
+      <div {...s.contentLayer} ref={containerRef}>
         <div {...s.containerCharactersCarouselBordered} style={{maxWidth: '1400px', width: '100%'}}>
           <div {...s.charactersContent}>
               <Carousel />

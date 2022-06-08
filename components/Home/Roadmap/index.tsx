@@ -1,13 +1,13 @@
-import React, { FunctionComponent, useEffect, useState, useRef } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import s from "./styles";
 import Video from "./video";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-const Roadmap: FunctionComponent = function () {
+const Roadmap: FunctionComponent = (props) => {
+  const {sectionRef} = props;
   const [selected, setSelected] = useState(0);
   const [showModal, setShowModal] = useState(false);
-  const roadmapRef = useRef()
   
   useEffect(() => {
     window.addEventListener('scroll', () => setShowModal(false))
@@ -16,7 +16,7 @@ const Roadmap: FunctionComponent = function () {
     }
   })
   return (
-    <section {...s.roadmap} ref={roadmapRef}>
+    <section {...s.roadmap} ref={sectionRef} id="roadmap">
       <div {...s.containerRoadmap}>
         <div {...s.containerRoadmapBordered} style={{ maxWidth: "1400px" }}>
           <div {...s.photoLayer}>
@@ -510,7 +510,7 @@ const Roadmap: FunctionComponent = function () {
                   <li {...s.roadmapList}>
                     Presale $Stori Token/$Stori Token Sale
                   </li>
-                  <li {...s.roadmapList}>NFT holder Airdrop</li>
+                  <li {...s.roadmapList}>NFT holder claim</li>
                   <li {...s.roadmapList}>Post withering Roadmap Launch</li>
                 </ul>
               </div>
