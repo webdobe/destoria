@@ -15,7 +15,7 @@ const Marketplace: FunctionComponent = function () {
           />
         </li>
         <li {...s.whiteTitle}>COMING SOON</li>
-        <li {...s.whiteText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        {/*<li {...s.whiteText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>*/}
       </ul>
     </div>
   );

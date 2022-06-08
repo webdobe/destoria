@@ -1405,7 +1405,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
 }
 @media (max-width: 390px) {
   .text-box-charac {
-    padding: 32px !important;
+    padding: 0 32px !important;
   }
 
     .find-more-text-box p {

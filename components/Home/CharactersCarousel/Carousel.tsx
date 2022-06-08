@@ -18,6 +18,8 @@ export default class SimpleSlider extends Component {
       >
         <div className="flex flex-col items-center">
           <div {...s.charactersContent}>
+            <h5 {...s.charactersTextMobileTitle}>Faction</h5>
+            <h4 {...s.charactersTextMobileSubtitle}>Outrider</h4>
             <div {...s.charactersImageContent} style={{ minWidth: "360px" }}>
               <Image
                 {...s.characterImage}
@@ -51,6 +53,8 @@ export default class SimpleSlider extends Component {
         </div>
         <div className="flex flex-col items-center  w-full">
           <div {...s.charactersContentBlurred}>
+            <h5 {...s.charactersTextMobileTitle}>Faction</h5>
+            <h4 {...s.charactersTextMobileSubtitle}>Tegrak</h4>
             <div
               {...s.charactersImageContentBlurred}
               style={{ minWidth: "360px" }}
@@ -91,6 +95,8 @@ export default class SimpleSlider extends Component {
         </div>
         <div className="flex flex-col items-center  w-full">
           <div {...s.charactersContentBlurred}>
+            <h5 {...s.charactersTextMobileTitle}>Faction</h5>
+            <h4 {...s.charactersTextMobileSubtitle}>Laidar</h4>
             <div
               {...s.charactersImageContentBlurred}
               style={{ minWidth: "360px" }}
