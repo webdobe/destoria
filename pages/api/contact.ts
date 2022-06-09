@@ -26,12 +26,15 @@ export default function handler(
   });
 
   const mailData = {
-    from: 'noreply@destoria.io',
-    to: 'jesse@jlte.ch',
+    from: req.body.email,
+    to: process.env.CONTACT_EMAIL,
     subject: `Destoria Contact: ${req.body.subject}`,
-    text: req.body.message + " | Sent from: " + req.body.email,
-    html: `<div>${req.body.message}</div><p>Sent from:
-    ${req.body.email}</p>`
+    text: `${req.body.message} | ${req.body.name} | Sent from: ${req.body.email}`,
+    html: `
+        <div>${req.body.message}</div>
+        <div>- ${req.body.name}</div>
+        <p>Sent from: ${req.body.email}</p>
+    `
   }
 
   transporter.sendMail(mailData, function (err, info) {
