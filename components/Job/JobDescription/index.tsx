@@ -15,7 +15,6 @@ const JobDescription: FunctionComponent = function ({ job }) {
   const defaultContact = {
     name: '',
     email: '',
-    subject: '',
     message: '',
     discord: '',
     social: '',
