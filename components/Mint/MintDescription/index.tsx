@@ -69,7 +69,7 @@ const MintDescription: FunctionComponent = function () {
               alt="DESTORIA-Feral"
             />
           </span>
-          <span className="block md:hidden pt-10">
+          <span className="mobile-mint-monsters block md:hidden pt-10">
             <Image
               src="/mint-monsters-mb.png"
               width={390}

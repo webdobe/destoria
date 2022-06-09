@@ -231,6 +231,10 @@ textarea, input {
   background-position: center;
 }
 
+.mobile-mint-monsters {
+  margin: -40px;
+}
+
 @keyframes glow {
   from {
     text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7.5px #f24a7c,
