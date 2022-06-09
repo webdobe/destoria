@@ -45,13 +45,13 @@ export default function handler(
     transporter.sendMail(mailData, function (err, info) {
       if(err) {
         console.log("SENDMAIL: ", err);
-        res.status(500);
+        res.status(500).json({message: 'Unable to send email.'});
       } else {
         console.log("SENDMAIL: ", info)
-        res.status(200);
+        res.status(200).json({message: 'Successfully sent email.'});
       }
     })
   } else {
-    res.status(400).json({name: ''});
+    res.status(400).json({message: 'Invalid request.'});
   }
 }
