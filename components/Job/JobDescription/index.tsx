@@ -42,7 +42,7 @@ const JobDescription: FunctionComponent = function ({ job }) {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(contact)
+      body: JSON.stringify({...contact, ...{job: job.name}})
     }).then((res) => {
       if (res.status === 200) {
         setContact(defaultContact);

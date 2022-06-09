@@ -9,7 +9,7 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const {name, email, message, social, social2, portfolio, discord} = req.body;
+  const {name, email, job, message, social, social2, portfolio, discord} = req.body;
 
   let nodemailer = require('nodemailer')
   const transporter = nodemailer.createTransport({
@@ -26,13 +26,13 @@ export default function handler(
     }
   });
 
-  if (name && email && message && discord) {
+  if (name && email && job && message && discord) {
     const mailData = {
       from: email,
       to: process.env.CONTACT_EMAIL,
-      subject: `Destoria Careers: ${name}`,
+      subject: `Destoria Careers (${job}): ${name}`,
       text: `
-        ${message} | ${name} 
+        ${message} | ${name} | ${job}
         ${discord ? `| ${discord}` : ''} 
         ${portfolio ? `| ${portfolio}` : ''} 
         ${social ? `| ${social}` : ''} 
@@ -40,6 +40,7 @@ export default function handler(
         | Sent from: ${email}
       `,
       html: `
+        <div>Job: ${job}</div>
         <div>${message}</div>
         <div>Discord: ${discord}</div>
         <div>Portfolio: ${portfolio}</div>
