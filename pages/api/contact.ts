@@ -19,7 +19,9 @@ export default function handler(
       type: 'OAuth2',
       user: process.env.MAIL_USER,
       clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
+      accessToken: process.env.GOOGLE_ACCESS_TOKEN,
     }
   });
 
