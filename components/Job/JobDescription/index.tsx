@@ -9,7 +9,50 @@ import {
 } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {PrimaryBtn} from "../../../styles";
+
 const JobDescription: FunctionComponent = function ({ job }) {
+  const defaultContact = {
+    name: '',
+    email: '',
+    message: '',
+    discord: '',
+    social: '',
+    social2: '',
+    portfolio: '',
+  };
+
+  const [contact, setContact] = useState(defaultContact);
+  const [success, setSuccess] = useState('');
+  const [error, setError] = useState('');
+
+  const handleOnChange = (e, field) => {
+    let values = {...contact}
+    values[field] = e.target.value;
+    setContact(values);
+  }
+
+  const handleSubmit = () => {
+    setSuccess('');
+    setError('');
+
+    fetch('/api/careers', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({...contact, ...{job: job.name}})
+    }).then((res) => {
+      if (res.status === 200) {
+        setContact(defaultContact);
+        setSuccess('Successfully submitted contact!');
+      } else {
+        setError('Sorry, something went wrong... try again in 5 minutes.');
+      }
+    })
+  }
+
   return (
     <section
       {...s.jobDescription}
@@ -37,14 +80,15 @@ const JobDescription: FunctionComponent = function ({ job }) {
           <div {...s.jobDescriptionBoxContent}>
             <div {...s.jobDescriptionBoxContentTitle}>About Destoria</div>
             <div {...s.jobDescriptionBoxContentText}>
-              Job description lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed
-              dignissim, metus nec fringilla accumsan, risus sem sollicitudin
-              lacus, ut interdum tellus elit sed risus. Maecenas eget
-              condimentum velit, sit amet feugiat lectus. Class aptent taciti
-              sociosqu ad litora torquent per conubia nostra, per inceptos
-              himenaeos. Praesent auctor purus luctus enim egestas, ac
-              scelerisque ante pulvinar.
+              <p>The team is constantly evolving to meet the market's needs and continually raising the bar
+                in innovative ways. We are a group of innovators who are curious and intrigued about new
+                things and developments within the Web3, block chain and gaming spaces. We will be
+                combining all these elements into a space changing experience, forever passionate about
+                creating impactful changes to stay at the forefront of web3.</p>
+              <p>Destoria is preparing to deliver property rights digitally to the world of Internet
+                users and gamers alike. Helping to create a whole new asset class that will revolutionize
+                the play-to-earn experiences, and more passive income opportunities for everyone to
+                experience and enter the open source Metaverse.</p>
             </div>
           </div>
           <div {...s.jobDescriptionBoxContent}>
@@ -105,11 +149,21 @@ const JobDescription: FunctionComponent = function ({ job }) {
           </div>
           <div {...s.jobDescriptionBoxFormContent}>
             <div {...s.jobDescriptionBoxContentTitle}>Send us a sign!</div>
+            <div {...s.contactFormMessages}>
+              <div {...s.contactFormSuccess}>
+                {success}
+              </div>
+              <div {...s.contactFormError}>
+                {error}
+              </div>
+            </div>
             <div {...s.gridForm}>
               <div {...s.gridSingle}>
                 <input
                   type="text"
                   placeholder="Full Name*"
+                  value={contact.name}
+                  onChange={(e) => handleOnChange(e, 'name')}
                   {...s.singleInput}
                 />
               </div>
@@ -117,26 +171,43 @@ const JobDescription: FunctionComponent = function ({ job }) {
                 <input
                   type="text"
                   placeholder="Discord Handle*"
+                  value={contact.discord}
+                  onChange={(e) => handleOnChange(e, 'discord')}
                   {...s.singleInput}
                 />
               </div>
               <div {...s.gridSingle}>
-                <input type="text" placeholder="Email*" {...s.singleInput} />
+                <input
+                  type="text"
+                  placeholder="Email*"
+                  value={contact.email}
+                  onChange={(e) => handleOnChange(e, 'email')}
+                  {...s.singleInput}
+                />
               </div>
               <div {...s.gridSingle}>
                 <input
                   type="text"
                   placeholder="Social media  (e.g. namesurname/linkedin)"
+                  value={contact.social}
+                  onChange={(e) => handleOnChange(e, 'social')}
                   {...s.singleInput}
                 />
               </div>
               <div {...s.gridSingle}>
-                <input type="text" placeholder="Portfolio" {...s.singleInput} />
+                <input
+                  type="text"
+                  placeholder="Portfolio"
+                  value={contact.portfolio}
+                  onChange={(e) => handleOnChange(e, 'portfolio')}
+                  {...s.singleInput} />
               </div>
               <div {...s.gridSingle}>
                 <input
                   type="text"
                   placeholder="Social media 2 (e.g. namesurname/linkedin)"
+                  value={contact.social2}
+                  onChange={(e) => handleOnChange(e, 'social2')}
                   {...s.singleInput}
                 />
               </div>
@@ -144,61 +215,27 @@ const JobDescription: FunctionComponent = function ({ job }) {
                 <textarea
                   type="text"
                   placeholder="Why would you like to be part of the team?"
+                  value={contact.message}
+                  onChange={(e) => handleOnChange(e, 'message')}
                   {...s.textAreaInput}
                 />
               </div>
             </div>
             <div {...s.interactions} >
               <div {...s.interactionsDiv}>
-                <div
-                  {...s.connectWalletText}
-                  onClick={() => window.location.href = '/team#3'}
-                  style={{
-                    whiteSpace: "nowrap",
-                    position: "relative",
-                    left:  window.innerWidth > 550 ? "65px" : "0",
-                    top: '10px'
-                  }}
-                >
-                  Back
-                </div>
-                <div {...s.connectWalletSpan}
-                  style={{ position: "relative", left: "-30px", top: "16px" }}
+                <PrimaryBtn
+                  outline
                   onClick={() => window.location.href = '/team#3'}
                 >
-                  <Image
-                    {...s.connectWalletImage}
-                    src="/connect-wallet.svg"
-                    alt="Apply now"
-                    width={window.innerWidth > 550 ? 160 : 130}
-                    height={45}
-                    style={{ position: "relative", left: "0" }}
-                  />
-                </div>
-                <Link href="/lore">
-                  <div
-                    {...s.applyNowText}
-                    style={{
-                      whiteSpace: "nowrap",
-                      position: "relative",
-                      left:  window.innerWidth > 550 ? "65px" : "30px",
-                      top: '10px',
-                      zIndex: 1,
-                    }}
-                  >
-                    Apply now
-                  </div>
-                </Link>
-                <div style={{ position: "relative", left: "-0", top: "16px" }}>
-                <Image
-                  {...s.connectWalletImage}
-                  src="/button-one.svg"
-                  alt="Apply Now"
-                  width={window.innerWidth > 550 ? 200 : 150}
-                  height={45}
-                  style={{ position: "relative" }}
-                />
-                </div>
+                  <span className="btn-bg"></span>
+                  <span className="btn-text">Back</span>
+                </PrimaryBtn>
+                <PrimaryBtn
+                  onClick={handleSubmit}
+                >
+                  <span className="btn-bg"></span>
+                  <span className="btn-text">Apply now</span>
+                </PrimaryBtn>
               </div>
             </div>
           </div>
