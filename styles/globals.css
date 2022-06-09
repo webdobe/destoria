@@ -1645,7 +1645,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   position: absolute;
   width: calc(100% - 47px);
   max-width: 500px;
-  max-height: 282px;
+  max-height: 305px;
   height: 100%;
   clip-path: polygon(0 67%, 0 11%, 5% 0, 95% 0, 100% 10%, 100% 52%, 97% 61%, 97% 90%, 93% 100%, 8.5% 100%, 3% 92%, 3% 75%);
   background-color: white;
@@ -1656,7 +1656,7 @@ tabButtonInnerFirst: allInners + "tab-nav-button-inner__first", */
   position: absolute;
   width: calc(100% - 6px);
   max-width: 500px;
-  max-height: 282px;
+  max-height: 305px;
   height: 100%;
 }
 
