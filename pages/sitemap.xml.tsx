@@ -4,26 +4,25 @@ import * as fs from 'fs'
 const BASE_URL = 'https://www.destoria.io';
 
 const Sitemap = () => {
-  return null;
+  return;
 };
 
-const staticPaths = fs
-  .readdirSync("pages")
-  .filter((staticPage) => {
-    return ![
-      "api",
-      "_app.tsx",
-      "_document.tsx",
-      "404.tsx",
-      "sitemap.xml.tsx",
-    ].includes(staticPage);
-  })
-  .map((staticPagePath) => {
-    const path = staticPagePath.replace(".tsx", "");
-    return `${BASE_URL}/${path === 'index' ? '' : path}`;
-  });
-
-export const getServerSideProps = async ({ res }) => {
+export async function getServerSideProps({res}) {
+  const staticPaths = fs
+    .readdirSync("pages")
+    .filter((staticPage) => {
+      return ![
+        "api",
+        "_app.tsx",
+        "_document.tsx",
+        "404.tsx",
+        "sitemap.xml.tsx",
+      ].includes(staticPage);
+    })
+    .map((staticPagePath) => {
+      const path = staticPagePath.replace(".tsx", "");
+      return `${BASE_URL}/${path === 'index' ? '' : path}`;
+    });
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       ${staticPaths
