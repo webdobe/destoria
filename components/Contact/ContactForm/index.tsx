@@ -99,6 +99,7 @@ const ContactForm: FunctionComponent = () => {
                 type="text"
                 name="name"
                 placeholder="Full Name*"
+                value={contact.name}
                 onChange={(e) => handleOnChange(e, 'name')}
                 {...s.singleInput}
               />
@@ -107,6 +108,7 @@ const ContactForm: FunctionComponent = () => {
               <input
                 type="text"
                 placeholder="Email*"
+                value={contact.email}
                 onChange={(e) => handleOnChange(e, 'email')}
                 {...s.singleInput}
               />
@@ -115,6 +117,7 @@ const ContactForm: FunctionComponent = () => {
               <input
                 type="text"
                 placeholder="Subject*"
+                value={contact.subject}
                 onChange={(e) => handleOnChange(e, 'subject')}
                 {...s.singleInput}
               />
@@ -123,6 +126,7 @@ const ContactForm: FunctionComponent = () => {
               <textarea
                 type="text"
                 placeholder="Message"
+                value={contact.message}
                 onChange={(e) => handleOnChange(e, 'message')}
                 {...s.textAreaInput}
               />
