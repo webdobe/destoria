@@ -6,7 +6,7 @@ const styles = {
     containerExploreTheMetaverseBordered: "flex flex-col justify-center items-center layout-first-border md:py-24 md:mx-5 xl:mx-5 h-85 md:h-auto",
     destoria: "pl-2",
     destoriaLogo: "w-80",
-    exploreTheMetaverseText: "uppercase tracking-wide text-dwhite md:text-5xl md:font-bold my-5 md:my-0",
+    exploreTheMetaverseText: "uppercase tracking-wide text-dwhite md:text-4xl md:font-bold my-5 md:my-0",
     connectWallet: "w-45 h-10 flex justify-center items-center cursor-pointer connect-wallet pt-2 main-button",
     connectWalletWrapper: "main-wrapper top-5",
     connectWalletNeon: "main-neon",

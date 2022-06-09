@@ -154,6 +154,7 @@ const FirstFrame: FunctionComponent = (props) => {
               <div {...s.destoriaHeroVideo}>
                 <video
                   id="video-hero"
+                  poster="/video-thumbnail.png"
                   className="video-js"
                   controls={true}
                   preload="auto"
