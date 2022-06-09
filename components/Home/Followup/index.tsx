@@ -1,5 +1,6 @@
 import s from "./styles";
 import { useEffect, useState, useRef, FunctionComponent } from "react";
+import Link from "next/link";
 import { gsap } from "gsap";
 import styled from "@emotion/styled";
 import {
@@ -13,51 +14,55 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Followup: FunctionComponent = (props) => {
   const {sectionRefs} = props;
-  const [isComplete, setIsComplete] = useState(false);
-  const { scrollYProgress, scrollXProgress, scrollY } = useViewportScroll();
-  const yRange = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
-  const pathLength = useSpring(yRange);
-  const [currentView, setCurrentView] = useState(0);
-  const [currentY, setCurrentY] = useState(0);
-  const revealRefs = useRef([]);
-  revealRefs.current = [];
+  const linkRefs = useRef([]);
+  const [sections, setSections] = useState([]);
+  linkRefs.current = [];
 
   useEffect(() => {
-    sectionRefs.current.forEach((el, index) => {
-      let link = revealRefs.current[index];
-      //console.log(el.getAttribute("data-trigger"));
-      gsap.to(link, {
-        ease: 'none',
-        scrollTrigger: {
-          trigger: el,
-          toggleClass: {targets: link, className: "active"},
-          start: "top center",
-          end: "bottom center",
-          //markers: true,
+    if (sections.length === sectionRefs.current.length) {
+      sectionRefs.current.forEach((el, index) => {
+        let link = linkRefs.current[index];
+        if (link) {
+          gsap.to(link, {
+            ease: 'none',
+            scrollTrigger: {
+              trigger: el,
+              toggleClass: {targets: link, className: "active"},
+              start: "top center",
+              end: "bottom center",
+              //markers: true,
+            }
+          });
         }
       });
-
-    });
-  }, []);
+    } else {
+      let elements = [];
+      sectionRefs.current.forEach((el) => {
+        if (el && !sections.includes(el)) {
+          elements.push(el);
+        }
+      });
+      setSections(elements);
+    }
+  }, [sections]);
 
   const addToRefs = el => {
-    if (el && !revealRefs.current.includes(el)) {
-      revealRefs.current.push(el);
+    if (el && !linkRefs.current.includes(el)) {
+      linkRefs.current.push(el);
     }
   };
 
   return (
-    <List
-      {...s.container}
-      onClick={() => console.log(pathLength)}
-    >
-      <ListItem ref={addToRefs} data-trigger="about">About</ListItem>
-      <ListItem ref={addToRefs} data-trigger="upcoming">Upcoming</ListItem>
-      <ListItem ref={addToRefs} data-trigger="classes">Classes</ListItem>
-      <ListItem ref={addToRefs} data-trigger="roadmap">Roadmap</ListItem>
-      <ListItem ref={addToRefs} data-trigger="game-specs">Game Specs</ListItem>
-      <ListItem ref={addToRefs} data-trigger="gallery">Gallery</ListItem>
-      <ListItem ref={addToRefs} data-trigger="faq">FAQ</ListItem>
+    <List {...s.container}>
+      {sections.length && sections.map((el) => {
+        const label = el.getAttribute("data-label");
+        const id = el.getAttribute("id");
+        return (
+          <ListItem key={id} ref={addToRefs}>
+            <Link href={`#${id}`}>{label}</Link>
+          </ListItem>
+        );
+      })}
     </List>
   );
 };

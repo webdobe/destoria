@@ -16,7 +16,7 @@ const Faq: FunctionComponent = (props) => {
     }, 400);
   }, [selected, setSelected])
   return (
-    <section {...s.faq} ref={sectionRef} id="faq">
+    <section {...s.faq} id="faq" ref={sectionRef} data-label="FAQs">
       <div {...s.photoLayer}></div>
       <div {...s.contentLayer}>
         <div

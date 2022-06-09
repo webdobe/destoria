@@ -16,7 +16,7 @@ const Roadmap: FunctionComponent = (props) => {
     }
   })
   return (
-    <section {...s.roadmap} ref={sectionRef} id="roadmap">
+    <section {...s.roadmap} id="roadmap" ref={sectionRef} data-label="Roadmap">
       <div {...s.containerRoadmap}>
         <div {...s.containerRoadmapBordered} style={{ maxWidth: "1400px" }}>
           <div {...s.photoLayer}>
@@ -382,13 +382,15 @@ const Roadmap: FunctionComponent = (props) => {
                   style={{ cursor: "pointer", minHeight: "50vh" }}
                   className="custom-modal-image"
                 >
-                  <Link passHref href="https://discord.com/invite/Y7QSJcWqFH">
-                    <Image
-                      src="/destoria-banner-discord.png"
-                      width={4096}
-                      height={2181}
-                      // layout="fill"
-                    />
+                  <Link href="https://discord.com/invite/Y7QSJcWqFH" passHref>
+                    <a>
+                      <Image
+                        src="/destoria-banner-discord.png"
+                        width={4096}
+                        height={2181}
+                        // layout="fill"
+                      />
+                    </a>
                   </Link>
                 </div>
                 Hints: Something that opens doors - Sword and... - Brand
@@ -452,13 +454,15 @@ const Roadmap: FunctionComponent = (props) => {
                 style={{ cursor: "pointer" }}
                 className="custom-modal-image pb-5"
               >
-                <Link passHref href="https://discord.com/invite/Y7QSJcWqFH">
-                  <Image
-                    src="/destoria-banner-discord.png"
-                    width={4096}
-                    height={2181}
-                    // layout="fill"
-                  />
+                <Link href="https://discord.com/invite/Y7QSJcWqFH" passHref>
+                  <a>
+                    <Image
+                      src="/destoria-banner-discord.png"
+                      width={4096}
+                      height={2181}
+                      // layout="fill"
+                    />
+                  </a>
                 </Link>
               </div>
               Hints: Something that opens doors - Sword and... - Brand

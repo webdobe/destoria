@@ -2,13 +2,17 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
-  name: string
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
 }
 
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+  const {name, email, subject, message} = req.body;
 
   let nodemailer = require('nodemailer')
   const transporter = nodemailer.createTransport({
@@ -25,23 +29,29 @@ export default function handler(
     }
   });
 
-  const mailData = {
-    from: req.body.email,
-    to: process.env.CONTACT_EMAIL,
-    subject: `Destoria Contact: ${req.body.subject}`,
-    text: `${req.body.message} | ${req.body.name} | Sent from: ${req.body.email}`,
-    html: `
-        <div>${req.body.message}</div>
-        <div>- ${req.body.name}</div>
-        <p>Sent from: ${req.body.email}</p>
-    `
-  }
+  if (name && email && message && subject) {
+    const mailData = {
+      from: email,
+      to: process.env.CONTACT_EMAIL,
+      subject: `Destoria Contact: ${subject}`,
+      text: `${message} | ${name} | Sent from: ${email}`,
+      html: `
+        <div>${message}</div>
+        <div>- ${name}</div>
+        <p>Sent from: ${email}</p>
+      `
+    }
 
-  transporter.sendMail(mailData, function (err, info) {
-    if(err)
-      console.log(err)
-    else
-      console.log(info)
-  })
-  res.status(200);
+    transporter.sendMail(mailData, function (err, info) {
+      if(err) {
+        console.log("SENDMAIL: ", err);
+        res.status(500);
+      } else {
+        console.log("SENDMAIL: ", info)
+        res.status(200);
+      }
+    })
+  } else {
+    res.status(400).json({name: ''});
+  }
 }
