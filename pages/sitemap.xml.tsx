@@ -9,7 +9,7 @@ const Sitemap = () => {
 
 export async function getServerSideProps({res}) {
   const staticPaths = fs
-    .readdirSync("pages")
+    .readdirSync("./pages")
     .filter((staticPage) => {
       return ![
         "api",
