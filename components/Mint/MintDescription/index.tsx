@@ -49,7 +49,6 @@ const MintDescription: FunctionComponent = function () {
                 <li {...s.listLitem}>
                 Merch drop.
                 </li>
-                <li {...s.listLitem}>Holders can enter in 3D character giveaways.</li>
                 <li {...s.listLitem}>
                 MMORPG loot box airdropped With B.O.P. summoning capability.
                 </li>
