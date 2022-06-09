@@ -54,13 +54,10 @@ const Home: NextPage = () => {
   sectionRefs.current = [];
 
   const addToSectionRefs = el => {
-    console.log("ADD TO SECTION REFS", el);
     if (el && !sectionRefs.current.includes(el)) {
       sectionRefs.current.push(el);
     }
   };
-
-  console.log("SECTION REFS", sectionRefs);
 
   return (
     <div>

@@ -28,7 +28,7 @@ const MintDescription: FunctionComponent = function () {
                 <li {...s.specialItemTwo}>Free mint for 3D project.</li>
                 <li {...s.listLitem}>Loot box air drops for free mint.</li>
                 <li {...s.listLitem}>
-                  Anyone who mints a B.O.P. gets a chance at finding a another
+                  Anyone who mints a B.O.P. gets a chance at finding another
                   one of Sebby’s keys.
                 </li>
                 <li {...s.listLitem}>Holders can enter in 3D character giveaways.</li>

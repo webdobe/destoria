@@ -60,7 +60,7 @@ const CharactersCarousel: FunctionComponent = (props) => {
   },[])
 
   return (
-    <section {...s.charactersCarousel} ref={sectionRef} id="characters">
+    <section {...s.charactersCarousel} id="characters" ref={sectionRef} data-label="Classes">
       <div {...s.contentLayer} ref={containerRef}>
         <div {...s.containerCharactersCarouselBordered} style={{maxWidth: '1400px', width: '100%'}}>
           <div {...s.charactersContent}>

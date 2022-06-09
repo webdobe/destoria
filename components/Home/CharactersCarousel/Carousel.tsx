@@ -6,7 +6,6 @@ import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
 
 export default class SimpleSlider extends Component {
-
   render() {
     return (
       <Carousel
@@ -65,7 +64,6 @@ export default class SimpleSlider extends Component {
                 alt="Burger Menu"
                 width={440}
                 height={440}
-                style={{ position: "absolute", minWidth: "360px" }}
               />
             </div>
             <div {...s.charactersTextContent}>
@@ -107,7 +105,6 @@ export default class SimpleSlider extends Component {
                 alt="Burger Menu"
                 width={440}
                 height={440}
-                style={{ position: "absolute", minWidth: "360px" }}
               />
             </div>
             <div {...s.charactersTextContent}>

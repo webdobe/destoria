@@ -16,7 +16,7 @@ const FindMore: FunctionComponent = (props) => {
   const [currentTab, setCurrentTab] = useState(0);
 
   return (
-    <section {...s.findMore} ref={sectionRef} id="game-specs">
+    <section {...s.findMore} id="game-specs" ref={sectionRef} data-label="Game Specs">
       <div {...s.photoLayer}></div>
       <div {...s.contentLayer}>
         <div
@@ -34,7 +34,7 @@ const FindMore: FunctionComponent = (props) => {
                 <div {...s.findmoreBoxOpenWorld}>
                   <div {...s.findmoreBoxText}>
                     <h3 {...s.titleContent}>Open World</h3>
-                    <p {...s.textContent}>With direct interconnected access into the Metaverse you will travel to and from your island straight into the RPG. Hot spots are the only places you can be looted or lose any valuables, so the property you own is your personal safe zone. You can keep it all to yourself or rent out space to others as safehavens while they traverse the metaverse. With many different types of P2E games within the metaverse island ecosystem, you will never run out of things to do or $Stori to earn.</p>
+                    <p {...s.textContent}>With direct interconnected access into the Metaverse you will travel to and from your island straight into the RPG. Hot spots are the only places you can be looted or lose any valuables, so the property you own is your personal safe zone. You can keep it all to yourself or rent out space to others as safehavens while they traverse the metaverse. With many different types of P2E games within the metaverse island ecosystem you will never run out of things to do or $Stori to earn.</p>
                   </div>
                 </div>
               )}
@@ -58,7 +58,7 @@ const FindMore: FunctionComponent = (props) => {
                 <div {...s.findmoreBoxInteroperability}>
                   <div {...s.findmoreBoxText}>
                     <h3 {...s.titleContent}>Interoperability</h3>
-                    <p {...s.textContent}>With the resources and expertise to rig a select group of collection pieces and a team to create your plot or island, Destoria has the ability to mass adopt entire communities to provide an extra outlet of utility and dynamics. Want your favorite project implemented into the Destorian metaverse? Hit the Collab page to find out how.</p>
+                    <p {...s.textContent}>With the resources and expertise to rig a select group of collection pieces and a team to create your plot or island, Destoria has the ability to mass adopt entire communities to provide an extra outlet of utility and dynamics. Want your favorite project implemented into the Destorian metaverse? Want to add your game and incorporate your tokens? Hit the Collab page to find out how.</p>
                   </div>
                 </div>
               )}

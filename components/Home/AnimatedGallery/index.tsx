@@ -13,7 +13,7 @@ const AnimatedGallery: FunctionComponent = (props) => {
   const {sectionRef} = props;
 
   return (
-    <section {...s.animatedGallery} ref={sectionRef}>
+    <section {...s.animatedGallery} id="gallery" ref={sectionRef} data-label="Gallery">
       <div {...s.photoLayer}></div>
       <div {...s.contentLayer}>
         <div

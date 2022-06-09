@@ -58,7 +58,7 @@ const FirstFrame: FunctionComponent = (props) => {
   }, [count]);
 
   return (
-    <div {...s.majorContainer} ref={sectionRef} id="about">
+    <div {...s.majorContainer}>
       <div {...s.photoLayer}>
         <ShipVideo />
       </div>
@@ -124,14 +124,13 @@ const FirstFrame: FunctionComponent = (props) => {
                       alt="Burger Menu"
                       width={200}
                       height={45}
-                      style={{ position: "absolute" }}
                     />
                   </motion.div>
               </motion.div>
             </div>
           </div>
         </section>
-        <section {...s.destoriaTheVideo}>
+        <section {...s.destoriaTheVideo} id="about" ref={sectionRef} data-label="About">
           <div
             {...s.containerDestoriaTheVideo}
             style={{ maxWidth: "1440px", width: "100%" }}
@@ -155,12 +154,13 @@ const FirstFrame: FunctionComponent = (props) => {
               <div {...s.destoriaHeroVideo}>
                 <video
                   id="video-hero"
+                  poster="/video-thumbnail.png"
                   className="video-js"
                   controls={true}
                   preload="auto"
                   data-setup="{}"
                   autoPlay={false}
-                  loop={false}
+                  loop={true}
                   ref={myVideo}
                 >
                   <source

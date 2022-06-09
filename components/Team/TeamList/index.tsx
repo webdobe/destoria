@@ -191,6 +191,19 @@ const TeamList: FunctionComponent = function () {
                     <div {...s.leadersTextTitle}>Rui Passos</div>
                     <div {...s.leadersTextDescription}>Game Developer</div>
                     <div {...s.leadersSocialMedia}>
+                      <a
+                        {...s.socialMedia}
+                        href="https://www.linkedin.com/in/rui-bronze-038ab7237/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Image
+                          src="/media-IN.svg"
+                          alt="Linkedin"
+                          width={26}
+                          height={26}
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>
