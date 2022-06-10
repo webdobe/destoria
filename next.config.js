@@ -8,7 +8,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   serverRuntimeConfig: {
-    PROJECT_ROOT: process.cwd()
+    PROJECT_ROOT: __dirname
   }
 }
 
