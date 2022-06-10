@@ -7,6 +7,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  serverRuntimeConfig: {
+    PROJECT_ROOT: process.cwd()
+  }
 }
 
 module.exports = nextConfig

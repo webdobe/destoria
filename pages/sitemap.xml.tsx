@@ -1,6 +1,9 @@
 import React from 'react';
-import * as fs from 'fs'
+import fs from 'fs'
+import path from "path"
+import getConfig from 'next/config'
 
+const { serverRuntimeConfig } = getConfig();
 const BASE_URL = 'https://www.destoria.io';
 
 const Sitemap = () => {
@@ -9,7 +12,7 @@ const Sitemap = () => {
 
 export async function getServerSideProps({res}) {
   const staticPaths = fs
-    .readdirSync("./pages")
+    .readdirSync(path.join(serverRuntimeConfig.PROJECT_ROOT, './pages'))
     .filter((staticPage) => {
       return ![
         "api",
