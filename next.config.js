@@ -7,16 +7,12 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  serverRuntimeConfig: {
-    PROJECT_ROOT: __dirname
-  },
-  async rewrites() {
-    return [
-      {
-        source: '/sitemap.xml',
-        destination: '/api/sitemap',
-      },
-    ]
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require('./scripts/generate-sitemap.tsx')
+    }
+
+    return config
   },
 }
 
