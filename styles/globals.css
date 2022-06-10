@@ -225,7 +225,7 @@ textarea, input {
       rgba(5, 13, 29, 0.25) 90%,
       rgba(5, 13, 29, 1) 100%
     ),
-    url("/bg-full-contact.png");
+    url("/bg-full-contact.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
